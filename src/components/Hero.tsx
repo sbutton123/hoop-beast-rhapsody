@@ -1,5 +1,6 @@
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import loopVideo from '@/assets/3hoop-duck-out-mobile.mp4'
 
 const Hero = () => {
   return (
@@ -11,19 +12,7 @@ const Hero = () => {
 
       {/* Left Video – Juggling Loop */}
       <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-1/2 transform -translate-y-1/2 z-20">
-        <video
-          className="w-40 sm:w-56 md:w-72 lg:w-80 h-auto opacity-90 animate-float"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source
-            src="/lovable-uploads/3hoop-duck-out-mobile.mp4"
-            type="video/mp4"
-          />
-          Your browser doesn’t support HTML5 video.
-        </video>
+      <source src={loopVideo} type="video/mp4" />
       </div>
 
       {/* Right Image – Hula Hooping */}
