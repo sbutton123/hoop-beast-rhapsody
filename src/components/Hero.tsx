@@ -1,18 +1,20 @@
-import { ArrowRight, Play } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { ArrowRight, Play } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-beast overflow-hidden">
       {/* subtle pulse grid */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 
-          bg-white/5 
-          bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] 
-          bg-[length:60px_60px] animate-pulse" />
+        <div
+          className="absolute inset-0 
+                     bg-white/5 
+                     bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] 
+                     bg-[length:60px_60px] animate-pulse"
+        />
       </div>
 
-      {/* ← looping video (MP4/WebM) */}
+      {/* ← looping video (WebM) */}
       <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-1/2 transform -translate-y-1/2 z-20">
         <video
           className="w-40 sm:w-56 md:w-72 lg:w-80 h-auto opacity-90 animate-float"
@@ -22,7 +24,7 @@ const Hero = () => {
           playsInline
         >
           <source
-            src="/3hoop-duck-out-mobile.webm"
+            src="/3hoop‑duck‑out‑mobile.webm"
             type="video/webm"
           />
           Your browser doesn’t support HTML5 video.
@@ -60,14 +62,14 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="btn-beast text-lg font-bangers tracking-wide">
+          <Button size="lg" className="btn-beast text-lg font‑bangers tracking‑wide">
             START YOUR JOURNEY
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="btn-beast-outline text-lg font-bangers tracking-wide bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary"
+            className="btn-beast-outline text-lg font‑bangers tracking‑wide bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary"
           >
             <Play className="mr-2 h-5 w-5" />
             WATCH DEMO
@@ -94,7 +96,7 @@ const Hero = () => {
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 
                       w-16 h-16 border-4 border-beast-orange/50 rounded-full animate-float" />
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
