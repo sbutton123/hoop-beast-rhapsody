@@ -9,13 +9,33 @@ const Hero = () => {
         <div className="absolute inset-0 bg-white/5 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:60px_60px] animate-pulse"></div>
       </div>
       
+      {/* Left Image - Juggling */}
+      <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-1/2 transform -translate-y-1/2 z-20">
+        <img 
+          src="/lovable-uploads/212cec6e-d89c-4bf8-aab7-f2d0b5f011ac.png" 
+          alt="Juggling hoops" 
+          className="w-32 sm:w-48 md:w-64 lg:w-80 h-auto opacity-90 animate-float"
+        />
+      </div>
+      
+      {/* Right Image - Hula Hooping */}
+      <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-1/2 transform -translate-y-1/2 z-20">
+        <img 
+          src="/lovable-uploads/aa66bb76-99ad-4824-9e6a-0edda4d38cba.png" 
+          alt="Hula hooping multiple hoops" 
+          className="w-32 sm:w-48 md:w-64 lg:w-80 h-auto opacity-90 animate-float delay-500"
+        />
+      </div>
+      
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           {/* Main Heading */}
           <h1 className="font-bangers text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white animate-bounce-gentle">
             UNLEASH YOUR
             <br />
-            <span className="text-beast-orange">BEAST</span>
+            <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl">INNER</span>
+            <br />
+            <span className="text-beast-orange text-7xl sm:text-8xl md:text-9xl lg:text-[10rem]">BEAST</span>
           </h1>
           
           {/* Subheading */}
@@ -58,10 +78,8 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-20 w-20 h-20 border-4 border-white/30 rounded-full animate-bounce-gentle"></div>
-      <div className="absolute bottom-20 right-20 w-16 h-16 border-4 border-beast-orange/50 rounded-full animate-float"></div>
-      <div className="absolute top-1/2 left-10 w-12 h-12 border-4 border-secondary/50 rounded-full animate-bounce-gentle delay-700"></div>
+      {/* Decorative Elements - Reduced to avoid clutter with images */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-16 h-16 border-4 border-beast-orange/50 rounded-full animate-float"></div>
     </section>
   );
 };
