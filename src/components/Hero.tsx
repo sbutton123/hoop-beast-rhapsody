@@ -9,14 +9,23 @@ const Hero = () => {
         <div className="absolute inset-0 bg-white/5 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:60px_60px] animate-pulse"></div>
       </div>
       
-      {/* Left Image - Juggling */}
-      <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-1/2 transform -translate-y-1/2 z-20">
-        <img 
-          src="/lovable-uploads/212cec6e-d89c-4bf8-aab7-f2d0b5f011ac.png" 
-          alt="Juggling hoops" 
-          className="w-32 sm:w-48 md:w-64 lg:w-80 h-auto opacity-90 animate-float"
-        />
-      </div>
+     {/* Left Video – Juggling Loop */}
+<div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-1/2 transform -translate-y-1/2 z-20">
+  <video
+    className="w-40 sm:w-56 md:w-72 lg:w-80 h-auto opacity-90 animate-float"
+    autoPlay
+    muted
+    loop
+    playsInline
+  >
+    <source 
+      src="/videos/3hoop-duck-out-mobile.mp4" 
+      type="video/mp4" 
+    />
+    {/* fallback for older browsers */}
+    Your browser doesn’t support HTML5 video.
+  </video>
+</div>
       
       {/* Right Image - Hula Hooping */}
       <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-1/2 transform -translate-y-1/2 z-20">
