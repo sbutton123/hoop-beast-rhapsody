@@ -61,7 +61,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				'beast-orange': {
+					DEFAULT: 'hsl(var(--beast-orange))',
+					foreground: 'hsl(var(--beast-orange-foreground))'
 				}
+			},
+			fontFamily: {
+				'bangers': ['Bangers', 'cursive'],
+				'inter': ['Inter', 'sans-serif'],
+				'sans': ['Inter', 'sans-serif']
+			},
+			backgroundImage: {
+				'gradient-beast': 'var(--gradient-beast)',
+				'gradient-beast-light': 'var(--gradient-beast-light)',
+				'gradient-text': 'var(--gradient-text)'
+			},
+			boxShadow: {
+				'beast': 'var(--shadow-beast)',
+				'glow': 'var(--shadow-glow)'
+			},
+			transitionTimingFunction: {
+				'beast': 'cubic-bezier(0.4, 0, 0.2, 1)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -89,6 +110,11 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			animationDelay: {
+				'500': '0.5s',
+				'700': '0.7s',
+				'1000': '1s',
 			}
 		}
 	},
