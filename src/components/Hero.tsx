@@ -7,11 +7,10 @@ const Hero = () => {
       {/* subtle pulse grid */}
       <div className="absolute inset-0 opacity-10">
         <div
-          className="absolute inset-0
-                     bg-white/5
-                     bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)]
-                     bg-[length:60px_60px]
-                     animate-pulse"
+          className="absolute inset-0 
+                     bg-white/5 
+                     bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] 
+                     bg-[length:60px_60px] animate-pulse"
         />
       </div>
 
@@ -25,7 +24,7 @@ const Hero = () => {
           playsInline
         >
           <source
-            src="/videos/3hoop-duck-out-mobile.webm"
+            src="/3hoop.webm"
             type="video/webm"
           />
           Your browser doesn’t support HTML5 video.
@@ -43,34 +42,23 @@ const Hero = () => {
 
       {/* center text + CTAs */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-        <h1
-          className="font-bangers leading-tight
-                     text-6xl sm:text-7xl md:text-8xl lg:text-9xl
-                     text-white animate-bounce-gentle"
-        >
-          UNLEASH YOUR<br />
+        <h1 className="font-bangers leading-tight 
+                       text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white animate-bounce-gentle">
+          UNLEASH YOUR<br/>
 
-          <span
-            className="text-black drop-shadow-md
-                       text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
-          >
+          <span className="text-black drop-shadow-md 
+                           text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
             INNER
           </span>{' '}
-          <span
-            className="text-beast-orange
-                       text-7xl sm:text-8xl md:text-9xl lg:text-[10rem]"
-          >
+          <span className="text-beast-orange 
+                           text-7xl sm:text-8xl md:text-9xl lg:text-[10rem]">
             BEAST
           </span>
         </h1>
 
-        <p
-          className="text-xl sm:text-2xl md:text-3xl
-                     text-white/90 font-inter font-light
-                     max-w-3xl mx-auto"
-        >
-          Transform your fitness journey with dynamic hula hoop workouts that ignite
-          your inner strength and unleash your athletic potential
+        <p className="text-xl sm:text-2xl md:text-3xl 
+                      text-white/90 font-inter font-light max-w-3xl mx-auto">
+          Transform your fitness journey with dynamic hula hoop workouts that ignite your inner strength and unleash your athletic potential
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -93,9 +81,9 @@ const Hero = () => {
             ['1000+', 'Beast Transformations', ''],
             ['50+',   'Dynamic Workouts',       'delay-500'],
             ['24/7',  'Beast Support',          'delay-1000'],
-          ].map(([num, label, delay], idx) => (
-            <div key={idx} className="text-center">
-              <div className={`font-bangers text-4xl text-beast-orange animate-float ${delay}`}>
+          ].map(([num, label, d], i) => (
+            <div key={i} className="text-center">
+              <div className={`font-bangers text-4xl text-beast-orange animate-float ${d}`}>
                 {num}
               </div>
               <div className="text-white/80 font-inter">{label}</div>
@@ -105,11 +93,8 @@ const Hero = () => {
       </div>
 
       {/* bottom decorative circle */}
-      <div
-        className="absolute bottom-20 left-1/2 transform -translate-x-1/2
-                   w-16 h-16 border-4 border-beast-orange/50 rounded-full
-                   animate-float"
-      />
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 
+                      w-16 h-16 border-4 border-beast-orange/50 rounded-full animate-float" />
     </section>
   )
 }
