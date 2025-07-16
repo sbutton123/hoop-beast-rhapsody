@@ -6,16 +6,16 @@ const Programs = () => {
   const programs = [
     {
       id: 1,
-      title: "Beast Beginner Bootcamp",
-      description: "Perfect for complete beginners. Learn fundamentals and build confidence in 4 weeks.",
-      duration: "4 weeks",
-      sessions: 12,
-      price: "$89",
+      title: "Hoopin & Groovin with Greg & Shanda",
+      description: "Shanda performs amazing hula hoop tricks and dazzles the crowd while Greg plays and sings classic rock songs with his acoustic guitar. They are a fun and dynamic duo and are guaranteed to impress and entertain!",
+      duration: "1 Hour Set",
+      sessions: 1,
+      price: "$350",
       features: [
-        "Basic hoop techniques",
-        "Fundamental movements",
-        "Core strength building",
-        "Beginner-friendly routines"
+        "Hula hoop tricks by Shanda",
+        "Live classic rock music by Greg",
+        "Interactive entertainment",
+        "Perfect for events, parties, and libraries"
       ],
       color: "bg-green-500"
     },
@@ -61,7 +61,7 @@ const Programs = () => {
                     </div>
                     <div className="flex items-center space-x-2">
                       <Users className="h-5 w-5 text-primary" />
-                      <span className="text-sm">{program.sessions} sessions</span>
+                      <span className="text-sm">{program.sessions} session</span>
                     </div>
                   </div>
 
