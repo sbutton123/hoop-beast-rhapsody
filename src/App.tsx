@@ -2,10 +2,9 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// global navbar
-import Navbar from '@/components/Navbar'
+import Navbar from './components/Navbar'
 
-// all your pages
+// page imports
 import Index from './pages/Index'
 import Tutorials from './pages/Tutorials'
 import Showcase from './pages/Showcase'
@@ -19,13 +18,12 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <BrowserRouter>
-      {/* ← Navbar sits here once for every route */}
+      {/* this ensures the navbar shows on every page */}
       <Navbar />
 
-      {/* push page content down below the sticky navbar */}
+      {/* push content below the sticky nav */}
       <main className="pt-16">
         <Routes>
-          {/* restore home as the root route */}
           <Route path="/" element={<Index />} />
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/showcase" element={<Showcase />} />
@@ -34,8 +32,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
-
-          {/* catch‑all 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
