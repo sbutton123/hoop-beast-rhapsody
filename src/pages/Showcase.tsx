@@ -62,16 +62,15 @@ const Showcase = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="bg-gradient-beast py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
-            SHOWCASE OUR FUN WITH HOOPS
-          </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Join our vibrant community of hoop beasts! Share your journey, celebrate victories, 
-            and inspire others with your amazing hoop adventures.
-          </p>
+      // The hero section now reads:
+<h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
+  BEAST MOVES
+</h1>
+<p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+  Watch raw flow, killer combos, and jaw-dropping performances — all powered
+  by the Hula Hoop Beast within. From stage shows to random bursts of hoop
+  joy, this is where the magic happens.
+</p>
           <Button size="lg" className="btn-beast">
             SHARE YOUR BEAST MOMENT
           </Button>
