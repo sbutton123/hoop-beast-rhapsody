@@ -4,9 +4,9 @@ import { Button } from '@/components/ui/button'
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-beast overflow-hidden">
-      {/* top-right logo */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30">
-        <img src="/logo.png" alt="Hula Hoop Beast logo" className="w-16 sm:w-20" />
+      {/* top-right logo: larger and further from edge */}
+      <div className="absolute top-6 right-6 sm:top-8 sm:right-8 z-30">
+        <img src="/logo.png" alt="Hula Hoop Beast logo" className="w-20 sm:w-24 md:w-28" />
       </div>
 
       {/* subtle pulse grid */}
@@ -19,7 +19,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* ← looping video: no crop, bumped up, rounded corners */}
+      {/* looping video: no crop, bumped up, rounded corners */}
       <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-[42%] transform -translate-y-1/2 z-20">
         <div className="overflow-hidden rounded-2xl shadow-xl w-40 sm:w-56 md:w-72 lg:w-80">
           <video
@@ -37,8 +37,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* → static PNG on the right */}
-      <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-1/2 transform -translate-y-1/2 z-20">
+      {/* static PNG on the right: moved down */}
+      <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-[60%] transform -translate-y-1/2 z-20">
         <img
           src="/lovable-uploads/aa66bb76-99ad-4824-9e6a-0edda4d38cba.png"
           alt="Hula hooping multiple hoops"
@@ -46,7 +46,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* center text + CTAs */}
+      {/* center text */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
         <h1 className="font-bangers leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white animate-bounce-gentle">
           UNLEASH YOUR<br/>
@@ -55,24 +55,8 @@ const Hero = () => {
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-white/90 font-inter font-light max-w-2xl mx-auto">
-          Transform your fitness journey with dynamic hula hoop workouts that ignite your
-          inner strength and unleash your athletic potential.
+          Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness! Whether you're brand new to hooping or ready to level up your skills, you're in the right place. Dive into our tutorials, challenge yourself with workouts, or just get inspired by creative performances and hoop magic. Join the movement. Embrace your inner beast. Let's hoop!
         </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="btn-beast text-base sm:text-lg font-bangers tracking-wide">
-            START YOUR JOURNEY
-            <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="btn-beast-outline text-base sm:text-lg font-bangers tracking-wide bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary"
-          >
-            <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-            WATCH DEMO
-          </Button>
-        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 pt-6 border-t border-white/20">
           {[
