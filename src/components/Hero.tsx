@@ -1,9 +1,15 @@
 import { ArrowRight, Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Logo from '@/assets/logo.svg'  // ← adjust path/name to your logo
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-beast overflow-hidden">
+      {/* top‑right logo */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30">
+        <img src={Logo} alt="Hula Hoop Beast logo" className="w-16 sm:w-20" />
+      </div>
+
       {/* subtle pulse grid */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -14,17 +20,18 @@ const Hero = () => {
         />
       </div>
 
-      {/* ← cropped, rounded looping video */}
-      <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-[45%] transform -translate-y-1/2 z-20">
-        <div className="w-40 sm:w-56 md:w-72 lg:w-80 h-72 sm:h-88 md:h-104 overflow-hidden rounded-2xl shadow-lg">
+      {/* ← looping video, no crop, bumped up */}
+      <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-[42%] transform -translate-y-1/2 z-20">
+        <div className="w-40 sm:w-56 md:w-72 lg:w-80 h-auto">
           <video
-            className="w-full h-full object-cover"
+            className="w-full h-auto"
             autoPlay
             muted
             loop
             playsInline
+            aria-label="Demo hula hoop performance"
             style={{
-              /* pull the frame up so your feet stay visible */
+              /* shift content up by 20% so your feet stay visible */
               objectPosition: 'center 20%'
             }}
           >
@@ -39,56 +46,44 @@ const Hero = () => {
         <img
           src="/lovable-uploads/aa66bb76-99ad-4824-9e6a-0edda4d38cba.png"
           alt="Hula hooping multiple hoops"
-          className="w-32 sm:w-48 md:w-64 lg:w-80 h-auto opacity-90 animate-float delay-500"
+          className="w-28 sm:w-40 md:w-56 lg:w-72 h-auto opacity-90 animate-float delay-500"
         />
       </div>
 
       {/* center text + CTAs */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-        <h1
-          className="font-bangers leading-tight
-                     text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white animate-bounce-gentle"
-        >
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
+        <h1 className="font-bangers leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white animate-bounce-gentle">
           UNLEASH YOUR
           <br />
-          <span
-            className="text-black drop-shadow-md
-                       text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
-          >
+          <span className="text-black drop-shadow-md text-3xl sm:text-4xl md:text-5xl">
             INNER
           </span>{' '}
-          <span
-            className="text-beast-orange
-                       text-7xl sm:text-8xl md:text-9xl lg:text-[10rem]"
-          >
+          <span className="text-beast-orange text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
             BEAST
           </span>
         </h1>
 
-        <p
-          className="text-xl sm:text-2xl md:text-3xl
-                     text-white/90 font-inter font-light max-w-3xl mx-auto"
-        >
-          Transform your fitness journey with dynamic hula hoop workouts that
-          ignite your inner strength and unleash your athletic potential
+        <p className="text-base sm:text-lg md:text-xl text-white/90 font-inter font-light max-w-2xl mx-auto">
+          Transform your fitness journey with dynamic hula hoop workouts that ignite your
+          inner strength and unleash your athletic potential.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="btn-beast text-lg font-bangers tracking-wide">
+          <Button size="lg" className="btn-beast text-base sm:text-lg font-bangers tracking-wide">
             START YOUR JOURNEY
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="btn-beast-outline text-lg font-bangers tracking-wide bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary"
+            className="btn-beast-outline text-base sm:text-lg font-bangers tracking-wide bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary"
           >
-            <Play className="mr-2 h-5 w-5" />
+            <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
             WATCH DEMO
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 pt-6 border-t border-white/20">
           {[
             ['1000+', 'Beast Transformations', ''],
             ['50+', 'Dynamic Workouts', 'delay-500'],
@@ -96,7 +91,7 @@ const Hero = () => {
           ].map(([num, label, delay], i) => (
             <div key={i} className="text-center">
               <div
-                className={`font-bangers text-4xl text-beast-orange animate-float ${delay}`}
+                className={`font-bangers text-3xl sm:text-4xl text-beast-orange animate-float ${delay}`}
               >
                 {num}
               </div>
@@ -108,8 +103,8 @@ const Hero = () => {
 
       {/* bottom decorative circle */}
       <div
-        className="absolute bottom-20 left-1/2 transform -translate-x-1/2
-                   w-16 h-16 border-4 border-beast-orange/50 rounded-full animate-float"
+        className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2
+                   w-12 h-12 sm:w-16 sm:h-16 border-4 border-beast-orange/50 rounded-full animate-float"
       />
     </section>
   )
