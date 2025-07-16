@@ -123,9 +123,23 @@ const Products = () => {
       <section className="bg-gradient-beast py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* BOLD OUTLINED HEADER */}
-          <h1 className="font-bangers text-6xl md:text-7xl uppercase text-gradient-beast text-stroke-orange-black mb-8 tracking-tighter drop-shadow-xl">
-            BEAST PRODUCTS
-          </h1>
+          <h1
+  className="
+    font-bangers
+    text-6xl md:text-7xl
+    uppercase
+    bg-gradient-to-r
+    from-[#FF7A22]  // Deep Orange (customize as needed)
+    to-[#1E90FF]    // Bright Blue (customize as needed)
+    bg-clip-text
+    text-transparent
+    drop-shadow-xl
+    mb-8
+    tracking-tighter
+  "
+>
+  BEAST PRODUCTS
+</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 font-inter font-medium">
             From custom-made hoops to downloadable workout guides and Beast-approved merch, here’s where you gear up. Shop tools that help you grow your skills, support your training, and show off your Beast pride.
           </p>
