@@ -1,107 +1,89 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+// src/pages/Contact.tsx
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+import React from 'react'
+import { useSearchParams, Link } from 'react-router-dom'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 
-  const navItems = [
-    { name: 'Tutorials', path: '/tutorials', color: 'bg-primary text-primary-foreground' },
-    { name: 'Beast Moves', path: '/showcase', color: 'bg-accent text-accent-foreground' },
-    { name: 'Programs', path: '/programs', color: 'bg-beast-orange text-beast-orange-foreground' },
-    { name: 'Workouts', path: '/workouts', color: 'bg-secondary text-secondary-foreground' },
-    { name: 'About', path: '/about', color: 'bg-primary/70 text-primary-foreground' },
-    { name: 'Products', path: '/products', color: 'bg-gradient-beast text-white' },
-    { name: 'Contact', path: '/contact', color: 'bg-accent text-accent-foreground' }, // ← added
-  ];
-
-  const isActive = (path: string) => location.pathname === path;
+export default function Contact() {
+  const [searchParams] = useSearchParams()
+  const program = searchParams.get('program') || ''
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo BUTTON */}
-          <Link
-            to="/"
-            className="flex items-center space-x-3 hover-lift transition-beast
-              bg-gradient-beast px-4 py-2 rounded-full shadow-beast
-              hover:scale-105 focus:outline-none focus:ring-2 focus:ring-beast-orange"
-            style={{ cursor: 'pointer' }}
-          >
-            <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
-              <img 
-                src="/lovable-uploads/6c553d32-054d-4cf2-892a-234d14b6d389.png" 
-                alt="Hula Hoop Beast Logo" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <span className="font-bangers text-lg sm:text-xl text-white drop-shadow-md">
-              HULA HOOP BEAST
-            </span>
-          </Link>
+    <div className="min-h-screen bg-background py-16">
+      <div className="max-w-lg mx-auto px-4">
+        <h1 className="font-bangers text-4xl text-center mb-6">Contact Me</h1>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
-            <div className="flex items-center space-x-4">
-              {navItems.map(item => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`font-inter font-medium px-4 py-2 rounded-full transition-beast hover:scale-105 ${
-                    isActive(item.path)
-                      ? `${item.color} shadow-beast`
-                      : `${item.color} opacity-80 hover:opacity-100`
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          className="space-y-6"
+        >
+          {/* Netlify form name and honeypot */}
+          <input type="hidden" name="form-name" value="contact" />
+          <p className="hidden">
+            <Label>
+              Don’t fill this out if you’re human: <Input name="bot-field" />
+            </Label>
+          </p>
+
+          {/* Carry over the program and set email subject */}
+          {program && (
+            <>
+              <input type="hidden" name="program" value={program} />
+              <input
+                type="hidden"
+                name="_subject"
+                value={`Booking request: ${program}`}
+              />
+            </>
+          )}
+
+          <div>
+            <Label htmlFor="name">Name</Label>
+            <Input id="name" name="name" required placeholder="Your full name" />
           </div>
 
-          {/* Spacer for balance */}
-          <div className="hidden lg:block w-32"></div>
+          <div>
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="you@example.com"
+            />
+          </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-primary z-50"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <div>
+            <Label htmlFor="message">Message</Label>
+            <Textarea
+              id="message"
+              name="message"
+              rows={4}
+              placeholder={
+                program
+                  ? `I’m interested in "${program}". Please tell me more…`
+                  : 'How can I help you?'
+              }
+            />
+          </div>
+
+          <div className="text-center">
+            <Button type="submit" className="btn-beast">
+              Send Message
             </Button>
           </div>
-        </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="lg:hidden py-4 border-t bg-background/90 backdrop-blur-sm">
-            <div className="flex flex-col space-y-4 px-4">
-              {navItems.map(item => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`font-inter font-medium px-4 py-2 rounded-full transition-beast hover:scale-105 ${
-                    isActive(item.path)
-                      ? `${item.color} shadow-beast`
-                      : `${item.color} opacity-80 hover:opacity-100`
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+          <div className="text-center text-sm text-gray-500">
+            Or <Link to="/" className="underline">back to home</Link>.
           </div>
-        )}
+        </form>
       </div>
-    </nav>
-  );
-};
-
-export default Navbar;
+    </div>
+  )
+}
