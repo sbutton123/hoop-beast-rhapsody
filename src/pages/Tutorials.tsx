@@ -84,17 +84,7 @@ const Tutorials = () => {
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
             Ready to level up? Start with beginner tricks or jump into more advanced skills — all broken down step-by-step. You’ll also learn how to make your own hoops, keep them in top shape, and become unstoppable. Get spinning, Beast!
           </p>
-          <div className="space-y-4 text-lg text-white/80">
-            <h2 className="font-semibold">Sections inside:</h2>
-            <ul className="list-disc list-inside">
-              <li>Beginner</li>
-              <li>Intermediate</li>
-              <li>Advanced</li>
-              <li>Make Your Own Hoops</li>
-              <li>Care Tips</li>
-            </ul>
-          </div>
-        </div>
+                  </div>
       </section>
 
       {/* Tutorials Grid */}
