@@ -1,188 +1,70 @@
-import { Heart, Users, Award, Target } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import React from "react";
 
-const About = () => {
-  const values = [
-    {
-      icon: Heart,
-      title: "Passion for Movement",
-      description: "We believe in the transformative power of movement and the joy it brings to life."
-    },
-    {
-      icon: Users,
-      title: "Community First",
-      description: "Building a supportive community where everyone can grow and achieve their goals."
-    },
-    {
-      icon: Award,
-      title: "Excellence in Training",
-      description: "Providing world-class instruction and innovative training methods."
-    },
-    {
-      icon: Target,
-      title: "Personal Growth",
-      description: "Empowering individuals to push beyond their limits and discover their potential."
-    }
-  ];
-
-  const team = [
-    {
-      name: "Sarah Beast",
-      role: "Founder & Lead Instructor",
-      bio: "Former professional dancer turned hoop fitness pioneer with 15+ years experience."
-    },
-    {
-      name: "Mike Thunder",
-      role: "Strength & Conditioning Coach",
-      bio: "Certified personal trainer specializing in functional fitness and athletic performance."
-    },
-    {
-      name: "Luna Goddess",
-      role: "Flow & Flexibility Expert",
-      bio: "Yoga instructor and movement therapist passionate about mind-body connection."
-    },
-    {
-      name: "Alex Beast Master",
-      role: "Community Manager",
-      bio: "Dedicated to building connections and supporting our global beast community."
-    }
-  ];
-
+export default function About() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="bg-gradient-beast py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
-            ABOUT HULA HOOP BEAST
-          </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Born from a passion for movement and community, Hula Hoop Beast revolutionizes 
-            fitness by combining the joy of hula hooping with serious athletic training.
-          </p>
+    <div className="max-w-4xl mx-auto px-4 py-12">
+      <h1 className="text-4xl font-bold text-center mb-8">About Me</h1>
+
+      <img
+        src="/lovable-uploads/kloeyandme.jpg"
+        alt="Shanda and Kloey hooping together"
+        className="rounded-2xl shadow-lg mb-8 w-full object-cover"
+      />
+
+      <div className="text-lg leading-relaxed space-y-6 text-gray-800">
+        <p>
+          Hi, I’m Shanda—creator of <strong>Hula Hoop Beast</strong>.
+        </p>
+
+        <p>
+          My journey with hula hooping began during one of the darkest chapters
+          of my life. After the devastating loss of my husband, I was left
+          navigating deep grief, raising three children, and managing severe
+          anxiety and depression. I was doing my best to keep going—but inside,
+          I felt broken.
+        </p>
+
+        <p>
+          Then one day, everything shifted. I caught a glimpse of a hula hoop
+          performer doing a trick called the <em>corkscrew</em>. Something
+          inside me lit up. I shouted for my daughter—“Kloey, come see this!”—
+          and in that moment, something clicked. We were hooked.
+        </p>
+
+        <p>
+          From that day on, hooping became our lifeline. We made our own hoops,
+          cleared our living room for practice space, and carried our hoops
+          everywhere. We choreographed dances, covered ourselves in bruises,
+          and even performed together. Hooping was our escape—and our therapy.
+        </p>
+
+        <p>
+          Years later, while studying accounting and pushing through life, I was
+          diagnosed with <strong>Multiple Sclerosis</strong>. That’s when I knew
+          I had to make a change. I needed to return to what truly healed me.
+        </p>
+
+        <p>
+          So I chose joy. I chose movement. I chose flow. That’s how Hula Hoop
+          Beast was born.
+        </p>
+
+        <p>
+          Today, I teach, perform, and share hooping as a path to strength,
+          healing, and expression. If you’ve ever felt stuck, lost, or
+          overwhelmed—I want you to know there’s a way forward. Grab a hoop.
+          Start where you are. You might just surprise yourself.
+        </p>
+
+        <div className="mt-10 text-center">
+          <a
+            href="/tutorials"
+            className="inline-block bg-black text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition"
+          >
+            Start Your Journey
+          </a>
         </div>
-      </section>
-
-      {/* Story Section */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-bangers text-4xl text-gradient-beast mb-6">
-              OUR BEAST STORY
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              What started as a simple love for hula hooping has evolved into a global movement. 
-              We discovered that this childhood toy could be transformed into a powerful fitness tool 
-              that builds strength, improves coordination, and ignites pure joy.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="space-y-6">
-              <h3 className="font-bangers text-2xl text-primary">The Beginning</h3>
-              <p className="text-muted-foreground">
-                Founded in 2020 by Sarah Beast, our journey began in a small studio with just five hoops 
-                and a big dream. We wanted to create something different - a fitness experience that 
-                didn't feel like work.
-              </p>
-              <p className="text-muted-foreground">
-                Through countless hours of experimentation, we developed unique training methods that 
-                combine cardiovascular fitness, strength training, and flow movement into one 
-                exhilarating experience.
-              </p>
-            </div>
-            <div className="space-y-6">
-              <h3 className="font-bangers text-2xl text-primary">The Evolution</h3>
-              <p className="text-muted-foreground">
-                Today, Hula Hoop Beast has grown into a global community of thousands of practitioners 
-                who have discovered their inner beast. Our innovative approach has been featured in 
-                major fitness publications and adopted by gyms worldwide.
-              </p>
-              <p className="text-muted-foreground">
-                We continue to push boundaries, constantly developing new techniques and programs 
-                that challenge conventional fitness norms while maintaining the fun and accessibility 
-                that defines our brand.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-16 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-bangers text-4xl text-gradient-beast mb-6">
-              OUR BEAST VALUES
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              These core values guide everything we do and shape the beast community we're building.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="text-center hover-lift shadow-beast">
-                <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-gradient-beast rounded-full flex items-center justify-center mb-4">
-                    <value.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <CardTitle className="font-bangers text-xl text-gradient-beast">
-                    {value.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    {value.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-bangers text-4xl text-gradient-beast mb-6">
-              MEET THE BEAST TEAM
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our passionate team of instructors and fitness experts are here to guide you 
-              on your beast journey.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="text-center hover-lift shadow-beast">
-                <CardHeader>
-                  <div className="mx-auto w-24 h-24 bg-gradient-beast rounded-full flex items-center justify-center mb-4">
-                    <span className="text-white font-bangers text-lg">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <CardTitle className="font-bangers text-xl text-gradient-beast">
-                    {member.name}
-                  </CardTitle>
-                  <CardDescription className="font-medium text-primary">
-                    {member.role}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">
-                    {member.bio}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
-};
-
-export default About;
+}
