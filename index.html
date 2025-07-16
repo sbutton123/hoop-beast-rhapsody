@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <!-- ⚡️ Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ8NEVEJPY"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G‑LZ8NEVEJPY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-LZ8NEVEJPY', { page_path: window.location.pathname });
+      gtag('config', 'G‑LZ8NEVEJPY', { page_path: window.location.pathname });
     </script>
 
     <!-- Required meta tags -->
@@ -43,7 +43,7 @@
     />
     <meta name="twitter:image" content="https://hulahoopbeast.com/og-image.png" />
 
-    <!-- Favicons -->
+    <!-- Favicon & Touch Icon -->
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
@@ -57,12 +57,18 @@
   </head>
 
   <body>
-    <!-- Netlify will detect this hidden form and wire up submissions -->
-    <form name="contact" method="POST" data-netlify="true" hidden>
+    <!-- React mounts here -->
+    <div id="root"></div>
+
+    <!--
+      THIS HIDDEN FORM SNIPPET ensures Netlify will detect a "contact"
+      form at build-time, even though it's rendered by React.
+    -->
+    <form name="contact" data-netlify="true" hidden>
       <input type="hidden" name="form-name" value="contact" />
     </form>
 
-    <div id="root"></div>
+    <!-- Vite entrypoint -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
