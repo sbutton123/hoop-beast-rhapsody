@@ -56,13 +56,13 @@ const Hero = () => {
         </h1>
 
         <p className="mt-6 text-base sm:text-lg md:text-xl text-white/90 font-inter font-light leading-relaxed">
-          Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness! Whether you’re brand new to hooping or ready to level up your skills, you’re in the right place. Dive into our tutorials, challenge yourself with workouts, or just get inspired by creative performances and hoop<br />
-          magic.<br />
+          Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness! Whether you’re brand new to hooping or ready to level up your skills, you’re in the right place. Dive into our tutorials, challenge yourself with workouts, or just get inspired by<br />
+          creative performances and hoop magic.<br />
           Embrace your inner beast.<br />
           Let’s hoop!
         </p>
 
-        {/* secondary hoops image */}
+        {/* hoops image */}
         <div className="mt-12">
           <img
             src="/lovable-uploads/aa66bb76-99ad-4824-9e6a-0edda4d38cba.png"
