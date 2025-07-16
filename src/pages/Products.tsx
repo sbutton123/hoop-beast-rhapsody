@@ -126,13 +126,8 @@ const Products = () => {
             BEAST PRODUCTS
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Gear up with professional-grade equipment and accessories designed 
-            to unleash your inner beast. Quality products for serious practitioners.
+            From custom-made hoops to downloadable workout guides and Beast-approved merch, here’s where you gear up. Shop tools that help you grow your skills, support your training, and show off your Beast pride.
           </p>
-          <Button size="lg" className="btn-beast">
-            <Package className="mr-2 h-5 w-5" />
-            SHOP NOW
-          </Button>
         </div>
       </section>
 
