@@ -49,7 +49,7 @@ const Hero = () => {
           <span className="text-beast-orange text-5xl sm:text-6xl md:text-7xl lg:text-8xl">BEAST</span>
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-white/90 font-inter font-light max-w-2xl mx-auto drop-shadow-md mt-4">
-          Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness! Whether you're brand new to hooping or ready to level up your skills, you're in the right place. Dive into our tutorials, challenge yourself with workouts, or just get inspired by creative performances and hoop magic. Join the movement.>br><br>Embrace your inner beast.<br></br>Let's hoop!
+          Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness! Whether you're brand new to hooping or ready to level up your skills, you're in the right place. Dive into our tutorials, challenge yourself with workouts, or just get inspired by creative performances and hoop magic. Join the movement. Embrace your inner beast. Let's hoop!
         </p>
         <div className="hidden sm:grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 md:mt-12 pt-6 border-t border-white/20">
           {[
@@ -73,3 +73,5 @@ const Hero = () => {
   )
 }
 export default Hero
+
+
