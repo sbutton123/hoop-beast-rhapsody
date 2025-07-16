@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+
   const navItems = [
     { name: 'Tutorials', path: '/tutorials', color: 'bg-primary text-primary-foreground' },
     { name: 'Beast Moves', path: '/showcase', color: 'bg-accent text-accent-foreground' },
@@ -13,8 +14,11 @@ const Navbar = () => {
     { name: 'Workouts', path: '/workouts', color: 'bg-secondary text-secondary-foreground' },
     { name: 'About', path: '/about', color: 'bg-primary/70 text-primary-foreground' },
     { name: 'Products', path: '/products', color: 'bg-gradient-beast text-white' },
+    { name: 'Contact', path: '/contact', color: 'bg-accent text-accent-foreground' }, // ← added
   ];
+
   const isActive = (path: string) => location.pathname === path;
+
   return (
     <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,16 +42,17 @@ const Navbar = () => {
               HULA HOOP BEAST
             </span>
           </Link>
-          {/* Desktop Navigation - Centered */}
+
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
             <div className="flex items-center space-x-4">
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <Link
                   key={item.name}
                   to={item.path}
                   className={`font-inter font-medium px-4 py-2 rounded-full transition-beast hover:scale-105 ${
-                    isActive(item.path) 
-                      ? `${item.color} shadow-beast` 
+                    isActive(item.path)
+                      ? `${item.color} shadow-beast`
                       : `${item.color} opacity-80 hover:opacity-100`
                   }`}
                 >
@@ -56,8 +61,10 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          {/* Spacer for logo balance - hidden on mobile */}
+
+          {/* Spacer for balance */}
           <div className="hidden lg:block w-32"></div>
+
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <Button
@@ -70,18 +77,19 @@ const Navbar = () => {
             </Button>
           </div>
         </div>
+
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t">
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
+          <div className="lg:hidden py-4 border-t bg-background/90 backdrop-blur-sm">
+            <div className="flex flex-col space-y-4 px-4">
+              {navItems.map(item => (
                 <Link
                   key={item.name}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
                   className={`font-inter font-medium px-4 py-2 rounded-full transition-beast hover:scale-105 ${
-                    isActive(item.path) 
-                      ? `${item.color} shadow-beast` 
+                    isActive(item.path)
+                      ? `${item.color} shadow-beast`
                       : `${item.color} opacity-80 hover:opacity-100`
                   }`}
                 >
@@ -95,4 +103,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;
