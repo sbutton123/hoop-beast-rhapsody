@@ -1,76 +1,105 @@
 // src/pages/Contact.tsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
-const Contact = () => (
-  <>
-    {/* put the navbar back */}
-    <Navbar />
+export default function Contact() {
+  // read an optional ?program=Your%20Program query param
+  const [searchParams] = useSearchParams();
+  const program = searchParams.get('program') || '';
 
-    <div className="min-h-screen bg-background">
-      <section className="max-w-2xl mx-auto py-20 px-4">
-        <h1 className="font-bangers text-4xl text-center mb-8">Contact Me</h1>
+  return (
+    <>
+      {/* sticky navbar */}
+      <Navbar />
 
-        {/* Netlify form */}
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          className="space-y-6"
-        >
-          {/* required hidden input for Netlify to detect your form */}
-          <input type="hidden" name="form-name" value="contact" />
+      <div className="min-h-screen bg-background py-16">
+        <div className="max-w-lg mx-auto px-4">
+          <h1 className="font-bangers text-4xl text-center mb-6">Contact Me</h1>
 
-          <div>
-            <label className="block mb-1 font-medium">Name</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your full name"
-              required
-              className="w-full border border-border rounded-lg p-3"
-            />
-          </div>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            className="space-y-6"
+          >
+            {/* Netlify needs this hidden field */}
+            <input type="hidden" name="form-name" value="contact" />
+            {/* honeypot field */}
+            <p className="hidden">
+              <Label>
+                Don’t fill this out if you’re human: <Input name="bot-field" />
+              </Label>
+            </p>
 
-          <div>
-            <label className="block mb-1 font-medium">Email</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="you@example.com"
-              required
-              className="w-full border border-border rounded-lg p-3"
-            />
-          </div>
+            {/* if someone clicked “Book This Program” with ?program=…, carry that over */}
+            {program && (
+              <>
+                <input type="hidden" name="program" value={program} />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value={`Booking request: ${program}`}
+                />
+              </>
+            )}
 
-          <div>
-            <label className="block mb-1 font-medium">Message</label>
-            <textarea
-              name="message"
-              rows={6}
-              placeholder="How can I help you?"
-              required
-              className="w-full border border-border rounded-lg p-3"
-            />
-          </div>
+            <div>
+              <Label htmlFor="name">Name</Label>
+              <Input
+                id="name"
+                name="name"
+                required
+                placeholder="Your full name"
+              />
+            </div>
 
-          <div className="text-center">
-            <Button type="submit" className="btn-beast">
-              Send Message
-            </Button>
-          </div>
+            <div>
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="you@example.com"
+              />
+            </div>
 
-          <div className="text-center">
-            <Link to="/" className="text-sm text-muted-foreground hover:underline">
-              Or back to home.
-            </Link>
-          </div>
-        </form>
-      </section>
-    </div>
-  </>
-);
+            <div>
+              <Label htmlFor="message">Message</Label>
+              <Textarea
+                id="message"
+                name="message"
+                rows={6}
+                placeholder={
+                  program
+                    ? `I’m interested in "${program}". Please tell me more…`
+                    : 'How can I help you?'
+                }
+              />
+            </div>
 
-export default Contact;
+            <div className="text-center">
+              <Button type="submit" className="btn-beast">
+                Send Message
+              </Button>
+            </div>
+
+            <div className="text-center text-sm text-muted-foreground">
+              Or{' '}
+              <Link to="/" className="underline hover:text-primary">
+                back to home
+              </Link>
+              .
+            </div>
+          </form>
+        </div>
+      </div>
+    </>
+  );
+}
