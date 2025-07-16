@@ -1,5 +1,4 @@
 import React from "react";
-import "./About.css"; // Optional: or include styles inline if not using CSS file
 
 const About = () => {
   return (
@@ -32,10 +31,9 @@ const About = () => {
           alt="Hooping on the Coast"
           style={{
             width: "100%",
-            height: "100%",
+            height: "50%",
             objectFit: "cover",
             borderRadius: "12px",
-            flex: 1,
           }}
         />
         <img
@@ -43,10 +41,9 @@ const About = () => {
           alt="Kloey and Me"
           style={{
             width: "100%",
-            height: "100%",
+            height: "50%",
             objectFit: "cover",
             borderRadius: "12px",
-            flex: 1,
           }}
         />
       </div>
