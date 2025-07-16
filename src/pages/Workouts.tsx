@@ -101,13 +101,8 @@ const Workouts = () => {
             BEAST WORKOUTS
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Ignite your fitness journey with our dynamic hoop workouts. From gentle flows 
-            to beast mode intensity - find your perfect challenge.
+            Get fit. Get strong. Get spinning. These hoop-based workouts are fun, fierce, and designed for all levels. Whether you’re working your core, blasting cardio, or flowing into flexibility — there’s a workout here to match your mood and your goals.
           </p>
-          <Button size="lg" className="btn-beast">
-            <Play className="mr-2 h-5 w-5" />
-            START SWEATING
-          </Button>
         </div>
       </section>
 
@@ -147,7 +142,6 @@ const Workouts = () => {
                   <CardDescription className="mb-4">
                     {workout.description}
                   </CardDescription>
-                  
                   {/* Workout Stats */}
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="flex items-center space-x-2">
@@ -159,7 +153,6 @@ const Workouts = () => {
                       <span className="text-sm">{workout.calories} cal</span>
                     </div>
                   </div>
-
                   {/* Category Badge */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
