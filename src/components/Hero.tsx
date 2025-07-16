@@ -1,13 +1,12 @@
 import { ArrowRight, Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import Logo from '@/assets/logo.svg'  // ← adjust path/name to your logo
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-beast overflow-hidden">
-      {/* top‑right logo */}
+      {/* top-right logo */}
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30">
-        <img src={Logo} alt="Hula Hoop Beast logo" className="w-16 sm:w-20" />
+        <img src="/logo.png" alt="Hula Hoop Beast logo" className="w-16 sm:w-20" />
       </div>
 
       {/* subtle pulse grid */}
@@ -20,20 +19,17 @@ const Hero = () => {
         />
       </div>
 
-      {/* ← looping video, no crop, bumped up */}
+      {/* ← looping video: no crop, bumped up, rounded corners */}
       <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-[42%] transform -translate-y-1/2 z-20">
-        <div className="w-40 sm:w-56 md:w-72 lg:w-80 h-auto">
+        <div className="overflow-hidden rounded-2xl shadow-xl w-40 sm:w-56 md:w-72 lg:w-80">
           <video
-            className="w-full h-auto"
+            className="w-full h-auto block"
             autoPlay
             muted
             loop
             playsInline
             aria-label="Demo hula hoop performance"
-            style={{
-              /* shift content up by 20% so your feet stay visible */
-              objectPosition: 'center 20%'
-            }}
+            style={{ objectPosition: 'center 20%' }}
           >
             <source src="/3hoop.webm" type="video/webm" />
             Your browser doesn’t support HTML5 video.
@@ -53,14 +49,9 @@ const Hero = () => {
       {/* center text + CTAs */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
         <h1 className="font-bangers leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white animate-bounce-gentle">
-          UNLEASH YOUR
-          <br />
-          <span className="text-black drop-shadow-md text-3xl sm:text-4xl md:text-5xl">
-            INNER
-          </span>{' '}
-          <span className="text-beast-orange text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-            BEAST
-          </span>
+          UNLEASH YOUR<br/>
+          <span className="text-black drop-shadow-md text-3xl sm:text-4xl md:text-5xl">INNER</span>{' '}
+          <span className="text-beast-orange text-5xl sm:text-6xl md:text-7xl lg:text-8xl">BEAST</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-white/90 font-inter font-light max-w-2xl mx-auto">
@@ -86,13 +77,11 @@ const Hero = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 pt-6 border-t border-white/20">
           {[
             ['1000+', 'Beast Transformations', ''],
-            ['50+', 'Dynamic Workouts', 'delay-500'],
-            ['24/7', 'Beast Support', 'delay-1000'],
+            ['50+',   'Dynamic Workouts',       'delay-500'],
+            ['24/7',  'Beast Support',          'delay-1000'],
           ].map(([num, label, delay], i) => (
             <div key={i} className="text-center">
-              <div
-                className={`font-bangers text-3xl sm:text-4xl text-beast-orange animate-float ${delay}`}
-              >
+              <div className={`font-bangers text-3xl sm:text-4xl text-beast-orange animate-float ${delay}`}>
                 {num}
               </div>
               <div className="text-white/80 font-inter">{label}</div>
@@ -102,10 +91,8 @@ const Hero = () => {
       </div>
 
       {/* bottom decorative circle */}
-      <div
-        className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2
-                   w-12 h-12 sm:w-16 sm:h-16 border-4 border-beast-orange/50 rounded-full animate-float"
-      />
+      <div className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2
+                      w-12 h-12 sm:w-16 sm:h-16 border-4 border-beast-orange/50 rounded-full animate-float" />
     </section>
   )
 }
