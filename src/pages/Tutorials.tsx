@@ -76,24 +76,19 @@ const Tutorials = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-beast py-12">
+      <section className="bg-gradient-beast py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
             BEAST TUTORIALS
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Ready to level up? Start with beginner tricks or jump into more advanced skills — all broken down step-by-step. You’ll also learn how to make your own hoops, keep them in top shape, and become unstoppable. Get spinning, Beast!
+            Master the art of hula hooping with our comprehensive video tutorials. 
+            From beginner basics to advanced beast mode techniques.
           </p>
-          <div className="space-y-4 text-lg text-white/80">
-            <h2 className="font-semibold">Sections inside:</h2>
-            <ul className="list-disc list-inside">
-              <li>Beginner</li>
-              <li>Intermediate</li>
-              <li>Advanced</li>
-              <li>Make Your Own Hoops</li>
-              <li>Care Tips</li>
-            </ul>
-          </div>
+          <Button size="lg" className="btn-beast">
+            <Play className="mr-2 h-5 w-5" />
+            START LEARNING
+          </Button>
         </div>
       </section>
 
@@ -102,7 +97,7 @@ const Tutorials = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {tutorials.map((tutorial) => (
-              <Card key={tutorial.id} className="hover-lift shadow-lg hover:shadow-xl shadow-beast">
+              <Card key={tutorial.id} className="hover-lift shadow-beast">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(tutorial.difficulty)}`}>
@@ -142,3 +137,4 @@ const Tutorials = () => {
 };
 
 export default Tutorials;
+
