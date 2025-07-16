@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-// Logo will be added later
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -19,8 +19,14 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 hover-lift">
+          {/* Logo BUTTON */}
+          <Link
+            to="/"
+            className="flex items-center space-x-3 hover-lift transition-beast
+              bg-gradient-beast px-4 py-2 rounded-full shadow-beast
+              hover:scale-105 focus:outline-none focus:ring-2 focus:ring-beast-orange"
+            style={{ cursor: 'pointer' }}
+          >
             <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
               <img 
                 src="/lovable-uploads/6c553d32-054d-4cf2-892a-234d14b6d389.png" 
@@ -28,7 +34,7 @@ const Navbar = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="font-bangers text-lg sm:text-xl text-gradient-beast">
+            <span className="font-bangers text-lg sm:text-xl text-white drop-shadow-md">
               HULA HOOP BEAST
             </span>
           </Link>
