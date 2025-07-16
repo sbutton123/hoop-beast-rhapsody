@@ -19,81 +19,7 @@ const Programs = () => {
       ],
       color: "bg-green-500"
     },
-    {
-      id: 2,
-      title: "Flow State Mastery",
-      description: "Advanced program for seamless transitions and fluid movements. Unlock your flow potential.",
-      duration: "6 weeks",
-      sessions: 18,
-      price: "$149",
-      features: [
-        "Advanced flow techniques",
-        "Seamless transitions",
-        "Creative expression",
-        "Performance preparation"
-      ],
-      color: "bg-purple-500"
-    },
-    {
-      id: 3,
-      title: "Beast Fitness Fusion",
-      description: "High-intensity hoop workouts combining cardio, strength, and flexibility training.",
-      duration: "8 weeks",
-      sessions: 24,
-      price: "$199",
-      features: [
-        "HIIT hoop workouts",
-        "Strength conditioning",
-        "Flexibility training",
-        "Nutrition guidance"
-      ],
-      color: "bg-red-500"
-    },
-    {
-      id: 4,
-      title: "Dance Beast Revolution",
-      description: "Fusion of dance and hoop for explosive, rhythm-based routines that ignite your passion.",
-      duration: "6 weeks",
-      sessions: 18,
-      price: "$159",
-      features: [
-        "Dance fusion techniques",
-        "Rhythm training",
-        "Choreography creation",
-        "Performance skills"
-      ],
-      color: "bg-pink-500"
-    },
-    {
-      id: 5,
-      title: "Beast Instructor Certification",
-      description: "Comprehensive training to become a certified Beast hoop instructor.",
-      duration: "12 weeks",
-      sessions: 36,
-      price: "$449",
-      features: [
-        "Teaching methodology",
-        "Advanced techniques",
-        "Safety protocols",
-        "Business fundamentals"
-      ],
-      color: "bg-orange-500"
-    },
-    {
-      id: 6,
-      title: "Elite Beast Academy",
-      description: "Our most intensive program for serious practitioners seeking mastery.",
-      duration: "16 weeks",
-      sessions: 48,
-      price: "$599",
-      features: [
-        "Master-level techniques",
-        "Personal mentorship",
-        "Competition preparation",
-        "Career guidance"
-      ],
-      color: "bg-blue-500"
-    }
+    // other programs here...
   ];
 
   return (
@@ -105,12 +31,10 @@ const Programs = () => {
             BEAST PROGRAMS
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Structured training programs designed to take your hoop skills from zero to beast. 
-            Choose your path and unleash your potential.
+            Looking for a show or interactive experience? I offer exciting, energizing
+            programs for schools, libraries, parks, parties, and more — custom-tailored to
+            your audience. Let’s bring the Hula hoop beast to your event!
           </p>
-          <Button size="lg" className="btn-beast">
-            FIND YOUR PROGRAM
-          </Button>
         </div>
       </section>
 
@@ -130,7 +54,6 @@ const Programs = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  {/* Program Stats */}
                   <div className="flex items-center justify-between mb-6 p-4 bg-muted rounded-lg">
                     <div className="flex items-center space-x-2">
                       <Calendar className="h-5 w-5 text-primary" />
@@ -142,7 +65,6 @@ const Programs = () => {
                     </div>
                   </div>
 
-                  {/* Features */}
                   <div className="space-y-2 mb-6">
                     {program.features.map((feature, index) => (
                       <div key={index} className="flex items-center space-x-2">
@@ -152,7 +74,6 @@ const Programs = () => {
                     ))}
                   </div>
 
-                  {/* Price and CTA */}
                   <div className="flex items-center justify-between">
                     <div>
                       <span className="font-bangers text-3xl text-gradient-beast">
