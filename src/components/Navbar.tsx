@@ -3,11 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 // Logo will be added later
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-
   const navItems = [
     { name: 'Tutorials', path: '/tutorials', color: 'bg-primary text-primary-foreground' },
     { name: 'Beast Moves', path: '/showcase', color: 'bg-accent text-accent-foreground' },
@@ -16,11 +14,9 @@ const Navbar = () => {
     { name: 'About', path: '/about', color: 'bg-primary/70 text-primary-foreground' },
     { name: 'Products', path: '/products', color: 'bg-gradient-beast text-white' },
   ];
-
   const isActive = (path: string) => location.pathname === path;
-
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b">
+    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -32,11 +28,10 @@ const Navbar = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="font-bangers text-xl text-gradient-beast">
+            <span className="font-bangers text-lg sm:text-xl text-gradient-beast">
               HULA HOOP BEAST
             </span>
           </Link>
-
           {/* Desktop Navigation - Centered */}
           <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
             <div className="flex items-center space-x-4">
@@ -55,23 +50,20 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-
-          {/* Spacer for logo balance */}
-          <div className="w-32"></div>
-
+          {/* Spacer for logo balance - hidden on mobile */}
+          <div className="hidden lg:block w-32"></div>
           {/* Mobile menu button */}
-          <div className="lg:hidden absolute right-4">
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-primary"
+              className="text-foreground hover:text-primary z-50"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
-
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden py-4 border-t">
@@ -97,5 +89,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;
