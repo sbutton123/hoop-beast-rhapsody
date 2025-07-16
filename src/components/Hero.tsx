@@ -43,7 +43,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Hero text & CTA */}
+      {/* Hero text */}
       <div className="relative z-30 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
         <h1 className="font-bangers leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white animate-bounce-gentle">
           UNLEASH YOUR<br />
@@ -56,18 +56,11 @@ const Hero = () => {
         </h1>
 
         <p className="mt-6 text-base sm:text-lg md:text-xl text-white/90 font-inter font-light leading-relaxed">
-          Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness! Whether you’re brand new to hooping or ready to level up your skills, you’re in the right place. Dive into our tutorials, challenge yourself with workouts, or just get inspired by creative performances and hoop magic.<br />
+          Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness! Whether you’re brand new to hooping or ready to level up your skills, you’re in the right place. Dive into our tutorials, challenge yourself with workouts, or just get inspired by creative performances and hoop<br />
+          magic.<br />
           Embrace your inner beast.<br />
           Let’s hoop!
         </p>
-
-        <Button
-          size="lg"
-          className="mt-8 bg-beast-orange text-white font-bangers tracking-wide hover:brightness-110"
-        >
-          Browse Tutorials
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
 
         {/* secondary hoops image */}
         <div className="mt-12">
