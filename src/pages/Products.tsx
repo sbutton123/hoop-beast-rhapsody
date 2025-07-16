@@ -122,21 +122,11 @@ const Products = () => {
       {/* Hero Section */}
       <section className="bg-gradient-beast py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1
-  className="
-    font-bangers
-    text-5xl md:text-6xl
-    bg-gradient-to-r from-beast-orange via-pink-500 to-purple-700
-    bg-clip-text text-transparent
-    font-extrabold
-    drop-shadow-[0_2px_20px_rgba(0,0,0,0.7)]
-    mb-6
-    tracking-tight
-  "
->
-  BEAST PRODUCTS
-</h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+          {/* BOLD OUTLINED HEADER */}
+          <h1 className="font-bangers text-6xl md:text-7xl uppercase text-gradient-beast text-stroke-orange-black mb-8 tracking-tighter drop-shadow-xl">
+            BEAST PRODUCTS
+          </h1>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 font-inter font-medium">
             From custom-made hoops to downloadable workout guides and Beast-approved merch, here’s where you gear up. Shop tools that help you grow your skills, support your training, and show off your Beast pride.
           </p>
         </div>
@@ -242,7 +232,7 @@ const Products = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="flex flex-col items-center">
               <Truck className="h-12 w-12 text-primary mb-4" />
-              <h3 className="font-bangers text-xl text-gradient-beast mb-2">
+              <h3 className="font-bangers text-xl text-gradient-beast mb-2 text-stroke-orange-black">
                 FREE SHIPPING
               </h3>
               <p className="text-muted-foreground">
@@ -251,7 +241,7 @@ const Products = () => {
             </div>
             <div className="flex flex-col items-center">
               <Package className="h-12 w-12 text-primary mb-4" />
-              <h3 className="font-bangers text-xl text-gradient-beast mb-2">
+              <h3 className="font-bangers text-xl text-gradient-beast mb-2 text-stroke-orange-black">
                 EASY RETURNS
               </h3>
               <p className="text-muted-foreground">
@@ -260,7 +250,7 @@ const Products = () => {
             </div>
             <div className="flex flex-col items-center">
               <Star className="h-12 w-12 text-primary mb-4" />
-              <h3 className="font-bangers text-xl text-gradient-beast mb-2">
+              <h3 className="font-bangers text-xl text-gradient-beast mb-2 text-stroke-orange-black">
                 QUALITY GUARANTEE
               </h3>
               <p className="text-muted-foreground">
