@@ -22,10 +22,6 @@ const Showcase = () => {
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
             Watch raw flow, killer combos, and jaw-dropping performances — all powered by the Hula Hoop Beast within. From stage shows to random bursts of hoop joy, this is where the magic happens.
           </p>
-          <Button size="lg" className="btn-beast">
-            <Play className="mr-2 h-5 w-5" />
-            SHARE YOUR BEAST MOMENT
-          </Button>
         </div>
       </section>
 
