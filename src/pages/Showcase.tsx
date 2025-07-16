@@ -62,29 +62,26 @@ const Showcase = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      // The hero section now reads:
-<h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
-  BEAST MOVES
-</h1>
-<p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-  Watch raw flow, killer combos, and jaw-dropping performances — all powered
-  by the Hula Hoop Beast within. From stage shows to random bursts of hoop
-  joy, this is where the magic happens.
-</p>
-          <Button size="lg" className="btn-beast">
-            SHARE YOUR BEAST MOMENT
-          </Button>
-        </div>
+      <section className="py-16 text-center">
+        <h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
+          BEAST MOVES
+        </h1>
+        <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+          Watch raw flow, killer combos, and jaw-dropping performances — all powered
+          by the Hula Hoop Beast within. From stage shows to random bursts of hoop
+          joy, this is where the magic happens.
+        </p>
+        <Button size="lg" className="btn-beast">
+          SHARE YOUR BEAST MOMENT
+        </Button>
       </section>
 
-      {/* Community Feed */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
             {posts.map((post) => (
               <Card key={post.id} className="shadow-beast">
                 <CardContent className="p-6">
-                  {/* Post Header */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-12 h-12 bg-gradient-beast rounded-full flex items-center justify-center">
@@ -106,17 +103,14 @@ const Showcase = () => {
                     </Button>
                   </div>
 
-                  {/* Post Content */}
                   <div className="mb-4">
                     <p className="text-foreground mb-4">{post.caption}</p>
-                    
-                    {/* Placeholder for video/image */}
+
                     <div className="aspect-video bg-gradient-beast-light rounded-lg flex items-center justify-center">
                       <Play className="h-16 w-16 text-white/70" />
                     </div>
                   </div>
 
-                  {/* Post Actions */}
                   <div className="flex items-center justify-between pt-4 border-t">
                     <div className="flex items-center space-x-6">
                       <button className="flex items-center space-x-2 text-muted-foreground hover:text-red-500 transition-colors">
