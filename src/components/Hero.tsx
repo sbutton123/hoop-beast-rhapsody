@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button'
 const Hero = () => {
   return (
     <section className="relative min-h-screen bg-gradient-beast overflow-hidden">
-      {/* Top-right logo (4× size, closer to header) */}
-      <div className="hidden md:block absolute top-2 right-4 z-30 transform scale-150">
+      {/* Top-right logo (2× size, closer to center) */}
+      <div className="hidden md:block absolute top-12 right-8 z-30 transform scale-200">
         <img
           src="/logo.png"
           alt="Hula Hoop Beast logo"
-          className="w-32 sm:w-40 md:w-48 lg:w-56"
+          className="w-32 sm:w-48 md:w-56 lg:w-64"
         />
       </div>
 
