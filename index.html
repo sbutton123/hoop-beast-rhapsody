@@ -1,38 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- ✨ Paste your new Google tag here, right after <head> -->
-    <!-- Google tag (gtag.js) -->
+    <!-- ⚡️ Google Analytics (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G‑LZ8NEVEJPY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G‑LZ8NEVEJPY');
+      gtag('config', 'G‑LZ8NEVEJPY', { page_path: window.location.pathname });
     </script>
 
-    <!-- …the rest of your head: meta tags, title, CSS links, etc. -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hula Hoop Beast</title>
-    <!-- your other SEO meta tags here… -->
-    <link rel="stylesheet" href="/index.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- your bundled <script> tags injected by Vite… -->
-  </body>
-</html>
     <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO Meta Tags -->
+    <!-- Primary SEO Meta Tags -->
     <title>Hula Hoop Beast – Unleash Your Inner Beast with Dynamic Hoop Workouts</title>
     <meta
       name="description"
@@ -60,26 +43,17 @@
     />
     <meta name="twitter:image" content="https://hulahoopbeast.com/og-image.png" />
 
-    <!-- Favicon & Touch Icons -->
+    <!-- Favicon & Touch Icon -->
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/logo.png" />
 
-    <!-- Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID', { page_path: window.location.pathname });
-    </script>
-
-    <!-- your existing Vite inject -->
-    %svelte.head% <!-- or whatever Vite placeholder you already have -->
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="/index.css" />
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- Vite’s script entry -->
+    <!-- Vite entrypoint -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
