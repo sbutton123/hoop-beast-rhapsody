@@ -1,10 +1,11 @@
+// src/components/ui/Hero.tsx
 import { ArrowRight, Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-beast overflow-hidden">
-      {/* subtle pulse grid */}
+      {/* grid pulse */}
       <div className="absolute inset-0 opacity-10">
         <div
           className="absolute inset-0 
@@ -14,25 +15,27 @@ const Hero = () => {
         />
       </div>
 
-      {/* ← looping video (WebM) */}
-      <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-1/2 transform -translate-y-1/2 z-20">
+      {/* ← cropped + rounded video “window” */}
+      <div
+        className="absolute left-6 sm:left-12 md:left-16 lg:left-24 
+                   top-[45%] sm:top-[42%] md:top-[40%] transform -translate-y-1/2 
+                   w-44 sm:w-60 md:w-72 lg:w-80 h-52 sm:h-64 md:h-72 lg:h-80 
+                   overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 via-pink-600 to-pink-500 shadow-xl z-20"
+      >
         <video
-          className="w-40 sm:w-56 md:w-72 lg:w-80 h-auto opacity-90 animate-float"
+          className="absolute inset-0 w-full h-auto min-h-full object-cover object-top opacity-90 animate-float"
           autoPlay
           muted
           loop
           playsInline
         >
-          <source
-            src="/3hoop.webm"
-            type="video/webm"
-          />
+          <source src="/3hoop.webm" type="video/webm" />
           Your browser doesn’t support HTML5 video.
         </video>
       </div>
 
       {/* → static PNG on the right */}
-      <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-1/2 transform -translate-y-1/2 z-20">
+      <div className="absolute right-6 sm:right-12 md:right-16 lg:right-24 top-1/2 transform -translate-y-1/2 z-20">
         <img
           src="/lovable-uploads/aa66bb76-99ad-4824-9e6a-0edda4d38cba.png"
           alt="Hula hooping multiple hoops"
@@ -44,8 +47,8 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         <h1 className="font-bangers leading-tight 
                        text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white animate-bounce-gentle">
-          UNLEASH YOUR<br/>
-
+          UNLEASH YOUR
+          <br />
           <span className="text-black drop-shadow-md 
                            text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
             INNER
@@ -79,8 +82,8 @@ const Hero = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
           {[
             ['1000+', 'Beast Transformations', ''],
-            ['50+',   'Dynamic Workouts',       'delay-500'],
-            ['24/7',  'Beast Support',          'delay-1000'],
+            ['50+', 'Dynamic Workouts', 'delay-500'],
+            ['24/7', 'Beast Support', 'delay-1000'],
           ].map(([num, label, d], i) => (
             <div key={i} className="text-center">
               <div className={`font-bangers text-4xl text-beast-orange animate-float ${d}`}>
