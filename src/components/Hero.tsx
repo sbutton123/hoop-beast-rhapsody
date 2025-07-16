@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button'
 const Hero = () => {
   return (
     <section className="relative min-h-screen bg-gradient-beast overflow-hidden">
-      {/* top-right logo: moved up 1 inch */}
-      <div className="absolute top-[-86] right-4 sm:top-[-82] sm:right-6 z-30">
+      {/* top-right logo: moved up higher */}
+      <div className="absolute top-[-110] right-4 sm:top-[-106] sm:right-6 z-30">
         <img src="/logo.png" alt="Hula Hoop Beast logo" className="w-80 sm:w-96 md:w-112" />
       </div>
 
@@ -46,8 +46,8 @@ const Hero = () => {
         />
       </div>
 
-      {/* top text: heading and paragraph, moved up 1 inch with space */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center absolute top-40">
+      {/* top text: heading and paragraph, moved up higher with space */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center absolute top-24">
         <h1 className="font-bangers leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white animate-bounce-gentle">
           UNLEASH YOUR<br/>
           <span className="text-black drop-shadow-md text-3xl sm:text-4xl md:text-5xl">INNER</span>{' '}
