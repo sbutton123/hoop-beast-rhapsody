@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png" />
-
     <!-- ⚡️ Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ8NEVEJPY"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G‑LZ8NEVEJPY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-LZ8NEVEJPY', { page_path: window.location.pathname });
+      gtag('config', 'G‑LZ8NEVEJPY', { page_path: window.location.pathname });
     </script>
 
     <!-- Required meta tags -->
@@ -52,14 +43,35 @@
     />
     <meta name="twitter:image" content="https://hulahoopbeast.com/og-image.png" />
 
-    <!-- Favicon & Touch Icon (legacy fallback) -->
-    <link rel="apple-touch-icon" href="/logo.png" />
+    <!-- Favicons & Web App Manifest -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/web-app-manifest-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/web-app-manifest-512x512.png"
+    />
 
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="/index.css" />
   </head>
 
   <body>
+    <!-- Netlify form stub so “contact” is detected at build time -->
+    <form name="contact" netlify hidden>
+      <input type="hidden" name="form-name" value="contact" />
+    </form>
+
     <div id="root"></div>
     <!-- Vite entrypoint -->
     <script type="module" src="/src/main.tsx"></script>
