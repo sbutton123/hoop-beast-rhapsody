@@ -1,18 +1,10 @@
+import React from 'react'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen bg-gradient-beast overflow-hidden">
-      {/* Top-right logo (scaled 150%, nudged left) */}
-      <div className="hidden md:block absolute top-12 right-12 z-30 transform scale-150">
-        <img
-          src="/logo.png"
-          alt="Hula Hoop Beast logo"
-          className="block w-48"
-        />
-      </div>
-
       {/* subtle pulse grid */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -23,7 +15,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* looping video with blend-in overlay */}
+      {/* Looping video (WebM) on the left */}
       <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-[60%] md:top-[42%] transform -translate-y-1/2 z-20">
         <div className="relative overflow-hidden rounded-2xl shadow-xl w-40 sm:w-56 md:w-72 lg:w-80">
           {/* semi-transparent fade on edges */}
@@ -40,6 +32,17 @@ const Hero = () => {
             <source src="/3hoop.webm" type="video/webm" />
             Your browser doesn’t support HTML5 video.
           </video>
+        </div>
+      </div>
+
+      {/* Logo mirrored on the right at same vertical position */}
+      <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-[60%] md:top-[42%] transform -translate-y-1/2 z-20">
+        <div className="w-40 sm:w-56 md:w-72 lg:w-80">
+          <img
+            src="/logo.png"
+            alt="Hula Hoop Beast logo"
+            className="w-full h-auto block"
+          />
         </div>
       </div>
 
@@ -62,7 +65,7 @@ const Hero = () => {
           Let’s hoop!
         </p>
 
-        {/* hoops image */}
+        {/* secondary hoops image */}
         <div className="mt-12">
           <img
             src="/lovable-uploads/aa66bb76-99ad-4824-9e6a-0edda4d38cba.png"
