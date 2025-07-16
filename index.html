@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hula Hoop Beast</title>
-    <meta name="description" content="Unleash your inner beast with dynamic hula hoop workouts, tutorials, and programs" />
-    <meta name="author" content="Hula Hoop Beast" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@300;400;500;600;700&display=swap">
 
-    <meta property="og:title" content="Hula Hoop Beast" />
-    <meta property="og:description" content="Unleash your inner beast with dynamic hula hoop workouts, tutorials, and programs" />
+    <!-- SEO Meta Tags -->
+    <title>Hula Hoop Beast – Unleash Your Inner Beast with Dynamic Hoop Workouts</title>
+    <meta
+      name="description"
+      content="Hula Hoop Beast offers tutorials, workouts, and performance inspiration to ignite your inner strength and flow. Dive into hoop magic today!"
+    />
+    <link rel="canonical" href="https://hulahoopbeast.com/" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:url" content="https://hulahoopbeast.com/" />
+    <meta property="og:title" content="Hula Hoop Beast – Unleash Your Inner Beast" />
+    <meta
+      property="og:description"
+      content="Transform your fitness journey with dynamic hula hoop tutorials, workouts & performances."
+    />
+    <meta property="og:image" content="https://hulahoopbeast.com/og-image.png" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:url" content="https://hulahoopbeast.com/" />
+    <meta name="twitter:title" content="Hula Hoop Beast – Unleash Your Inner Beast" />
+    <meta
+      name="twitter:description"
+      content="Transform your fitness journey with dynamic hula hoop tutorials, workouts & performances."
+    />
+    <meta name="twitter:image" content="https://hulahoopbeast.com/og-image.png" />
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID', { page_path: window.location.pathname });
+    </script>
+
+    <!-- your existing Vite inject -->
+    %svelte.head% <!-- or whatever Vite placeholder you already have -->
   </head>
 
   <body>
     <div id="root"></div>
+    <!-- Vite’s script entry -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
