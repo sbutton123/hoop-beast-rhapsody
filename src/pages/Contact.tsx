@@ -1,25 +1,27 @@
 // src/pages/Contact.tsx
-import React from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import React from 'react'
+import { useSearchParams, Link } from 'react-router-dom'
+import Navbar from '@/components/Navbar'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 
 export default function Contact() {
-  // read an optional ?program=Your%20Program query param
-  const [searchParams] = useSearchParams();
-  const program = searchParams.get('program') || '';
+  // optional ?program=… carries over into your email subject
+  const [searchParams] = useSearchParams()
+  const program = searchParams.get('program') || ''
 
   return (
     <>
-      {/* sticky navbar */}
+      {/* ← Navbar back in place */}
       <Navbar />
 
-      <div className="min-h-screen bg-background py-16">
+      <div className="min-h-screen bg-background py-16 pt-20">
         <div className="max-w-lg mx-auto px-4">
-          <h1 className="font-bangers text-4xl text-center mb-6">Contact Me</h1>
+          <h1 className="font-bangers text-4xl text-center mb-6">
+            Contact Me
+          </h1>
 
           <form
             name="contact"
@@ -28,16 +30,15 @@ export default function Contact() {
             data-netlify-honeypot="bot-field"
             className="space-y-6"
           >
-            {/* Netlify needs this hidden field */}
+            {/* Netlify form hook */}
             <input type="hidden" name="form-name" value="contact" />
-            {/* honeypot field */}
             <p className="hidden">
               <Label>
                 Don’t fill this out if you’re human: <Input name="bot-field" />
               </Label>
             </p>
 
-            {/* if someone clicked “Book This Program” with ?program=…, carry that over */}
+            {/* carry over the program name into the subject */}
             {program && (
               <>
                 <input type="hidden" name="program" value={program} />
@@ -101,5 +102,5 @@ export default function Contact() {
         </div>
       </div>
     </>
-  );
+  )
 }
