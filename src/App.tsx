@@ -18,20 +18,25 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <BrowserRouter>
-      {/* this ensures the navbar shows on every page */}
+      {/* Navbar sits above everything */}
       <Navbar />
 
-      {/* push content below the sticky nav */}
+      {/* push the page content down below the sticky nav */}
       <main className="pt-16">
         <Routes>
+          {/* exact home route */}
           <Route path="/" element={<Index />} />
+
+          {/* each page gets its own path */}
           <Route path="/tutorials" element={<Tutorials />} />
-          <Route path="/showcase" element={<Showcase />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/workouts" element={<Workouts />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/showcase"    element={<Showcase />} />
+          <Route path="/programs"    element={<Programs />} />
+          <Route path="/workouts"    element={<Workouts />} />
+          <Route path="/about"       element={<About />} />
+          <Route path="/products"    element={<Products />} />
+          <Route path="/contact"     element={<Contact />} />
+
+          {/* catch‑all for any unmatched path */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
