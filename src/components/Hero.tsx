@@ -10,29 +10,25 @@ const Hero = () => {
           className="absolute inset-0
                      bg-white/5
                      bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)]
-                     bg-[length:60px_60px]
-                     animate-pulse"
+                     bg-[length:60px_60px] animate-pulse"
         />
       </div>
 
       {/* ← cropped, rounded looping video */}
-      <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-1/2 transform -translate-y-1/2 z-20">
-        <div className="w-40 sm:w-56 md:w-72 lg:w-80 h-64 sm:h-80 md:h-96 overflow-hidden rounded-2xl shadow-lg">
+      <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-[45%] transform -translate-y-1/2 z-20">
+        <div className="w-40 sm:w-56 md:w-72 lg:w-80 h-72 sm:h-88 md:h-104 overflow-hidden rounded-2xl shadow-lg">
           <video
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
             autoPlay
             muted
             loop
             playsInline
             style={{
-              /* nudge the video up a bit so legs stay visible */
-              objectPosition: 'center 10%'
+              /* pull the frame up so your feet stay visible */
+              objectPosition: 'center 20%'
             }}
           >
-            <source
-              src="/3hoop.webm"
-              type="video/webm"
-            />
+            <source src="/3hoop.webm" type="video/webm" />
             Your browser doesn’t support HTML5 video.
           </video>
         </div>
@@ -49,23 +45,32 @@ const Hero = () => {
 
       {/* center text + CTAs */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-        <h1 className="font-bangers leading-tight
-                       text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white animate-bounce-gentle">
-          UNLEASH YOUR<br/>
-
-          <span className="text-black drop-shadow-md
-                           text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1
+          className="font-bangers leading-tight
+                     text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white animate-bounce-gentle"
+        >
+          UNLEASH YOUR
+          <br />
+          <span
+            className="text-black drop-shadow-md
+                       text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
+          >
             INNER
           </span>{' '}
-          <span className="text-beast-orange
-                           text-7xl sm:text-8xl md:text-9xl lg:text-[10rem]">
+          <span
+            className="text-beast-orange
+                       text-7xl sm:text-8xl md:text-9xl lg:text-[10rem]"
+          >
             BEAST
           </span>
         </h1>
 
-        <p className="text-xl sm:text-2xl md:text-3xl
-                      text-white/90 font-inter font-light max-w-3xl mx-auto">
-          Transform your fitness journey with dynamic hula hoop workouts that ignite your inner strength and unleash your athletic potential
+        <p
+          className="text-xl sm:text-2xl md:text-3xl
+                     text-white/90 font-inter font-light max-w-3xl mx-auto"
+        >
+          Transform your fitness journey with dynamic hula hoop workouts that
+          ignite your inner strength and unleash your athletic potential
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -86,11 +91,13 @@ const Hero = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
           {[
             ['1000+', 'Beast Transformations', ''],
-            ['50+',   'Dynamic Workouts',       'delay-500'],
-            ['24/7',  'Beast Support',          'delay-1000'],
-          ].map(([num, label, d], i) => (
+            ['50+', 'Dynamic Workouts', 'delay-500'],
+            ['24/7', 'Beast Support', 'delay-1000'],
+          ].map(([num, label, delay], i) => (
             <div key={i} className="text-center">
-              <div className={`font-bangers text-4xl text-beast-orange animate-float ${d}`}>
+              <div
+                className={`font-bangers text-4xl text-beast-orange animate-float ${delay}`}
+              >
                 {num}
               </div>
               <div className="text-white/80 font-inter">{label}</div>
@@ -100,11 +107,12 @@ const Hero = () => {
       </div>
 
       {/* bottom decorative circle */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2
-                      w-16 h-16 border-4 border-beast-orange/50 rounded-full animate-float" />
+      <div
+        className="absolute bottom-20 left-1/2 transform -translate-x-1/2
+                   w-16 h-16 border-4 border-beast-orange/50 rounded-full animate-float"
+      />
     </section>
   )
 }
 
 export default Hero
-
