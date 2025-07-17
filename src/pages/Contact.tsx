@@ -1,4 +1,5 @@
-import React from 'react'
+// src/pages/Contact.tsx
+import React, { useState, useEffect } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import Navbar from '@/components/Navbar'
 import { Button } from '@/components/ui/button'
@@ -10,13 +11,24 @@ export default function Contact() {
   const [searchParams] = useSearchParams()
   const program = searchParams.get('program') || ''
 
+  // keep the message in state so it can be prefilled and edited
+  const [message, setMessage] = useState('')
+
+  useEffect(() => {
+    if (program) {
+      setMessage(`I’m interested in "${program}". Please tell me more…`)
+    }
+  }, [program])
+
   return (
     <>
       <Navbar />
 
       <div className="min-h-screen bg-background py-16 pt-20">
         <div className="max-w-lg mx-auto px-4">
-          <h1 className="font-bangers text-4xl text-center mb-6">Contact Me</h1>
+          <h1 className="font-bangers text-4xl text-center mb-6">
+            Contact Me
+          </h1>
 
           <form
             name="contact"
@@ -27,12 +39,15 @@ export default function Contact() {
           >
             {/* Netlify form hook */}
             <input type="hidden" name="form-name" value="contact" />
+
+            {/* honeypot */}
             <p className="hidden">
               <Label>
                 Don’t fill this out if you’re human: <Input name="bot-field" />
               </Label>
             </p>
 
+            {/* keep program in the submission and use for subject */}
             {program && (
               <>
                 <input type="hidden" name="program" value={program} />
@@ -42,6 +57,19 @@ export default function Contact() {
                   value={`Booking request: ${program}`}
                 />
               </>
+            )}
+
+            {/* Visible Program field */}
+            {program && (
+              <div>
+                <Label htmlFor="program">Program</Label>
+                <Input
+                  id="program"
+                  name="programDisplay"
+                  value={program}
+                  readOnly
+                />
+              </div>
             )}
 
             <div>
@@ -71,7 +99,8 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows={6}
-                placeholder="How can I help you?"
+                value={message}
+                onChange={(e) => setMessage(e.currentTarget.value)}
               />
             </div>
 
@@ -85,8 +114,7 @@ export default function Contact() {
               Or{' '}
               <Link to="/" className="underline hover:text-primary">
                 back to home
-              </Link>
-              .
+              </Link>.
             </div>
           </form>
         </div>
