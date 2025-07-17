@@ -68,18 +68,20 @@ const Programs = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bangers text-gradient-beast mb-6">
-            Performance Programs
+      <section className="bg-gradient-beast py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
+            BEAST PROGRAMS
           </h1>
-          <p className="text-lg text-foreground max-w-3xl mx-auto mb-8">
-            I bring high-energy hula hoop performances and creative workshops to
-            schools, libraries, parties, fairs, and festivals. Explore the program
-            options below!
+          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+            Looking for a show or interactive experience? I offer exciting, energizing programs for schools, libraries, parks, parties, and more — custom-tailored to your audience. Let's bring the Hula Hoop Beast to your event!
           </p>
-          
-          {/* Booking & Travel Policies */}
+        </div>
+      </section>
+
+      {/* Booking & Travel Policies */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
           <div className="bg-card rounded-lg p-6 shadow-beast max-w-4xl mx-auto">
             <h2 className="text-2xl font-bangers text-center text-foreground mb-4">
               Booking & Travel Policies
@@ -99,6 +101,11 @@ const Programs = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Programs Section */}
+      <section className="pb-16">
+        <div className="container mx-auto px-4">
 
         {/* Programs Grid - Top Row (3 cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -185,7 +192,8 @@ const Programs = () => {
             </Card>
           ))}
         </div>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };
