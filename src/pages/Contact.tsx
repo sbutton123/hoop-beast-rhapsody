@@ -1,73 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- ⚡️ Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G‑LZ8NEVEJPY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G‑LZ8NEVEJPY', { page_path: window.location.pathname });
-    </script>
+// src/pages/Contact.tsx
+import React from 'react';
+import { useSearchParams, Link } from 'react-router-dom';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
-    <!-- Required meta tags -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+export default function Contact() {
+  // carry over ?program=… into email subject if present
+  const [searchParams] = useSearchParams();
+  const program = searchParams.get('program') || '';
 
-    <!-- Primary SEO Meta Tags -->
-    <title>Hula Hoop Beast – Unleash Your Inner Beast with Dynamic Hoop Workouts</title>
-    <meta
-      name="description"
-      content="Hula Hoop Beast offers tutorials, workouts, and performance inspiration to ignite your inner strength and flow. Dive into hoop magic today!"
-    />
-    <link rel="canonical" href="https://hulahoopbeast.com/" />
+  return (
+    <>
+      {/* navbar */}
+      <Navbar />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hulahoopbeast.com/" />
-    <meta property="og:title" content="Hula Hoop Beast – Unleash Your Inner Beast" />
-    <meta
-      property="og:description"
-      content="Transform your fitness journey with dynamic hula hoop tutorials, workouts & performances."
-    />
-    <meta property="og:image" content="https://hulahoopbeast.com/og-image.png" />
+      <div className="min-h-screen bg-background py-16 pt-20">
+        <div className="max-w-lg mx-auto px-4">
+          <h1 className="font-bangers text-4xl text-center mb-6">
+            Contact Me
+          </h1>
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://hulahoopbeast.com/" />
-    <meta name="twitter:title" content="Hula Hoop Beast – Unleash Your Inner Beast" />
-    <meta
-      name="twitter:description"
-      content="Transform your fitness journey with dynamic hula hoop tutorials, workouts & performances."
-    />
-    <meta name="twitter:image" content="https://hulahoopbeast.com/og-image.png" />
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            className="space-y-6"
+          >
+            {/* Netlify hidden inputs */}
+            <input type="hidden" name="form-name" value="contact" />
+            <p className="hidden">
+              <Label>
+                Don’t fill this out if you’re human: <Input name="bot-field" />
+              </Label>
+            </p>
 
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/logo.png" />
+            {/* pass program into form subject */}
+            {program && (
+              <>
+                <input type="hidden" name="program" value={program} />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value={`Booking request: ${program}`}
+                />
+              </>
+            )}
 
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="/index.css" />
-  </head>
+            <div>
+              <Label htmlFor="name">Name</Label>
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                required
+                placeholder="Your full name"
+                className="w-full border border-border rounded-lg p-3"
+              />
+            </div>
 
-  <body>
-    <!-- React mount point -->
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+            <div>
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="you@example.com"
+                className="w-full border border-border rounded-lg p-3"
+              />
+            </div>
 
-    <!--
-      Hidden static form for Netlify build‑time detection.
-      Netlify will see this at build time, hook up the backend,
-      and then your React form (in Contact.tsx) will submit into it.
-    -->
-    <form name="contact" method="POST" data-netlify="true" hidden>
-      <!-- required hidden input -->
-      <input type="hidden" name="form-name" value="contact" />
-      <!-- matching field names -->
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-    </form>
-  </body>
-</html>
+            <div>
+              <Label htmlFor="message">Message</Label>
+              <Textarea
+                id="message"
+                name="message"
+                rows={6}
+                required
+                placeholder={
+                  program
+                    ? `I’m interested in "${program}". Please tell me more…`
+                    : 'How can I help you?'
+                }
+                className="w-full border border-border rounded-lg p-3"
+              />
+            </div>
+
+            <div className="text-center">
+              <Button type="submit" className="btn-beast">
+                Send Message
+              </Button>
+            </div>
+
+            <div className="text-center text-sm text-muted-foreground">
+              Or{' '}
+              <Link to="/" className="underline hover:text-primary">
+                back to home
+              </Link>
+              .
+            </div>
+          </form>
+        </div>
+      </div>
+    </>
+  );
+}
+
