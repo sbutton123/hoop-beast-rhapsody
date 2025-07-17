@@ -1,178 +1,182 @@
-// src/pages/Programs.tsx
-import { useNavigate } from 'react-router-dom';
-import { Calendar, Users, Trophy, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const Programs = () => {
-  const navigate = useNavigate();
-  const programs = [
-    {
-      id: 1,
-      title: "The Hula Hoop Beast Experience",
-      description:
-        "This high-energy 45-minute interactive show is perfect for families and audiences of all ages. Performed to music, it features dazzling hula hoop tricks and crowd participation. Shanda brings the fun, laughter, and movement — your crowd brings the energy!",
-      duration: "45 min",
-      sessions: 1,
-      price: "$300 flat rate",
-      videoUrl: "https://www.youtube.com/embed/NHJKBceyUgk",
-      color: "bg-beast-orange",
-    },
-    {
-      id: 2,
-      title: "Hoopin & Groovin with Greg & Shanda",
-      description:
-        "Shanda performs amazing hula hoop tricks and dazzles the crowd while Greg plays and sings classic rock songs with his acoustic guitar. They are a fun and dynamic duo and are guaranteed to impress and entertain!",
-      duration: "1 Hour Set",
-      sessions: 1,
-      price: "$350",
-      videoUrl: "https://www.youtube.com/embed/tKJ18SIWM_M",
-      color: "bg-accent",
-    },
-    {
-      id: 3,
-      title: "Hula Hoop Making Workshop",
-      description:
-        "Workshop includes a short performance of amazing hula hoop tricks. Learn about various types of hoops & my journey in becoming a Hula Hoop Extraordinaire. Each participant builds a colorful custom hoop—specific to their size & skill level. All supplies provided.",
-      duration: "1–2 hours",
-      sessions: 1,
-      price: "$300 + $15/hoop (materials)",
-      imageUrl: "/hulahoops.jpg",
-      color: "bg-secondary",
-    },
-    {
-      id: 4,
-      title: "Juggling Ball Making Workshop",
-      description:
-        "Studies have shown juggling can boost grey-matter density & reduce anxiety. Participants learn juggling with scarves & balls, then craft a 3-ball set to take home—each ball weighted to their preference. All supplies provided.",
-      duration: "1–2 hours",
-      sessions: 1,
-      price: "$300 (up to 25 participants)",
-      imageUrl: "/jugglingballs.jpg",
-      color: "bg-secondary",
-    },
-    {
-      id: 5,
-      title: "Level Up – 5 Rings of Gravity",
-      description:
-        "Level Up brings you five gravity-defying ring routines paired with interactive audience challenges. Perfect for schools, festivals, and community events—this show will leave everyone mesmerized.",
-      duration: "30–60 min",
-      sessions: 1,
-      price: "$400",
-      imageUrl: "/5rings.jpg", // replace with your image file
-      color: "bg-primary",
-    },
-  ];
-
-  const handleEnquire = (title: string) => {
-    navigate(`/contact?program=${encodeURIComponent(title)}`);
-  };
-
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-beast py-12">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="font-bangers text-5xl text-white mb-4">
+      <section className="bg-gradient-beast py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
             BEAST PROGRAMS
           </h1>
-          <p className="text-lg sm:text-xl text-white/90 mb-6">
-            Looking for a show or interactive experience? I offer exciting,
-            energizing programs for schools, libraries, parks, parties, and
-            more — custom-tailored to your audience. Let’s bring the Hula Hoop
-            Beast to your event!
+          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+            Looking for a show or interactive experience? I offer exciting, energizing programs for schools, libraries, parks, parties, and more — custom-tailored to your audience. Let’s bring the Hula Hoop Beast to your event!
           </p>
-
           {/* Booking & Travel Policies */}
-          <p className="font-bangers text-2xl text-black mb-2">
-            Booking &amp; Travel Policies
-          </p>
-          <div className="text-base text-black max-w-md mx-auto space-y-1 mb-8">
-            <p>
-              Multiple bookings receive a $50 discount each when scheduled
-              consecutively on the same date and in the same area.
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-bangers text-2xl text-black mb-2">Booking &amp; Travel Policies</h2>
+            <p className="text-white/80 font-inter mb-1">
+              $50 discount for consecutive bookings on the same date and area.
             </p>
-            <p>
-              Travel fee applies beyond 50 miles from Gresham, OR: $1 per mile
-              over 50; above 100 miles is case by case.
+            <p className="text-white/80 font-inter">
+              Travel fee: $1 per mile over 50 miles from Gresham, OR; custom pricing for trips over 100 miles.
             </p>
           </div>
         </div>
       </section>
 
       {/* Programs Grid */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programs.map((program) => (
-              <Card
-                key={program.id}
-                className="h-full flex flex-col hover-lift shadow-beast"
-              >
-                {/* Top color bar */}
-                <div className={`${program.color} h-1 w-full`} />
-
-                <CardHeader>
-                  <CardTitle className="font-bangers text-xl">
-                    {program.title}
-                  </CardTitle>
-                  <CardDescription>{program.description}</CardDescription>
-                </CardHeader>
-
-                <CardContent className="flex-1 flex flex-col">
-                  {/* Video or Image */}
-                  {program.videoUrl && (
-                    <div className="relative pb-[56.25%] mb-4">
-                      <iframe
-                        src={program.videoUrl}
-                        title={program.title}
-                        frameBorder="0"
-                        allowFullScreen
-                        className="absolute top-0 left-0 w-full h-full rounded-lg"
-                      />
-                    </div>
-                  )}
-                  {!program.videoUrl && program.imageUrl && (
-                    <img
-                      src={program.imageUrl}
-                      alt={program.title}
-                      className="w-full h-48 object-cover rounded-lg mb-4"
-                    />
-                  )}
-
-                  {/* Stats */}
-                  <div className="flex items-center justify-between bg-muted p-2 rounded mb-4">
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="h-5 w-5 text-primary" />
-                      <span className="text-sm">{program.duration}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Users className="h-5 w-5 text-primary" />
-                      <span className="text-sm">
-                        {program.sessions} session
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Spacer pushes price & button to bottom */}
-                  <div className="flex-1" />
-
-                  {/* Price */}
-                  <div className="text-2xl font-bangers text-beast-orange mb-4 text-center">
-                    {program.price}
-                  </div>
-
-                  {/* Enquire Button */}
-                  <Button
-                    onClick={() => handleEnquire(program.title)}
-                    className="btn-beast w-full"
-                  >
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          {/* Top row: 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* 1. The Hula Hoop Beast Experience */}
+            <Card className="h-full flex flex-col shadow-beast">
+              <CardHeader>
+                <CardTitle className="font-bangers text-2xl text-gradient-beast">
+                  The Hula Hoop Beast Experience
+                </CardTitle>
+                <CardDescription>
+                  High-energy 45‐minute interactive show perfect for families & audiences of all ages. Includes tricks, volunteers, & crowd dance‐along finale.
+                </CardDescription>
+              </CardHeader>
+              <div className="relative flex-1">
+                <iframe
+                  className="w-full aspect-video"
+                  src="https://www.youtube.com/embed/NHJKBceyUgk"
+                  title="The Hula Hoop Beast Experience"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+              </div>
+              <CardContent className="mt-4">
+                <Link to="/contact?program=The%20Hula%20Hoop%20Beast%20Experience">
+                  <Button className="btn-beast w-full">
                     Enquire Now
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* 2. Hoopin & Groovin with Greg & Shanda */}
+            <Card className="h-full flex flex-col shadow-beast">
+              <CardHeader>
+                <CardTitle className="font-bangers text-2xl text-gradient-beast">
+                  Hoopin &amp; Groovin with Greg &amp; Shanda
+                </CardTitle>
+                <CardDescription>
+                  Interactive family show with hula hoop tricks by Shanda and live music by Greg. A fun duo performance for any event.
+                </CardDescription>
+              </CardHeader>
+              <div className="relative flex-1">
+                <iframe
+                  className="w-full aspect-video"
+                  src="https://www.youtube.com/embed/tKJ18SIWM_M"
+                  title="Hoopin & Groovin with Greg & Shanda"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+              </div>
+              <CardContent className="mt-4">
+                <Link to="/contact?program=Hoopin%20%26%20Groovin%20with%20Greg%20%26%20Shanda">
+                  <Button className="btn-beast w-full">
+                    Enquire Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* 3. Level Up – 5 Rings of Gravity */}
+            <Card className="h-full flex flex-col shadow-beast">
+              <CardHeader>
+                <CardTitle className="font-bangers text-2xl text-gradient-beast">
+                  Level Up – 5 Rings of Gravity
+                </CardTitle>
+                <CardDescription>
+                  Advanced hoop flow performance featuring five simultaneous hoops. A gravity‐defying spectacle.
+                </CardDescription>
+              </CardHeader>
+              <div className="relative flex-1">
+                <iframe
+                  className="w-full aspect-video"
+                  src="https://www.youtube.com/embed/PMy9erGocIE"
+                  title="Level Up – 5 Rings of Gravity"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                />
+              </div>
+              <CardContent className="mt-4">
+                <Link to="/contact?program=Level%20Up%20%E2%80%93%205%20Rings%20of%20Gravity">
+                  <Button className="btn-beast w-full">
+                    Enquire Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Bottom row: 2 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* 4. Hula Hoop Making Workshop */}
+            <Card className="h-full flex flex-col shadow-beast">
+              <CardHeader>
+                <CardTitle className="font-bangers text-2xl text-gradient-beast">
+                  Hula Hoop Making Workshop
+                </CardTitle>
+                <CardDescription>
+                  Hands‐on session building your own custom hoop. All materials and tape techniques included.
+                </CardDescription>
+              </CardHeader>
+              <div className="relative flex-1">
+                <img
+                  src="/lovable-uploads/hulahoops.jpg"
+                  alt="Hula hoops"
+                  className="w-full h-full object-cover rounded-t-lg"
+                />
+              </div>
+              <CardContent className="mt-4">
+                <Link to="/contact?program=Hula%20Hoop%20Making%20Workshop">
+                  <Button className="btn-beast w-full">
+                    Enquire Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* 5. Juggling Ball Making Workshop */}
+            <Card className="h-full flex flex-col shadow-beast">
+              <CardHeader>
+                <CardTitle className="font-bangers text-2xl text-gradient-beast">
+                  Juggling Ball Making Workshop
+                </CardTitle>
+                <CardDescription>
+                  Learn to craft your own juggling balls from scratch. Includes materials & basic techniques.
+                </CardDescription>
+              </CardHeader>
+              <div className="relative flex-1">
+                <img
+                  src="/lovable-uploads/jugglingballs.jpg"
+                  alt="Juggling balls"
+                  className="w-full h-full object-cover rounded-t-lg"
+                />
+              </div>
+              <CardContent className="mt-4">
+                <Link to="/contact?program=Juggling%20Ball%20Making%20Workshop">
+                  <Button className="btn-beast w-full">
+                    Enquire Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
