@@ -7,18 +7,28 @@ const Hero = () => {
       {/* subtle pulse grid */}
       <div className="absolute inset-0 opacity-10">
         <div
-          className="absolute inset-0
-                     bg-white/5
-                     bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)]
-                     bg-[length:60px_60px] animate-pulse"
+          className="
+            absolute inset-0
+            bg-white/5
+            bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)]
+            bg-[length:60px_60px]
+            animate-pulse
+          "
         />
       </div>
 
       {/* Left-side looping video */}
       <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-[60%] md:top-[42%] transform -translate-y-1/2 z-20">
-        <div className="relative overflow-hidden rounded-2xl shadow-xl w-40 sm:w-56 md:w-72 lg:w-80">
-          {/* semi-transparent fade on edges */}
-          <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-purple-900/30 to-pink-500/30" />
+        <div
+          className="
+            relative
+            overflow-hidden
+            rounded-2xl
+            shadow-xl
+            w-40 sm:w-56 md:w-72 lg:w-80
+            bg-transparent        /* ensure no background behind video */
+          "
+        >
           <video
             className="relative w-full h-auto block"
             autoPlay
@@ -28,14 +38,13 @@ const Hero = () => {
             aria-label="Demo hula hoop performance"
             style={{ objectPosition: 'center 20%' }}
           >
-            {/* ← swapped to your new file */}
             <source src="/3hoopduckout.webm" type="video/webm" />
-            Your browser doesn't support HTML5 video.
+            Your browser doesn’t support HTML5 video.
           </video>
         </div>
       </div>
 
-      {/* Logo mirrored on the right at same vertical position */}
+      {/* Logo mirrored on the right */}
       <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-[60%] md:top-[42%] transform -translate-y-1/2 z-20">
         <div className="w-48 sm:w-64 md:w-80 lg:w-96">
           <img
@@ -46,21 +55,31 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Hero text – floating glassmorphism overlay */}
+      {/* Hero text – glassmorphism overlay */}
       <div className="relative z-30 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div
-          className="backdrop-blur-md bg-gradient-to-br from-primary/10 via-primary/5 to-transparent
-                     border border-white/10 rounded-3xl p-8 sm:p-12
-                     shadow-2xl shadow-primary/20
-                     hover:shadow-primary/30 transition-all duration-500
-                     text-center relative overflow-hidden"
+          className="
+            backdrop-blur-md
+            bg-gradient-to-br from-primary/10 via-primary/5 to-transparent
+            border border-white/10
+            rounded-3xl
+            p-8 sm:p-12
+            shadow-2xl shadow-primary/20
+            hover:shadow-primary/30 transition-all duration-500
+            text-center
+            relative overflow-hidden
+          "
         >
           {/* subtle inner glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl pointer-events-none" />
 
           <h1
-            className="relative font-bangers leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white
-                       drop-shadow-lg animate-bounce-gentle"
+            className="
+              relative font-bangers leading-tight
+              text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+              text-white drop-shadow-lg
+              animate-bounce-gentle
+            "
           >
             UNLEASH YOUR
             <br />
@@ -73,14 +92,18 @@ const Hero = () => {
           </h1>
 
           <p
-            className="relative mt-6 text-base sm:text-lg md:text-xl text-white/95 font-inter font-light
-                       leading-relaxed drop-shadow-sm max-w-3xl mx-auto"
+            className="
+              relative mt-6 text-base sm:text-lg md:text-xl
+              text-white/95 font-inter font-light
+              leading-relaxed drop-shadow-sm
+              max-w-3xl mx-auto
+            "
           >
-            Welcome to Hula Hoop Beast where strength meets flow and fun turns into
-            fitness! Whether you're brand new to hooping or ready to level up your
-            skills, you're in the right place. Dive into our tutorials, challenge
-            yourself with workouts, or just get inspired by creative performances
-            and hoop magic.
+            Welcome to Hula Hoop Beast where strength meets flow and fun turns
+            into fitness! Whether you're brand new to hooping or ready to level
+            up your skills, you're in the right place. Dive into our tutorials,
+            challenge yourself with workouts, or just get inspired by creative
+            performances and hoop magic.
             <br />
             <br />
             <span className="text-beast-orange font-medium drop-shadow-md">
