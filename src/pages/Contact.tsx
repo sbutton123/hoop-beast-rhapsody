@@ -8,13 +8,12 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 export default function Contact() {
-  // carry over ?program=… into email subject if present
   const [searchParams] = useSearchParams();
   const program = searchParams.get('program') || '';
 
   return (
     <>
-      {/* navbar */}
+      {/* Navbar at top */}
       <Navbar />
 
       <div className="min-h-screen bg-background py-16 pt-20">
@@ -30,7 +29,7 @@ export default function Contact() {
             data-netlify-honeypot="bot-field"
             className="space-y-6"
           >
-            {/* Netlify hidden inputs */}
+            {/* Netlify form hook */}
             <input type="hidden" name="form-name" value="contact" />
             <p className="hidden">
               <Label>
@@ -38,7 +37,7 @@ export default function Contact() {
               </Label>
             </p>
 
-            {/* pass program into form subject */}
+            {/* carry over program into subject */}
             {program && (
               <>
                 <input type="hidden" name="program" value={program} />
@@ -55,7 +54,6 @@ export default function Contact() {
               <Input
                 id="name"
                 name="name"
-                type="text"
                 required
                 placeholder="Your full name"
                 className="w-full border border-border rounded-lg p-3"
@@ -109,4 +107,3 @@ export default function Contact() {
     </>
   );
 }
-
