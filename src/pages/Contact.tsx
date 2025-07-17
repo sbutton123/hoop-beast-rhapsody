@@ -9,13 +9,11 @@ import { Textarea } from '@/components/ui/textarea'
 
 export default function Contact() {
   const [searchParams] = useSearchParams()
-  // grab the program name from the URL
   const program = searchParams.get('program') || ''
 
-  // state to hold the message body
+  // keep the message in state so it can be prefilled and edited
   const [message, setMessage] = useState('')
 
-  // when the page loads, if there's a program param, set the message
   useEffect(() => {
     if (program) {
       setMessage(`I’m interested in "${program}". Please tell me more…`)
@@ -49,7 +47,7 @@ export default function Contact() {
               </Label>
             </p>
 
-            {/* carry over program and set email subject */}
+            {/* keep program in the submission and use for subject */}
             {program && (
               <>
                 <input type="hidden" name="program" value={program} />
@@ -59,6 +57,19 @@ export default function Contact() {
                   value={`Booking request: ${program}`}
                 />
               </>
+            )}
+
+            {/* Visible Program field */}
+            {program && (
+              <div>
+                <Label htmlFor="program">Program</Label>
+                <Input
+                  id="program"
+                  name="programDisplay"
+                  value={program}
+                  readOnly
+                />
+              </div>
             )}
 
             <div>
@@ -88,7 +99,6 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows={6}
-                // use the message state as the default value
                 value={message}
                 onChange={(e) => setMessage(e.currentTarget.value)}
               />
