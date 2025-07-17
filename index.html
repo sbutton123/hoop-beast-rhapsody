@@ -43,32 +43,31 @@
     />
     <meta name="twitter:image" content="https://hulahoopbeast.com/og-image.png" />
 
-    <!-- Favicon & Touch Icon -->
+    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
 
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="/index.css" />
   </head>
 
   <body>
-    <!-- React mounts here -->
+    <!-- React mount point -->
     <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
 
     <!--
-      THIS HIDDEN FORM SNIPPET ensures Netlify will detect a "contact"
-      form at build-time, even though it's rendered by React.
+      Hidden static form for Netlify build‑time detection.
+      Netlify will see this at build time, hook up the backend,
+      and then your React form (in Contact.tsx) will submit into it.
     -->
-    <form name="contact" data-netlify="true" hidden>
+    <form name="contact" method="POST" data-netlify="true" hidden>
+      <!-- required hidden input -->
       <input type="hidden" name="form-name" value="contact" />
+      <!-- matching field names -->
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
     </form>
-
-    <!-- Vite entrypoint -->
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
