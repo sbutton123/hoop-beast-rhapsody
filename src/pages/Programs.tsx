@@ -20,7 +20,7 @@ const Programs = () => {
       sessions: 1,
       price: '$300',
       features: [
-        'Volunteer segments + crowd dance‑along finale',
+        'Volunteer segments + crowd dance‑along finale',
         'Family‑friendly flow art adventure',
       ],
       videoUrl: 'https://youtu.be/NHJKBceyUgk',
@@ -28,7 +28,7 @@ const Programs = () => {
     },
     {
       id: 2,
-      title: 'Hoopin & Groovin with Greg & Shanda',
+      title: 'Hoopin & Groovin with Greg & Shanda',
       description: `Shanda performs amazing hula hoop tricks and dazzles the crowd while Greg plays and sings classic rock songs with his acoustic guitar. They’re a dynamic duo guaranteed to impress and entertain!`,
       duration: '1 Hour Set',
       sessions: 1,
@@ -43,7 +43,7 @@ const Programs = () => {
     },
     {
       id: 3,
-      title: 'Level Up: 5 Rings of Gravity',
+      title: 'Level Up: 5 Rings of Gravity',
       description: `We’ve been sucked into a video game! The Evil Wizard of the West has hidden the five Rings of Gravity, and only your team can reclaim them. Shanda leads volunteers through five challenge‑filled levels—each one unlocked by increasingly impressive hoop & juggling tricks.`,
       duration: '45 min',
       sessions: 1,
@@ -70,20 +70,31 @@ const Programs = () => {
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-4">
             Looking for a show or interactive experience? I offer exciting,
             energizing programs for schools, libraries, parks, parties, and more
-            — custom-tailored to your audience. Let’s bring the Hula Hoop Beast to
+            — custom‑tailored to your audience. Let’s bring the Hula Hoop Beast to
             your event!
           </p>
-          {/* Booking & Travel Policies */}
-          <div className="text-white/80 text-sm max-w-md mx-auto space-y-2">
-            <p>
-              If you book multiple performances on the same date in the same area,
-              you’ll receive a $50 discount on each additional program.
-            </p>
-            <p>
-              A travel fee applies beyond 50 miles from Gresham, OR: $1 per mile
-              over 50. Over 100 miles is handled case‑by‑case.
-            </p>
+
+          {/* —— Restyled Booking & Travel Policies —— */}
+          <div className="mt-6 max-w-md mx-auto text-left">
+            <h2 className="font-bangers italic text-2xl text-black mb-2">
+              Booking &amp; Travel Policies
+            </h2>
+            <ul className="list-disc list-inside space-y-2 text-black text-sm">
+              <li>
+                Book multiple performances on the same date <br className="md:hidden" />
+                &amp; in the same area — receive a{' '}
+                <span className="text-beast-orange font-bold">$50 discount</span>{' '}
+                on each additional booking.
+              </li>
+              <li>
+                Travel fee applies beyond{' '}
+                <span className="font-bold">50 miles</span> from Gresham at{' '}
+                <span className="text-beast-orange font-bold">$1/mile</span> overage;{' '}
+                over 100 miles is handled case‑by‑case.
+              </li>
+            </ul>
           </div>
+          {/* —— end policies —— */}
         </div>
       </section>
 
