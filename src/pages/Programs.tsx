@@ -59,7 +59,7 @@ const Programs = () => {
   const navigate = useNavigate();
 
   const handleEnquireClick = (program) => {
-    navigate(`/contact?program=${encodeURIComponent(program)}`);
+    navigate(/contact?program=${encodeURIComponent(program)});
   };
 
   return (
@@ -89,41 +89,45 @@ const Programs = () => {
       </div>
 
       <div className="programs-grid">
-        {[...programs, ...workshops].map((program, index) => (
+        {programs.map((program, index) => (
           <div className="program-card" key={index}>
             <div className="media-wrapper">
-              {program.videoUrl ? (
-                <iframe
-                  width="100%"
-                  height="215"
-                  src={program.videoUrl}
-                  title={program.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              ) : (
-                <img
-                  src={program.image}
-                  alt={program.title}
-                  style={{ width: "100%", height: "215px", objectFit: "cover" }}
-                />
-              )}
+              <iframe
+                width="100%"
+                height="215"
+                src={program.videoUrl}
+                title={program.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
             <h3>{program.title}</h3>
             <p>{program.description}</p>
-            {program.features && (
-              <ul>
-                {program.features.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
-            )}
-            {program.duration && (
-              <p><strong>Duration:</strong> {program.duration}</p>
-            )}
+            <ul>
+              {program.features?.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+            <p><strong>Duration:</strong> {program.duration || "45 minutes"}</p>
             <p><strong>Price:</strong> {program.price}</p>
             <button onClick={() => handleEnquireClick(program.title)}>Enquire Now</button>
+          </div>
+        ))}
+
+        {workshops.map((workshop, index) => (
+          <div className="program-card" key={index + programs.length}>
+            <div className="media-wrapper">
+              <img
+                src={workshop.image}
+                alt={workshop.title}
+                style={{ width: "100%", height: "215px", objectFit: "cover" }}
+              />
+            </div>
+            <h3>{workshop.title}</h3>
+            <p>{workshop.description}</p>
+            <p><strong>Price:</strong> {workshop.price}</p>
+            <button onClick={() => handleEnquireClick(workshop.title)}>Enquire Now</button>
           </div>
         ))}
       </div>
