@@ -17,31 +17,26 @@ const Hero = () => {
         />
       </div>
 
-      {/* Left-side looping video */}
+      {/* Left-side looping video (no solid card behind it) */}
       <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-[60%] md:top-[42%] transform -translate-y-1/2 z-20">
-        <div
+        <video
           className="
             relative
-            overflow-hidden
+            w-40 sm:w-56 md:w-72 lg:w-80
             rounded-2xl
             shadow-xl
-            w-40 sm:w-56 md:w-72 lg:w-80
-            bg-transparent        /* ensure no background behind video */
+            block
           "
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Demo hula hoop performance"
+          style={{ objectFit: 'contain', objectPosition: 'center 20%' }}
         >
-          <video
-            className="relative w-full h-auto block"
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-label="Demo hula hoop performance"
-            style={{ objectPosition: 'center 20%' }}
-          >
-            <source src="/3hoopduckout.webm" type="video/webm" />
-            Your browser doesn’t support HTML5 video.
-          </video>
-        </div>
+          <source src="/3hoopduckout.webm" type="video/webm" />
+          Your browser doesn’t support HTML5 video.
+        </video>
       </div>
 
       {/* Logo mirrored on the right */}
@@ -126,3 +121,4 @@ const Hero = () => {
 }
 
 export default Hero
+
