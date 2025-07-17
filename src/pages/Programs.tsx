@@ -105,7 +105,7 @@ export default function Programs() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-beast py-20">
+      <section className="bg-gradient-beast py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
             BEAST PROGRAMS
@@ -117,19 +117,19 @@ export default function Programs() {
             your event!
           </p>
 
-          {/* —— Center‑aligned Black Policies —— */}
+          {/* Booking & Travel Policies */}
           <div className="mt-8 max-w-md mx-auto text-center">
             <h2 className="font-bangers italic text-2xl text-black mb-3">
               Booking &amp; Travel Policies
             </h2>
             <ul className="list-disc list-inside space-y-2 text-black text-lg">
               <li>
-                Book multiple performances on the same date &amp; in the same area
-                — receive a $50 discount on each additional booking.
+                Book multiple performances on the same date &amp; in the same area — receive a $50 discount on each
+                <br />
+                additional bookings.
               </li>
               <li>
-                Travel fee beyond 50 miles from Gresham at $1/mile overage; over 100 miles
-                handled case‑by‑case.
+                Travel fee beyond 50 miles from Gresham at $1/mile overage; over 100 miles handled case‑by‑case.
               </li>
             </ul>
           </div>
@@ -145,7 +145,7 @@ export default function Programs() {
                 key={p.id}
                 className="relative overflow-hidden hover-lift shadow-beast"
               >
-                {/* colored stripe */}
+                {/* top stripe */}
                 <div className={`absolute top-0 left-0 right-0 h-2 ${p.color}`} />
 
                 <CardHeader>
@@ -158,14 +158,12 @@ export default function Programs() {
                 </CardHeader>
 
                 <CardContent>
-                  {/* either video or image */}
+                  {/* embed video or show image */}
                   {p.videoUrl ? (
                     <div className="mb-4">
                       <iframe
                         className="w-full aspect-video rounded-lg"
-                        src={`https://www.youtube.com/embed/${p.videoUrl
-                          .split('/')
-                          .pop()}`}
+                        src={`https://www.youtube.com/embed/${p.videoUrl.split('/').pop()}`}
                         title={p.title}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
@@ -181,7 +179,7 @@ export default function Programs() {
                     </div>
                   )}
 
-                  {/* duration/sessions */}
+                  {/* timing & sessions */}
                   <div className="flex items-center justify-between mb-6 p-4 bg-muted rounded-lg">
                     <div className="flex items-center space-x-2">
                       <Calendar className="h-5 w-5 text-primary" />
@@ -193,7 +191,7 @@ export default function Programs() {
                     </div>
                   </div>
 
-                  {/* features */}
+                  {/* features list */}
                   <div className="space-y-2 mb-6">
                     {p.features.map((f, i) => (
                       <div key={i} className="flex items-center space-x-2">
@@ -203,7 +201,7 @@ export default function Programs() {
                     ))}
                   </div>
 
-                  {/* price & button */}
+                  {/* price & enquire button */}
                   <div className="flex items-center justify-between">
                     <span className="font-bangers text-3xl text-gradient-beast">
                       {p.price}
@@ -211,11 +209,11 @@ export default function Programs() {
                     <Button
                       size="sm"
                       className="btn-beast"
-                      onClick={() => {
-                        window.location.href = `/contact?program=${encodeURIComponent(
+                      onClick={() =>
+                        (window.location.href = `/contact?program=${encodeURIComponent(
                           p.title
-                        )}`
-                      }}
+                        )}`)
+                      }
                     >
                       Enquire Now
                       <ArrowRight className="ml-2 h-4 w-4" />
