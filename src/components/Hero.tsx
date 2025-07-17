@@ -17,22 +17,29 @@ const Hero = () => {
         />
       </div>
 
-      {/* Left-side looping video (no solid card behind it) */}
-      <div className="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-[60%] md:top-[42%] transform -translate-y-1/2 z-20">
+      {/* Left-side looping video – no card, fully transparent background */}
+      <div
+        className="absolute left-4 sm:left-8 md:left-16 lg:left-24
+                   top-[60%] md:top-[42%] transform -translate-y-1/2 z-20"
+      >
         <video
           className="
-            relative
+            block
             w-40 sm:w-56 md:w-72 lg:w-80
             rounded-2xl
             shadow-xl
-            block
+            bg-transparent
           "
           autoPlay
           muted
           loop
           playsInline
           aria-label="Demo hula hoop performance"
-          style={{ objectFit: 'contain', objectPosition: 'center 20%' }}
+          style={{
+            objectFit: 'contain',
+            objectPosition: 'center 20%',
+            backgroundColor: 'transparent',
+          }}
         >
           <source src="/3hoopduckout.webm" type="video/webm" />
           Your browser doesn’t support HTML5 video.
@@ -40,7 +47,10 @@ const Hero = () => {
       </div>
 
       {/* Logo mirrored on the right */}
-      <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-[60%] md:top-[42%] transform -translate-y-1/2 z-20">
+      <div
+        className="absolute right-4 sm:right-8 md:right-16 lg:right-24
+                   top-[60%] md:top-[42%] transform -translate-y-1/2 z-20"
+      >
         <div className="w-48 sm:w-64 md:w-80 lg:w-96">
           <img
             src="/logo.png"
@@ -65,7 +75,7 @@ const Hero = () => {
             relative overflow-hidden
           "
         >
-          {/* subtle inner glow */}
+          {/* inner glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl pointer-events-none" />
 
           <h1
@@ -121,4 +131,3 @@ const Hero = () => {
 }
 
 export default Hero
-
