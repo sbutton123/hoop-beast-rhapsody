@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-beast overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-beast">
       {/* subtle pulse grid */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -17,40 +17,35 @@ const Hero = () => {
         />
       </div>
 
-      {/* Left-side looping video – no card, fully transparent background */}
-      <div
-        className="absolute left-4 sm:left-8 md:left-16 lg:left-24
-                   top-[60%] md:top-[42%] transform -translate-y-1/2 z-20"
+      {/* ← YOUR VIDEO: absolutely positioned, transparent, with drop‑shadow filter */}
+      <video
+        className="
+          absolute
+          left-4 sm:left-8 md:left-16 lg:left-24
+          top-[60%] md:top-[42%]
+          transform -translate-y-1/2
+          w-40 sm:w-56 md:w-72 lg:w-80
+          rounded-2xl
+          filter drop-shadow-2xl
+          bg-transparent
+        "
+        style={{
+          objectFit: 'contain',
+          objectPosition: 'center 20%',
+          background: 'transparent',
+        }}
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-label="Demo hula hoop performance"
       >
-        <video
-          className="
-            block
-            w-40 sm:w-56 md:w-72 lg:w-80
-            rounded-2xl
-            shadow-xl
-            bg-transparent
-          "
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-label="Demo hula hoop performance"
-          style={{
-            objectFit: 'contain',
-            objectPosition: 'center 20%',
-            backgroundColor: 'transparent',
-          }}
-        >
-          <source src="/3hoopduckout.webm" type="video/webm" />
-          Your browser doesn’t support HTML5 video.
-        </video>
-      </div>
+        <source src="/3hoopduckout.webm" type="video/webm" />
+        Your browser doesn’t support HTML5 video.
+      </video>
 
       {/* Logo mirrored on the right */}
-      <div
-        className="absolute right-4 sm:right-8 md:right-16 lg:right-24
-                   top-[60%] md:top-[42%] transform -translate-y-1/2 z-20"
-      >
+      <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-[60%] md:top-[42%] transform -translate-y-1/2 z-20">
         <div className="w-48 sm:w-64 md:w-80 lg:w-96">
           <img
             src="/logo.png"
@@ -60,7 +55,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Hero text – glassmorphism overlay */}
+      {/* Hero text – floating glassmorphism overlay */}
       <div className="relative z-30 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div
           className="
@@ -75,7 +70,7 @@ const Hero = () => {
             relative overflow-hidden
           "
         >
-          {/* inner glow */}
+          {/* subtle inner glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl pointer-events-none" />
 
           <h1
