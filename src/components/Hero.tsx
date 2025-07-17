@@ -28,7 +28,7 @@ const Hero = () => {
         style={{ objectPosition: 'center 20%' }}
       >
         <source src="/3hoop.webm" type="video/webm" />
-        Your browser doesn’t support HTML5 video.
+        Your browser doesn't support HTML5 video.
       </video>
     </div>
   </div>
@@ -44,31 +44,43 @@ const Hero = () => {
     </div>
   </div>
 
-  {/* Hero text */}
-  <div className="relative z-30 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
-    <h1 className="font-bangers leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white animate-bounce-gentle">
-      UNLEASH YOUR<br />
-      <span className="text-black drop-shadow-md text-3xl sm:text-4xl md:text-5xl">
-        INNER
-      </span>{' '}
-      <span className="text-beast-orange text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-        BEAST
-      </span>
-    </h1>
+  {/* Hero text - floating glassmorphism overlay */}
+  <div className="relative z-30 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+    {/* Glassmorphism text container */}
+    <div className="backdrop-blur-md bg-gradient-to-br from-primary/10 via-primary/5 to-transparent 
+                    border border-white/10 rounded-3xl p-8 sm:p-12 
+                    shadow-2xl shadow-primary/20 
+                    hover:shadow-primary/30 transition-all duration-500
+                    text-center relative overflow-hidden">
+      
+      {/* Subtle inner glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl pointer-events-none" />
+      
+      <h1 className="relative font-bangers leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white 
+                     drop-shadow-lg animate-bounce-gentle">
+        UNLEASH YOUR<br />
+        <span className="text-white/80 drop-shadow-lg text-3xl sm:text-4xl md:text-5xl">
+          INNER
+        </span>{' '}
+        <span className="text-beast-orange drop-shadow-lg text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+          BEAST
+        </span>
+      </h1>
 
-    <p className="mt-6 text-base sm:text-lg md:text-xl text-white/90 font-inter font-light leading-relaxed">
-      Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness! Whether you’re brand new to hooping or ready to level up your skills, you’re in the right place. Dive into our tutorials, challenge yourself with workouts, or just get inspired by<br />
-      creative performances and hoop magic.<br />
-      Embrace your inner beast.<br />
-      Let’s hoop!
-    </p>
+      <p className="relative mt-6 text-base sm:text-lg md:text-xl text-white/95 font-inter font-light 
+                   leading-relaxed drop-shadow-sm max-w-3xl mx-auto">
+        Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness! Whether you're brand new to hooping or ready to level up your skills, you're in the right place. Dive into our tutorials, challenge yourself with workouts, or just get inspired by creative performances and hoop magic.
+        <br /><br />
+        <span className="text-beast-orange font-medium drop-shadow-md">Embrace your inner beast. Let's hoop!</span>
+      </p>
+    </div>
 
-    {/* secondary hoops image */}
-    <div className="mt-12">
+    {/* secondary hoops image - positioned below the glassmorphism box */}
+    <div className="mt-8 text-center">
       <img
         src="/lovable-uploads/aa66bb76-99ad-4824-9e6a-0edda4d38cba.png"
         alt="Hula hooping multiple hoops"
-        className="mx-auto w-40 sm:w-56 md:w-64 lg:w-72 h-auto opacity-90 animate-float"
+        className="mx-auto w-32 sm:w-40 md:w-48 lg:w-56 h-auto opacity-80 animate-float"
       />
     </div>
   </div>
