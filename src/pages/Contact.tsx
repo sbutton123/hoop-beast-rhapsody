@@ -1,5 +1,5 @@
 // src/pages/Contact.tsx
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import Navbar from '@/components/Navbar'
 import { Button } from '@/components/ui/button'
@@ -10,15 +10,6 @@ import { Textarea } from '@/components/ui/textarea'
 export default function Contact() {
   const [searchParams] = useSearchParams()
   const program = searchParams.get('program') || ''
-
-  // keep the message in state so it can be prefilled and edited
-  const [message, setMessage] = useState('')
-
-  useEffect(() => {
-    if (program) {
-      setMessage(`I’m interested in "${program}". Please tell me more…`)
-    }
-  }, [program])
 
   return (
     <>
@@ -40,36 +31,20 @@ export default function Contact() {
             {/* Netlify form hook */}
             <input type="hidden" name="form-name" value="contact" />
 
-            {/* honeypot */}
+            {/* Anti‑spam honeypot */}
             <p className="hidden">
               <Label>
                 Don’t fill this out if you’re human: <Input name="bot-field" />
               </Label>
             </p>
 
-            {/* keep program in the submission and use for subject */}
+            {/* If program is present, set the email subject */}
             {program && (
-              <>
-                <input type="hidden" name="program" value={program} />
-                <input
-                  type="hidden"
-                  name="_subject"
-                  value={`Booking request: ${program}`}
-                />
-              </>
-            )}
-
-            {/* Visible Program field */}
-            {program && (
-              <div>
-                <Label htmlFor="program">Program</Label>
-                <Input
-                  id="program"
-                  name="programDisplay"
-                  value={program}
-                  readOnly
-                />
-              </div>
+              <input
+                type="hidden"
+                name="_subject"
+                value={`Booking request: ${program}`}
+              />
             )}
 
             <div>
@@ -93,14 +68,25 @@ export default function Contact() {
               />
             </div>
 
+            {program && (
+              <div>
+                <Label htmlFor="program">Program</Label>
+                <Input
+                  id="program"
+                  name="program"
+                  value={program}
+                  readOnly
+                />
+              </div>
+            )}
+
             <div>
               <Label htmlFor="message">Message</Label>
               <Textarea
                 id="message"
                 name="message"
-                rows={6}
-                value={message}
-                onChange={(e) => setMessage(e.currentTarget.value)}
+                rows={4}
+                placeholder="How can I help you?"
               />
             </div>
 
@@ -114,7 +100,8 @@ export default function Contact() {
               Or{' '}
               <Link to="/" className="underline hover:text-primary">
                 back to home
-              </Link>.
+              </Link>
+              .
             </div>
           </form>
         </div>
