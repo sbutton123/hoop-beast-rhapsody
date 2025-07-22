@@ -2,7 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button }       from '@/components/ui/button';
+import { Button }           from '@/components/ui/button';
 
 export default function Programs() {
   const navigate = useNavigate();
@@ -15,7 +15,8 @@ export default function Programs() {
       title: 'Hoopin & Groovin with Greg & Shanda',
       description: `Shanda performs amazing hula hoop tricks and dazzles the crowd while Greg plays and sings classic rock songs with his acoustic guitar. They are a fun and dynamic duo and are guaranteed to impress and entertain!`,
       demoUrl: 'https://youtu.be/tKJ18SIWM_M',
-      type: 'demo',
+      image: '/lovable-uploads/hoopin-groovin.png', // ← replace with your actual image file
+      type: 'flyer',
     },
     {
       key: 'harvest',
@@ -23,7 +24,8 @@ export default function Programs() {
       description: `Kids will discover how every skill—just like a plant—starts small and needs sunshine (practice), water (learning), and the courage to fail (and try again) to truly grow. Through high‑energy hula‑hoop and playful juggling demos, fun hands‑on volunteer interactions, and inspiring songs, Ms. Button brings the “Plant a Seed, Read” theme to life.`,
       duration: '45 minutes',
       price: '$300 flat rate',
-      type: 'content',
+      image: '/lovable-uploads/hula-hoop-harvest.png', // ← replace with your actual image file
+      type: 'flyer',
     },
     {
       key: 'aeology',
@@ -31,7 +33,8 @@ export default function Programs() {
       description: `Join Ms. Button, your Hula‑Hoop‑ologist, for a 45‑minute interactive show that combines hula‑hooping, juggling, and archaeological discovery fun! Participants dig for “artifacts,” brush off buried juggling balls, and cheer on every “oops”—because practice makes growth! Perfect for kids ages 4–12.`,
       duration: '45 minutes',
       price: '$300 flat rate',
-      type: 'content',
+      image: '/lovable-uploads/hoop-ology.png', // ← replace with your actual image file
+      type: 'flyer',
     },
     {
       key: 'levelup',
@@ -102,7 +105,18 @@ export default function Programs() {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map(c => (
             <Card key={c.key} className="hover-lift flex flex-col h-full">
-              {/* video embed */}
+              {/* flyer image cards */}
+              {c.type === 'flyer' && (
+                <div className="aspect-[3/2] overflow-hidden rounded-t-lg">
+                  <img
+                    src={c.image}
+                    alt={c.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+
+              {/* video embed cards */}
               {c.type === 'video' && (
                 <div className="aspect-video overflow-hidden rounded-t-lg">
                   <iframe
@@ -116,11 +130,17 @@ export default function Programs() {
                 </div>
               )}
 
-              {/* demo card */}
-              {c.type === 'demo' && (
-                <CardContent className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bangers text-primary mb-3">{c.title}</h3>
-                  <p className="text-muted-foreground mb-6 flex-1">{c.description}</p>
+              <CardContent className="p-6 flex-1 flex flex-col">
+                <h3 className="text-xl font-bangers text-primary mb-3">
+                  {c.title}
+                </h3>
+
+                <p className="text-muted-foreground mb-4 flex-1">
+                  {c.description}
+                </p>
+
+                {/* flyer‑type: show Demo button if available, else details */}
+                {c.type === 'flyer' && c.demoUrl && (
                   <Button
                     as="a"
                     href={c.demoUrl}
@@ -129,67 +149,60 @@ export default function Programs() {
                   >
                     Watch Demo
                   </Button>
-                </CardContent>
-              )}
+                )}
 
-              {/* text‑only card */}
-              {c.type === 'content' && (
-                <CardContent className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bangers text-primary mb-3">{c.title}</h3>
-                  <p className="text-muted-foreground mb-4 flex-1">{c.description}</p>
-                  <p className="text-sm mb-2">
-                    <strong>Duration:</strong> {c.duration}
-                  </p>
-                  <p className="text-sm mb-6">
-                    <strong>Price:</strong> {c.price}
-                  </p>
-                </CardContent>
-              )}
-
-              {/* combined workshops card */}
-              {c.type === 'workshops' && (
-                <CardContent className="p-6 flex-1 flex flex-col space-y-6">
-                  <h3 className="text-xl font-bangers text-primary">
-                    Hula Hoop &amp; Juggling Workshops
-                  </h3>
-                  {/* Hula Hoop Making */}
-                  <div>
-                    <h4 className="font-medium mb-1">Hula Hoop Making Workshop</h4>
-                    <p className="text-muted-foreground mb-2">
-                      Each participant will design and decorate their very own
-                      custom hoop to take home. Includes short demo of hoop tricks,
-                      tubing selection guidance, and all materials.
+                {/* video‑type: show duration & price */}
+                {c.type === 'video' && (
+                  <div className="space-y-2 mb-4">
+                    <p className="text-sm">
+                      <strong>Duration:</strong> {c.duration}
                     </p>
                     <p className="text-sm">
-                      <strong>Duration:</strong> 1–2 hours
-                      <br />
-                      <strong>Price:</strong> $300 + $15/hoop (materials)
+                      <strong>Price:</strong> {c.price}
                     </p>
                   </div>
-                  {/* Juggling Ball Making */}
-                  <div>
-                    <h4 className="font-medium mb-1">Juggling Ball Making Workshop</h4>
-                    <p className="text-muted-foreground mb-2">
-                      Learn to craft your own 3‑ball juggling set and juggling scarfs
-                      to take home, plus a mini juggling lesson. All materials provided.
-                    </p>
-                    <p className="text-sm">
-                      <strong>Duration:</strong> 1–2 hours
-                      <br />
-                      <strong>Price:</strong> $300 (up to 25 participants)
-                    </p>
-                  </div>
-                </CardContent>
-              )}
+                )}
 
-              {/* enquire button */}
-              <CardContent className="p-6 pt-0 mt-auto">
-                <Button
-                  onClick={() => enquire(c.title)}
-                  className="btn-beast w-full"
-                >
-                  Enquire Now
-                </Button>
+                {/* combined workshops card */}
+                {c.type === 'workshops' && (
+                  <div className="space-y-6 flex-1">
+                    <div>
+                      <h4 className="font-medium">Hula Hoop Making Workshop</h4>
+                      <p className="text-muted-foreground">
+                        Each participant will design and decorate their own custom
+                        hoop to take home. Includes demo of hoop tricks, tubing
+                        guidance, and all materials.
+                      </p>
+                      <p className="text-sm">
+                        <strong>Duration:</strong> 1–2 hours
+                        <br />
+                        <strong>Price:</strong> $300 + $15/hoop
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium">Juggling Ball Making Workshop</h4>
+                      <p className="text-muted-foreground">
+                        Make your own 3‑ball juggling set plus scarfs. Includes mini
+                        lesson and all materials for up to 25 participants.
+                      </p>
+                      <p className="text-sm">
+                        <strong>Duration:</strong> 1–2 hours
+                        <br />
+                        <strong>Price:</strong> $300
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Enquire button */}
+                <div className="mt-6">
+                  <Button
+                    onClick={() => enquire(c.title)}
+                    className="btn-beast w-full"
+                  >
+                    Enquire Now
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
