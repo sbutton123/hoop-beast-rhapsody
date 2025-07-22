@@ -1,152 +1,179 @@
-// src/pages/Programs.tsx
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Card, CardContent } from '@/components/ui/card'
-import { Button }             from '@/components/ui/button'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+const flyers = [
+  {
+    key: "groovin",
+    title: "Hoopin & Groovin with Greg & Shanda",
+    image: "/lovable-uploads/hoopin&groovin.png",
+  },
+  {
+    key: "harvest",
+    title: "Hula Hoop Harvest: Plant a Skill, Watch it Grow",
+    image: "/lovable-uploads/hulahoopharvest.png",
+  },
+];
+
+const videoProgram = {
+  key: "beast-experience",
+  title: "The Hula Hoop Beast Experience",
+  description:
+    "This high‑energy 45‑minute interactive show is perfect for families and audiences of all ages. Performed to music, it features dazzling hula hoop tricks and crowd participation.",
+  duration: "45 minutes",
+  price: "$300 flat rate",
+  videoUrl: "https://www.youtube.com/embed/NHJKBceyUgk",
+};
+
+const workshops = [
+  {
+    key: "hoop-making",
+    title: "Hula Hoop Making Workshop",
+    image: "/lovable-uploads/hulahoopology.png",
+  },
+  {
+    key: "ball-making",
+    title: "Juggling Ball Making Workshop",
+    image: "/lovable-uploads/hulahoopandjugglingballs.png",
+  },
+];
 
 export default function Programs() {
-  const navigate = useNavigate()
-  const enquire = (title: string) =>
-    navigate(`/contact?program=${encodeURIComponent(title)}`)
-
-  const cards = [
-    {
-      key: 'groovin',
-      type: 'flyer',
-      title: 'Hoopin & Groovin with Greg & Shanda',
-      image: '/lovable-uploads/hoopin&groovin.png',
-      demoUrl: 'https://youtu.be/tKJ18SIWM_M',
-    },
-    {
-      key: 'harvest',
-      type: 'flyer',
-      title: 'Hula Hoop Harvest: Plant a Skill, Watch It Grow',
-      image: '/lovable-uploads/hulahoopharvest.png',
-    },
-    {
-      key: 'aeology',
-      type: 'flyer',
-      title: 'Hula‑Hoop‑ology: Dig Up Your Skills',
-      image: '/lovable-uploads/hulahoopology.png',
-    },
-    {
-      key: 'levelup',
-      type: 'video',
-      title: 'Level Up – 5 Rings of Gravity to Save Planet Earth!',
-      videoUrl: 'https://www.youtube.com/embed/PMy9erGocIE',
-      duration: '45 minutes',
-      price: '$300 flat rate',
-    },
-    {
-      key: 'beastexp',
-      type: 'video',
-      title: 'The Hula Hoop Beast Experience',
-      videoUrl: 'https://www.youtube.com/embed/NHJKBceyUgk',
-      duration: '45 minutes',
-      price: '$300 flat rate',
-    },
-    {
-      key: 'workshop',
-      type: 'flyer',
-      title: 'Workshops: Hoop & Juggle‑Ball Making',
-      image: '/lovable-uploads/hulahoopandjugglingballs.png',
-    },
-  ]
+  const navigate = useNavigate();
+  const enquire = (program: string) =>
+    navigate(`/contact?program=${encodeURIComponent(program)}`);
 
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <section className="bg-gradient-beast py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
+        <div className="max-w-3xl mx-auto text-center px-4">
+          <h1 className="font-bangers text-5xl text-white mb-6">
             BEAST PROGRAMS
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-lg text-white/90">
             Looking for a show or interactive experience? I offer exciting,
-            energizing programs for schools, libraries, parks, parties, and more
-            — custom-tailored to your audience. Let’s bring the Hula Hoop Beast to
-            your event!
+            energizing programs for schools, libraries, parks, parties, and
+            more — custom‑tailored to your audience. Let’s bring the Hula Hoop
+            Beast to your event!
           </p>
         </div>
       </section>
 
-      {/* Booking & Travel Policies */}
+      {/* Policies */}
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4">
           <div className="bg-card rounded-lg p-6 shadow-beast">
-            <h2 className="font-bangers text-2xl text-center mb-4">
+            <h2 className="text-2xl font-bangers text-center mb-4">
               Booking &amp; Travel Policies
             </h2>
-            <p className="text-center mb-3">
-              If multiple performances are booked, there is a $50 discount on each
-              program that is booked consecutively on the same date and in the same
-              area.
+            <p className="text-center mb-2">
+              • $50 off each program when you book multiple shows on the same
+              date &amp; area
             </p>
             <p className="text-center">
-              I charge a travel fee if traveling more than 50 miles from Gresham,
-              Oregon. For each mile over 50 miles to the destination, I charge $1. If
-              the distance exceeds 100 miles, the travel charge will be handled on
-              a case‑by‑case basis.
+              • $1/mile travel fee beyond 50 miles from Gresham, OR • 100+ miles
+              quoted case by case
             </p>
           </div>
         </div>
       </section>
 
-      {/* Cards Grid */}
+      {/* Top row: 2 Flyers */}
       <section className="pb-16">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cards.map((c) => (
-            <Card key={c.key} className="hover-lift flex flex-col h-full">
-              {/* Full‑bleed flyer or video */}
-              {c.type === 'flyer' ? (
-                <div className="aspect-[3/2] overflow-hidden rounded-t-lg">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {flyers.map((f) => (
+              <Card key={f.key} className="hover-lift flex flex-col h-full">
+                <div className="w-full overflow-hidden rounded-t-lg flex justify-center">
                   <img
-                    src={c.image}
-                    alt={c.title}
-                    className="w-full h-full object-cover"
+                    src={f.image}
+                    alt={f.title}
+                    className="w-full h-auto object-contain"
                   />
                 </div>
-              ) : (
-                <div className="aspect-video overflow-hidden rounded-t-lg">
-                  <iframe
-                    className="w-full h-full"
-                    src={c.videoUrl}
-                    title={c.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              )}
+                <CardContent className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-2xl font-bangers mb-4">{f.title}</h3>
+                  <div className="mt-auto">
+                    <Button
+                      onClick={() => enquire(f.title)}
+                      className="btn-beast w-full"
+                    >
+                      Enquire Now
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              {/* Buttons only—no extra text for flyers (the PNG has all your copy) */}
+      {/* Bottom row: video + 2 workshops */}
+      <section className="pb-20">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Beast Experience (video) */}
+            <Card className="hover-lift flex flex-col h-full">
+              <div className="aspect-video w-full overflow-hidden rounded-t-lg">
+                <iframe
+                  src={videoProgram.videoUrl}
+                  title={videoProgram.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
               <CardContent className="p-6 flex-1 flex flex-col">
-                {/* Demo button */}
-                {c.demoUrl && (
-                  <Button
-                    as="a"
-                    href={c.demoUrl}
-                    target="_blank"
-                    className="mb-4 w-full"
-                  >
-                    Watch Demo
-                  </Button>
-                )}
-
-                {/* Enquire Now */}
-                <div className="mt-auto">
-                  <Button
-                    onClick={() => enquire(c.title)}
-                    className="btn-beast w-full"
-                  >
-                    Enquire Now
-                  </Button>
-                </div>
+                <h3 className="text-2xl font-bangers mb-3">
+                  {videoProgram.title}
+                </h3>
+                <p className="flex-1 mb-4 text-muted-foreground">
+                  {videoProgram.description}
+                </p>
+                <p className="text-sm mb-2">
+                  <strong>Duration:</strong> {videoProgram.duration}
+                </p>
+                <p className="text-sm mb-4">
+                  <strong>Price:</strong> {videoProgram.price}
+                </p>
+                <Button
+                  onClick={() => enquire(videoProgram.title)}
+                  className="btn-beast w-full mt-auto"
+                >
+                  Enquire Now
+                </Button>
               </CardContent>
             </Card>
-          ))}
+
+            {/* Workshops */}
+            {workshops.map((w) => (
+              <Card key={w.key} className="hover-lift flex flex-col h-full">
+                <div className="w-full overflow-hidden rounded-t-lg flex justify-center">
+                  <img
+                    src={w.image}
+                    alt={w.title}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <CardContent className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-2xl font-bangers mb-4">{w.title}</h3>
+                  <div className="mt-auto">
+                    <Button
+                      onClick={() => enquire(w.title)}
+                      className="btn-beast w-full"
+                    >
+                      Enquire Now
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
