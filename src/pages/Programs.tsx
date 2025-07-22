@@ -1,3 +1,4 @@
+// src/pages/Programs.tsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,6 +11,7 @@ const flyers = [
     alt: "Hoopin & Groovin with Greg & Shanda flyer",
     duration: "45 min.",
     price: "$350",
+    demoUrl: "https://youtube.com/shorts/x0ullahvn8E",
   },
   {
     key: "harvest",
@@ -106,7 +108,15 @@ export default function Programs() {
                   <p className="text-center text-sm mb-4">
                     Program is {f.duration} &nbsp;Cost is {f.price}
                   </p>
-                  <div className="mt-auto">
+                  <div className="mt-auto space-y-2">
+                    {f.demoUrl && (
+                      <Button
+                        onClick={() => window.open(f.demoUrl, "_blank")}
+                        className="btn-beast-outline w-full"
+                      >
+                        Demo Video
+                      </Button>
+                    )}
                     <Button
                       onClick={() => enquire(f.key)}
                       className="btn-beast w-full"
