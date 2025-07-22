@@ -6,13 +6,26 @@ import { Button } from "@/components/ui/button";
 const flyers = [
   {
     key: "groovin",
-    title: "Hoopin & Groovin with Greg & Shanda",
     image: "/lovable-uploads/hoopin&groovin.png",
+    alt: "Hoopin & Groovin with Greg & Shanda flyer",
   },
   {
     key: "harvest",
-    title: "Hula Hoop Harvest: Plant a Skill, Watch it Grow",
     image: "/lovable-uploads/hulahoopharvest.png",
+    alt: "Hula Hoop Harvest flyer",
+  },
+];
+
+const secondRow = [
+  {
+    key: "ology",
+    image: "/lovable-uploads/hulahoopology.png",
+    alt: "Hula‑Hoop‑Ology: Dig Up Your Skills flyer",
+  },
+  {
+    key: "juggle-workshop",
+    image: "/lovable-uploads/hulahoopandjugglingballs.png",
+    alt: "Juggling Ball Making Workshop flyer",
   },
 ];
 
@@ -20,24 +33,11 @@ const videoProgram = {
   key: "beast-experience",
   title: "The Hula Hoop Beast Experience",
   description:
-    "This high‑energy 45‑minute interactive show is perfect for families and audiences of all ages. Performed to music, it features dazzling hula hoop tricks and crowd participation.",
+    "This high‑energy 45‑minute interactive show is perfect for families and audiences of all ages. Performed to music, it features dazzling hula hoop tricks and crowd participation. Shanda brings the fun, laughter, and movement — your crowd brings the energy!",
   duration: "45 minutes",
   price: "$300 flat rate",
-  videoUrl: "https://www.youtube.com/embed/NHJKBceyUgk",
+  videoUrl: "https://www.youtube.com/embed/LDlvHRzV3ss",
 };
-
-const workshops = [
-  {
-    key: "hoop-making",
-    title: "Hula Hoop Making Workshop",
-    image: "/lovable-uploads/hulahoopology.png",
-  },
-  {
-    key: "ball-making",
-    title: "Juggling Ball Making Workshop",
-    image: "/lovable-uploads/hulahoopandjugglingballs.png",
-  },
-];
 
 export default function Programs() {
   const navigate = useNavigate();
@@ -80,24 +80,26 @@ export default function Programs() {
         </div>
       </section>
 
-      {/* Top row: 2 Flyers */}
+      {/* Top row: 2 flyer cards */}
       <section className="pb-16">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {flyers.map((f) => (
-              <Card key={f.key} className="hover-lift flex flex-col h-full">
+              <Card
+                key={f.key}
+                className="hover-lift border border-gray-200 flex flex-col h-full"
+              >
                 <div className="w-full overflow-hidden rounded-t-lg flex justify-center">
                   <img
                     src={f.image}
-                    alt={f.title}
+                    alt={f.alt}
                     className="w-full h-auto object-contain"
                   />
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-2xl font-bangers mb-4">{f.title}</h3>
                   <div className="mt-auto">
                     <Button
-                      onClick={() => enquire(f.title)}
+                      onClick={() => enquire(f.key)}
                       className="btn-beast w-full"
                     >
                       Enquire Now
@@ -110,59 +112,26 @@ export default function Programs() {
         </div>
       </section>
 
-      {/* Bottom row: video + 2 workshops */}
-      <section className="pb-20">
+      {/* Second row: 2 cards (Hula‑Hoop‑Ology + Juggling Workshop) */}
+      <section className="pb-16">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Beast Experience (video) */}
-            <Card className="hover-lift flex flex-col h-full">
-              <div className="aspect-video w-full overflow-hidden rounded-t-lg">
-                <iframe
-                  src={videoProgram.videoUrl}
-                  title={videoProgram.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-              <CardContent className="p-6 flex-1 flex flex-col">
-                <h3 className="text-2xl font-bangers mb-3">
-                  {videoProgram.title}
-                </h3>
-                <p className="flex-1 mb-4 text-muted-foreground">
-                  {videoProgram.description}
-                </p>
-                <p className="text-sm mb-2">
-                  <strong>Duration:</strong> {videoProgram.duration}
-                </p>
-                <p className="text-sm mb-4">
-                  <strong>Price:</strong> {videoProgram.price}
-                </p>
-                <Button
-                  onClick={() => enquire(videoProgram.title)}
-                  className="btn-beast w-full mt-auto"
-                >
-                  Enquire Now
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Workshops */}
-            {workshops.map((w) => (
-              <Card key={w.key} className="hover-lift flex flex-col h-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {secondRow.map((f) => (
+              <Card
+                key={f.key}
+                className="hover-lift border border-gray-200 flex flex-col h-full"
+              >
                 <div className="w-full overflow-hidden rounded-t-lg flex justify-center">
                   <img
-                    src={w.image}
-                    alt={w.title}
+                    src={f.image}
+                    alt={f.alt}
                     className="w-full h-auto object-contain"
                   />
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-2xl font-bangers mb-4">{w.title}</h3>
                   <div className="mt-auto">
                     <Button
-                      onClick={() => enquire(w.title)}
+                      onClick={() => enquire(f.key)}
                       className="btn-beast w-full"
                     >
                       Enquire Now
@@ -172,6 +141,44 @@ export default function Programs() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Third row: Beast Experience video */}
+      <section className="pb-20">
+        <div className="max-w-3xl mx-auto px-4">
+          <Card className="hover-lift border border-gray-200 flex flex-col h-full">
+            <div className="aspect-video w-full overflow-hidden rounded-t-lg">
+              <iframe
+                src={videoProgram.videoUrl}
+                title={videoProgram.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+            <CardContent className="p-6 flex-1 flex flex-col">
+              <h3 className="text-2xl font-bangers mb-4">
+                {videoProgram.title}
+              </h3>
+              <p className="flex-1 mb-4 text-muted-foreground">
+                {videoProgram.description}
+              </p>
+              <p className="text-sm mb-2">
+                <strong>Duration:</strong> {videoProgram.duration}
+              </p>
+              <p className="text-sm mb-4">
+                <strong>Price:</strong> {videoProgram.price}
+              </p>
+              <Button
+                onClick={() => enquire(videoProgram.key)}
+                className="btn-beast w-full mt-auto"
+              >
+                Enquire Now
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>
