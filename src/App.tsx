@@ -22,7 +22,7 @@ function App() {
       <Navbar />
 
       {/* push the page content down below the sticky nav */}
-      <main className="pt-16">
+      <main className="pt-8">
         <Routes>
           {/* exact home route */}
           <Route path="/" element={<Index />} />
