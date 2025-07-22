@@ -15,7 +15,7 @@ export default function Programs() {
       title: 'Hoopin & Groovin with Greg & Shanda',
       description: `Shanda performs amazing hula hoop tricks and dazzles the crowd while Greg plays and sings classic rock songs with his acoustic guitar. They are a fun and dynamic duo and are guaranteed to impress and entertain!`,
       demoUrl: 'https://youtu.be/tKJ18SIWM_M',
-      image: '/lovable-uploads/hoopin-groovin.png', // ← replace with your actual image file
+      image: '/lovable-uploads/hoopin&groovin.png', // ← replace with your actual image file
       type: 'flyer',
     },
     {
@@ -30,7 +30,7 @@ export default function Programs() {
     {
       key: 'aeology',
       title: 'Hula‑Hoop‑ology: Dig Up Your Skills',
-      description: `Join Ms. Button, your Hula‑Hoop‑ologist, for a 45‑minute interactive show that combines hula‑hooping, juggling, and archaeological discovery fun! Participants dig for “artifacts,” brush off buried juggling balls, and cheer on every “oops”—because practice makes growth! Perfect for kids ages 4–12.`,
+      description: `Join Ms. Button, your hulahoopologist, for a 45‑minute interactive show that combines hula‑hooping, juggling, and archaeological discovery fun! Participants dig for “artifacts,” brush off buried juggling balls, and cheer on every “oops”—because practice makes growth! Perfect for kids ages 4–12.`,
       duration: '45 minutes',
       price: '$300 flat rate',
       image: '/lovable-uploads/hoop-ology.png', // ← replace with your actual image file
