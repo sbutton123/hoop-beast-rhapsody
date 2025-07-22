@@ -52,13 +52,13 @@ export default function Programs() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero */}
-      <section className="bg-gradient-beast py-20">
+      {/* Hero Section (reduced vertical padding) */}
+      <section className="bg-gradient-beast py-12">
         <div className="max-w-3xl mx-auto text-center px-4">
-          <h1 className="font-bangers text-5xl text-white mb-6">
+          <h1 className="font-bangers text-5xl text-white mb-4">
             BEAST PROGRAMS
           </h1>
-          <p className="text-lg text-white/90">
+          <p className="text-lg text-white/90 mb-6">
             Looking for a show or interactive experience? I offer exciting,
             energizing programs for schools, libraries, parks, parties, and
             more — custom‑tailored to your audience. Let’s bring the Hula Hoop
@@ -67,7 +67,7 @@ export default function Programs() {
         </div>
       </section>
 
-      {/* Policies */}
+      {/* Booking & Travel Policies */}
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4">
           <div className="bg-card rounded-lg p-6 shadow-beast">
@@ -93,7 +93,7 @@ export default function Programs() {
             {flyers.map((f) => (
               <Card
                 key={f.key}
-                className="hover-lift border bg-muted border-gray-200 flex flex-col h-full"
+                className="hover-lift border-2 border-gray-200 bg-muted flex flex-col h-full"
               >
                 <div className="w-full overflow-hidden rounded-t-lg flex justify-center">
                   <img
@@ -103,7 +103,6 @@ export default function Programs() {
                   />
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
-                  {/* Program length & cost */}
                   <p className="text-center text-sm mb-4">
                     Program is {f.duration} &nbsp;Cost is {f.price}
                   </p>
@@ -129,7 +128,7 @@ export default function Programs() {
             {secondRow.map((f) => (
               <Card
                 key={f.key}
-                className="hover-lift border bg-muted border-gray-200 flex flex-col h-full"
+                className="hover-lift border-2 border-gray-200 bg-muted flex flex-col h-full"
               >
                 <div className="w-full overflow-hidden rounded-t-lg flex justify-center">
                   <img
@@ -139,7 +138,6 @@ export default function Programs() {
                   />
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
-                  {/* only show length & cost if provided */}
                   {f.duration && f.price && (
                     <p className="text-center text-sm mb-4">
                       Program is {f.duration} &nbsp;Cost is {f.price}
@@ -163,7 +161,7 @@ export default function Programs() {
       {/* Third row: Beast Experience video */}
       <section className="pb-20">
         <div className="max-w-3xl mx-auto px-4">
-          <Card className="hover-lift border bg-muted border-gray-200 flex flex-col h-full">
+          <Card className="hover-lift border-2 border-gray-200 bg-muted flex flex-col h-full">
             <div className="aspect-video w-full overflow-hidden rounded-t-lg">
               <iframe
                 src={videoProgram.videoUrl}
