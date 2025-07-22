@@ -53,12 +53,12 @@ export default function Programs() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section (reduced vertical padding) */}
-      <section className="bg-gradient-beast py-12">
+      <section className="bg-gradient-beast py-8">
         <div className="max-w-3xl mx-auto text-center px-4">
           <h1 className="font-bangers text-5xl text-white mb-4">
             BEAST PROGRAMS
           </h1>
-          <p className="text-lg text-white/90 mb-6">
+          <p className="text-lg text-white/90 mb-4">
             Looking for a show or interactive experience? I offer exciting,
             energizing programs for schools, libraries, parks, parties, and
             more — custom‑tailored to your audience. Let’s bring the Hula Hoop
@@ -67,8 +67,8 @@ export default function Programs() {
         </div>
       </section>
 
-      {/* Booking & Travel Policies */}
-      <section className="py-12">
+      {/* Booking & Travel Policies (tighter spacing) */}
+      <section className="py-8">
         <div className="max-w-4xl mx-auto px-4">
           <div className="bg-card rounded-lg p-6 shadow-beast">
             <h2 className="text-2xl font-bangers text-center mb-4">
