@@ -8,11 +8,15 @@ const flyers = [
     key: "groovin",
     image: "/lovable-uploads/hoopin&groovin.png",
     alt: "Hoopin & Groovin with Greg & Shanda flyer",
+    duration: "45 min.",
+    price: "$350",
   },
   {
     key: "harvest",
     image: "/lovable-uploads/hulahoopharvest.png",
     alt: "Hula Hoop Harvest flyer",
+    duration: "45 min.",
+    price: "$300",
   },
 ];
 
@@ -21,6 +25,8 @@ const secondRow = [
     key: "ology",
     image: "/lovable-uploads/hulahoopology.png",
     alt: "Hula‑Hoop‑Ology: Dig Up Your Skills flyer",
+    duration: "45 min.",
+    price: "$300",
   },
   {
     key: "juggle-workshop",
@@ -87,7 +93,7 @@ export default function Programs() {
             {flyers.map((f) => (
               <Card
                 key={f.key}
-                className="hover-lift border border-gray-200 flex flex-col h-full"
+                className="hover-lift border bg-muted border-gray-200 flex flex-col h-full"
               >
                 <div className="w-full overflow-hidden rounded-t-lg flex justify-center">
                   <img
@@ -97,6 +103,10 @@ export default function Programs() {
                   />
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
+                  {/* Program length & cost */}
+                  <p className="text-center text-sm mb-4">
+                    Program is {f.duration} &nbsp;Cost is {f.price}
+                  </p>
                   <div className="mt-auto">
                     <Button
                       onClick={() => enquire(f.key)}
@@ -112,14 +122,14 @@ export default function Programs() {
         </div>
       </section>
 
-      {/* Second row: 2 cards (Hula‑Hoop‑Ology + Juggling Workshop) */}
+      {/* Second row: 2 cards */}
       <section className="pb-16">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {secondRow.map((f) => (
               <Card
                 key={f.key}
-                className="hover-lift border border-gray-200 flex flex-col h-full"
+                className="hover-lift border bg-muted border-gray-200 flex flex-col h-full"
               >
                 <div className="w-full overflow-hidden rounded-t-lg flex justify-center">
                   <img
@@ -129,6 +139,12 @@ export default function Programs() {
                   />
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
+                  {/* only show length & cost if provided */}
+                  {f.duration && f.price && (
+                    <p className="text-center text-sm mb-4">
+                      Program is {f.duration} &nbsp;Cost is {f.price}
+                    </p>
+                  )}
                   <div className="mt-auto">
                     <Button
                       onClick={() => enquire(f.key)}
@@ -147,7 +163,7 @@ export default function Programs() {
       {/* Third row: Beast Experience video */}
       <section className="pb-20">
         <div className="max-w-3xl mx-auto px-4">
-          <Card className="hover-lift border border-gray-200 flex flex-col h-full">
+          <Card className="hover-lift border bg-muted border-gray-200 flex flex-col h-full">
             <div className="aspect-video w-full overflow-hidden rounded-t-lg">
               <iframe
                 src={videoProgram.videoUrl}
