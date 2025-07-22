@@ -53,7 +53,7 @@ export default function Programs() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section (reduced vertical padding) */}
-      <section className="bg-gradient-beast py-8">
+      <section className="bg-gradient-beast py-6">
         <div className="max-w-3xl mx-auto text-center px-4">
           <h1 className="font-bangers text-5xl text-white mb-4">
             BEAST PROGRAMS
