@@ -110,13 +110,13 @@ export default function Programs() {
                   </p>
                   <div className="mt-auto space-y-2">
                     {f.demoUrl && (
-                      <Button
-                        onClick={() => window.open(f.demoUrl, "_blank")}
-                        className="btn-beast-outline w-full"
-                      >
-                        Demo Video
-                      </Button>
-                    )}
+  <Button
+    onClick={() => window.open(f.demoUrl, "_blank")}
+    className="btn-beast w-full"
+  >
+    Demo Video
+  </Button>
+)}
                     <Button
                       onClick={() => enquire(f.key)}
                       className="btn-beast w-full"
