@@ -5,10 +5,10 @@ import { Card } from "@/components/ui/card";
 const videos = [
   { id: 1, videoUrl: "https://www.youtube.com/embed/U76PMiitJ1I" },
   { id: 2, videoUrl: "https://www.youtube.com/embed/_PRQgxwIXFs" },
-  { id: 3, videoUrl: "https://youtube.com/shorts/u3TYbxcSxPU?feature=share" },
+  { id: 3, videoUrl: "https://www.youtube.com/embed/u3TYbxcSxPU" },  // 👈 updated!
   { id: 4, videoUrl: "https://www.youtube.com/embed/x0ullahvn8E" },
   { id: 5, videoUrl: "https://www.youtube.com/embed/0_OMZ-YeD0o" },
-  { id: 6, videoUrl: "https://www.youtube.com/embed/U76PMiitJ1I" } // swap in any other
+  { id: 6, videoUrl: "https://www.youtube.com/embed/U76PMiitJ1I" }
 ];
 
 const Showcase = () => {
