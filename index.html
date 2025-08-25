@@ -1,83 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hula Hoop Beast – Unleash Your Inner Beast</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #8f00ff, #ff69b4);
-      color: white;
-      overflow: hidden;
-    }
-
-    header {
-      padding: 1rem;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    header h1 span {
-      color: black;
-      text-shadow: 0 0 5px white;
-    }
-
-    .hero-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .overlay {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      margin-top: 30vh;
-    }
-
-    .overlay h2 {
-      font-size: 2rem;
-      background-color: rgba(0, 0, 0, 0.4);
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-    }
-
-    @media (max-width: 768px) {
-      .overlay h2 {
-        font-size: 1.5rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hula Hoop Beast</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" />
+    <style>
+      body {
+        background: linear-gradient(to bottom right, #b380f0, #f8e8ff);
+        color: #2c174e;
+        font-family: Arial, sans-serif;
       }
-    }
-  </style>
-</head>
-<body>
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center text-center px-4">
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <!-- Optional background effects could go here -->
+      </div>
+      <div class="relative z-10 max-w-3xl">
+        <h1 class="text-5xl font-extrabold mb-6 text-white drop-shadow-lg">
+          <span class="text-black bg-white bg-opacity-70 px-4 py-2 rounded-xl">UNLEASH YOUR INNER BEAST</span>
+        </h1>
+        <div class="mb-6">
+          <a href="#moves" class="inline-block bg-purple-500 text-white text-lg px-6 py-3 rounded-lg shadow-lg hover:bg-purple-700 transition-all duration-200">Watch Moves</a>
+        </div>
+        <!-- Video Embed -->
+        <div class="max-w-[300px] mx-auto rounded-2xl overflow-hidden shadow-xl border-2 border-purple-300">
+          <video autoplay muted loop playsinline class="w-full h-auto">
+            <source src="assets/3hoopduckout.webm" type="video/webm" />
+            <source src="assets/3hoopduckout.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
 
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="src/assets/3hoopduckout.webm" type="video/webm" />
-    <source src="src/assets/3hoop-duck-out-mobile.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-
-  <header>
-    <h1>Unleash Your <span>Inner</span> Beast</h1>
-  </header>
-
-  <div class="overlay">
-    <h2>Hula Hoop Training, Tutorials & Performances</h2>
-  </div>
-
-</body>
+    <!-- Optional: Add more sections below -->
+    <footer class="text-center text-sm text-white bg-purple-500 py-4">
+      &copy; 2025 Hula Hoop Beast. All rights reserved.
+    </footer>
+  </body>
 </html>
