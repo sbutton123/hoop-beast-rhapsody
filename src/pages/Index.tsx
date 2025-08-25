@@ -1,3 +1,4 @@
+// src/pages/Index.tsx
 import Hero from '@/components/Hero';
 
 const Index = () => {
