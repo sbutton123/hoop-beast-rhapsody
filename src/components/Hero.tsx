@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 const Hero = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-beast">
-      {/* Background pulse grid */}
+      {/* subtle pulse grid */}
       <div className="absolute inset-0 opacity-10">
         <div
           className="
@@ -17,7 +17,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Your looped webm video */}
+      {/* YOUR VIDEO: fixed position and size like original */}
       <video
         className="
           absolute
@@ -40,12 +40,11 @@ const Hero = () => {
         playsInline
         aria-label="Demo hula hoop performance"
       >
-        <source src="/assets/3hoopduckout.webm" type="video/webm" />
-        <source src="/assets/3hoopduckout.mp4" type="video/mp4" />
+        <source src="/3hoopduckout.webm" type="video/webm" />
         Your browser doesn’t support HTML5 video.
       </video>
 
-      {/* Logo on the right */}
+      {/* Logo mirrored on the right */}
       <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-[60%] md:top-[42%] transform -translate-y-1/2 z-20">
         <div className="w-48 sm:w-64 md:w-80 lg:w-96">
           <img
@@ -56,7 +55,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Hero text */}
+      {/* Hero text – glassmorphism card */}
       <div className="relative z-30 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div
           className="
@@ -71,6 +70,7 @@ const Hero = () => {
             relative overflow-hidden
           "
         >
+          {/* subtle inner glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl pointer-events-none" />
 
           <h1
@@ -112,7 +112,7 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* Secondary hoop image */}
+        {/* secondary hoops image */}
         <div className="mt-8 text-center">
           <img
             src="/lovable-uploads/aa66bb76-99ad-4824-9e6a-0edda4d38cba.png"
