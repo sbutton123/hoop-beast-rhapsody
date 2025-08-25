@@ -1,159 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hula Hoop Beast</title>
-  <style>
-    :root {
-      --primary: #a97ef9;
-      --secondary: #d682f4;
-      --accent: #78aaff;
-      --text-dark: #2c174e;
-      --background-start: #f3eaff;
-      --background-end: #ede4ff;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, var(--background-start), var(--background-end));
-      color: var(--text-dark);
-      overflow-x: hidden;
-    }
-    nav {
-      background: var(--secondary);
-      text-align: center;
-      padding: 1rem;
-    }
-    nav a {
-      margin: 0 .5rem;
-      padding: .75rem 1.5rem;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: .5rem;
-      transition: background .3s, transform .2s;
-    }
-    nav a:hover {
-      background: var(--primary);
-      transform: translateY(-2px);
-    }
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem;
-    }
-    .hero-text {
-      flex: 1 1 50%;
-      padding: 1rem;
-    }
-    .hero-text h1 {
-      font-size: 3rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    .hero-text p {
-      font-size: 1.3rem;
-    }
-    .hero-video {
-      flex: 1 1 40%;
-      max-width: 400px;
-      padding: 1rem;
-    }
-    .hero-video video {
-      width: 100%;
-      border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .card-row {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .card {
-      background: #fff;
-      border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      width: 300px;
-      text-align: center;
-      transition: transform .2s;
-    }
-    .card:hover {
-      transform: scale(1.03);
-    }
-    .card img {
-      width: 100%;
-      border-radius: .5rem;
-      margin-bottom: 1rem;
-    }
-    footer {
-      background: var(--primary);
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-      }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hula Hoop Beast</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Add any Tailwind CDN if you're not using build tools -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-  <div class="hero">
-    <div class="hero-text">
-      <h1>UNLEASH YOUR <span style="color:black;text-shadow:0 0 5px white;">INNER</span> BEAST</h1>
-      <p>Hula hooping like you've never seen it before. Strength. Style. Skill.</p>
-    </div>
-    <div class="hero-video">
-      <video autoplay muted loop playsinline>
-        <source src="src/assets/3hoopduckout.webm" type="video/webm">
-        <source src="src/assets/3hoopduckout.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+  <body class="bg-gradient-to-b from-purple-900 via-black to-purple-900 min-h-screen text-white font-inter">
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-md">
+      <nav class="flex items-center justify-between max-w-6xl mx-auto px-4 py-3">
+        <a href="/" class="text-2xl font-bold text-beast-orange font-bangers">Hula Hoop Beast</a>
+        <div class="space-x-6 text-sm sm:text-base">
+          <a href="/tutorials" class="hover:text-beast-orange">Tutorials</a>
+          <a href="/workouts" class="hover:text-beast-orange">Workouts</a>
+          <a href="/programs" class="hover:text-beast-orange">Programs</a>
+          <a href="/products" class="hover:text-beast-orange">Products</a>
+          <a href="/about" class="hover:text-beast-orange">About</a>
+          <a href="/contact" class="hover:text-beast-orange">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen pt-24 px-4 sm:px-8 overflow-hidden">
+      <!-- BACKGROUND GRID -->
+      <div class="absolute inset-0 opacity-10 pointer-events-none z-0">
+        <div
+          class="absolute inset-0 bg-white/5 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:60px_60px] animate-pulse"
+        ></div>
+      </div>
+
+      <!-- HOOP VIDEO (right side) -->
+      <video
+        class="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-[60%] md:top-[42%] transform -translate-y-1/2 w-40 sm:w-56 md:w-72 lg:w-80 rounded-2xl filter drop-shadow-2xl bg-transparent z-20"
+        style="object-fit: contain; object-position: center 20%; background: transparent"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-label="Demo hula hoop performance"
+      >
+        <source src="/assets/3hoopduckout.webm" type="video/webm" />
+        <source src="/assets/3hoopduckout.mp4" type="video/mp4" />
+        Your browser doesn’t support HTML5 video.
       </video>
-    </div>
-  </div>
 
-  <section>
-    <h2 style="text-align:center;color:var(--accent);margin-bottom:2rem;">Programs & Highlights</h2>
-    <div class="card-row">
-      <div class="card">
-        <img src="images/hoop-classic.png" alt="Classic Rock Hooping">
-        <h3>Hoopin' & Groovin'</h3>
-        <p>A high-energy fusion of hula hooping and classic rock with Greg on guitar and Shanda on hoops.</p>
+      <!-- LOGO IMAGE (left side) -->
+      <div class="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-[60%] md:top-[42%] transform -translate-y-1/2 z-20">
+        <img
+          src="/logo.png"
+          alt="Hula Hoop Beast logo"
+          class="w-48 sm:w-64 md:w-80 lg:w-96 h-auto block"
+        />
       </div>
-      <div class="card">
-        <img src="images/hoop-5rings.png" alt="5 Rings of Gravity Show">
-        <h3>5 Rings of Gravity</h3>
-        <p>Kids save the planet through interactive hula hoop missions. Fun, educational, unforgettable!</p>
-      </div>
-    </div>
-  </section>
 
-  <footer>
-    &copy; 2025 Hula Hoop Beast. All rights reserved.
-  </footer>
-</body>
+      <!-- HERO TEXT -->
+      <div class="relative z-30 max-w-4xl mx-auto pt-16 text-center">
+        <div
+          class="backdrop-blur-md bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl hover:shadow-primary/30 transition-all duration-500"
+        >
+          <h1 class="font-bangers text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-lg animate-bounce-gentle">
+            UNLEASH YOUR <br />
+            <span class="text-white/80 drop-shadow-lg text-3xl sm:text-4xl md:text-5xl">INNER</span>
+            <span class="text-beast-orange drop-shadow-lg text-5xl sm:text-6xl md:text-7xl lg:text-8xl">BEAST</span>
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg md:text-xl text-white/95 font-light leading-relaxed drop-shadow-sm max-w-3xl mx-auto">
+            Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness!
+            Whether you're brand new to hooping or ready to level up your skills, you're in the right place.
+            Dive into our tutorials, challenge yourself with workouts, or just get inspired by creative performances and hoop magic.
+            <br /><br />
+            <span class="text-beast-orange font-medium drop-shadow-md">Embrace your inner beast. Let's hoop!</span>
+          </p>
+        </div>
+
+        <!-- FLOATING HOOP IMAGE -->
+        <div class="mt-8">
+          <img
+            src="/lovable-uploads/aa66bb76-99ad-4824-9e6a-0edda4d38cba.png"
+            alt="Multiple hoops floating"
+            class="mx-auto w-32 sm:w-40 md:w-48 lg:w-56 h-auto opacity-80 animate-float"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
