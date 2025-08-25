@@ -1,73 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- ⚡️ Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G‑LZ8NEVEJPY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G‑LZ8NEVEJPY', { page_path: window.location.pathname });
-    </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hula Hoop Beast – Unleash Your Inner Beast</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #8f00ff, #ff69b4);
+      color: white;
+      overflow: hidden;
+    }
 
-    <!-- Required meta tags -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    header {
+      padding: 1rem;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
 
-    <!-- Primary SEO Meta Tags -->
-    <title>Hula Hoop Beast – Unleash Your Inner Beast with Dynamic Hoop Workouts</title>
-    <meta
-      name="description"
-      content="Hula Hoop Beast offers tutorials, workouts, and performance inspiration to ignite your inner strength and flow. Dive into hoop magic today!"
-    />
-    <link rel="canonical" href="https://hulahoopbeast.com/" />
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hulahoopbeast.com/" />
-    <meta property="og:title" content="Hula Hoop Beast – Unleash Your Inner Beast" />
-    <meta
-      property="og:description"
-      content="Transform your fitness journey with dynamic hula hoop tutorials, workouts & performances."
-    />
-    <meta property="og:image" content="https://hulahoopbeast.com/og-image.png" />
+    header h1 span {
+      color: black;
+      text-shadow: 0 0 5px white;
+    }
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://hulahoopbeast.com/" />
-    <meta name="twitter:title" content="Hula Hoop Beast – Unleash Your Inner Beast" />
-    <meta
-      name="twitter:description"
-      content="Transform your fitness journey with dynamic hula hoop tutorials, workouts & performances."
-    />
-    <meta name="twitter:image" content="https://hulahoopbeast.com/og-image.png" />
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      z-index: -1;
+    }
 
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/logo.png" />
+    .overlay {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-top: 30vh;
+    }
 
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="/index.css" />
-  </head>
+    .overlay h2 {
+      font-size: 2rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+    }
 
-  <body>
-    <!-- React mount point -->
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    @media (max-width: 768px) {
+      .overlay h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
 
-    <!--
-      Hidden static form for Netlify build‑time detection.
-      Netlify will see this at build time, hook up the backend,
-      and then your React form (in Contact.tsx) will submit into it.
-    -->
-    <form name="contact" method="POST" data-netlify="true" hidden>
-      <!-- required hidden input -->
-      <input type="hidden" name="form-name" value="contact" />
-      <!-- matching field names -->
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-    </form>
-  </body>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="src/assets/3hoopduckout.webm" type="video/webm" />
+    <source src="src/assets/3hoop-duck-out-mobile.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <header>
+    <h1>Unleash Your <span>Inner</span> Beast</h1>
+  </header>
+
+  <div class="overlay">
+    <h2>Hula Hoop Training, Tutorials & Performances</h2>
+  </div>
+
+</body>
 </html>
