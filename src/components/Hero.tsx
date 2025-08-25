@@ -1,11 +1,10 @@
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import threeHoopDuckOut from '@/assets/3hoopduckout.webm'
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-beast">
-      {/* subtle pulse grid */}
+      {/* Background pulse grid */}
       <div className="absolute inset-0 opacity-10">
         <div
           className="
@@ -18,7 +17,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Hula hoop video */}
+      {/* Your looped webm video */}
       <video
         className="
           absolute
@@ -41,7 +40,8 @@ const Hero = () => {
         playsInline
         aria-label="Demo hula hoop performance"
       >
-        <source src={threeHoopDuckOut} type="video/webm" />
+        <source src="/assets/3hoopduckout.webm" type="video/webm" />
+        <source src="/assets/3hoopduckout.mp4" type="video/mp4" />
         Your browser doesn’t support HTML5 video.
       </video>
 
@@ -56,7 +56,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Hero text box */}
+      {/* Hero text */}
       <div className="relative z-30 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div
           className="
@@ -71,7 +71,6 @@ const Hero = () => {
             relative overflow-hidden
           "
         >
-          {/* inner glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl pointer-events-none" />
 
           <h1
@@ -113,7 +112,7 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* secondary hoop image */}
+        {/* Secondary hoop image */}
         <div className="mt-8 text-center">
           <img
             src="/lovable-uploads/aa66bb76-99ad-4824-9e6a-0edda4d38cba.png"
