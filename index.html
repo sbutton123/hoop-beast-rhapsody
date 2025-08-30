@@ -1,70 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- ⚡️ Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G‑LZ8NEVEJPY"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ8NEVEJPY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G‑LZ8NEVEJPY', { page_path: window.location.pathname });
+      gtag('config', 'G-LZ8NEVEJPY', { page_path: window.location.pathname });
     </script>
 
-    <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary SEO Meta Tags -->
     <title>Hula Hoop Beast – Unleash Your Inner Beast with Dynamic Hoop Workouts</title>
-    <meta
-      name="description"
-      content="Hula Hoop Beast offers tutorials, workouts, and performance inspiration to ignite your inner strength and flow. Dive into hoop magic today!"
-    />
+    <meta name="description" content="Hula Hoop Beast offers tutorials, workouts, and performance inspiration to ignite your inner strength and flow. Dive into hoop magic today!" />
     <link rel="canonical" href="https://hulahoopbeast.com/" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hulahoopbeast.com/" />
     <meta property="og:title" content="Hula Hoop Beast – Unleash Your Inner Beast" />
-    <meta
-      property="og:description"
-      content="Transform your fitness journey with dynamic hula hoop tutorials, workouts & performances."
-    />
+    <meta property="og:description" content="Transform your fitness journey with dynamic hula hoop tutorials, workouts & performances." />
     <meta property="og:image" content="https://hulahoopbeast.com/og-image.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://hulahoopbeast.com/" />
     <meta name="twitter:title" content="Hula Hoop Beast – Unleash Your Inner Beast" />
-    <meta
-      name="twitter:description"
-      content="Transform your fitness journey with dynamic hula hoop tutorials, workouts & performances."
-    />
+    <meta name="twitter:description" content="Transform your fitness journey with dynamic hula hoop tutorials, workouts & performances." />
     <meta name="twitter:image" content="https://hulahoopbeast.com/og-image.png" />
 
     <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/logo.png" />
-
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="/index.css" />
+    <!-- DO NOT link /index.css here in Vite. CSS is imported in src/main.tsx -->
   </head>
 
   <body>
-    <!-- React mount point -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!--
-      Hidden static form for Netlify build‑time detection.
-      Netlify will see this at build time, hook up the backend,
-      and then your React form (in Contact.tsx) will submit into it.
-    -->
+    <!-- Netlify form detection -->
     <form name="contact" method="POST" data-netlify="true" hidden>
-      <!-- required hidden input -->
       <input type="hidden" name="form-name" value="contact" />
-      <!-- matching field names -->
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>
