@@ -36,7 +36,7 @@ const Hero = () => {
               )}
             </div>
 
-            {/* Middle: Text + image under paragraph */}
+            {/* Middle: Text + optional image under paragraph */}
             <div className="text-center md:col-span-1">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
                 UNLEASH YOUR <span className="text-orange-400">INNER BEAST</span>
@@ -49,12 +49,13 @@ const Hero = () => {
                 Embrace your inner beast. Let’s hoop!
               </p>
 
-              {/* Image under the paragraph */}
-              <img
-                src="/hulahooping1.png"     // <-- upload this file to /public (see steps below)
-                alt="Hula Hoop Beast"
+              {/* Example placeholder image under paragraph */}
+              {/* Replace /hero-under.jpg with your own file uploaded to /public */}
+              {/* <img
+                src="/hero-under.jpg"
+                alt="Hula Hoop Beast action"
                 className="mt-6 mx-auto w-64 md:w-80 rounded-lg shadow-lg"
-              />
+              /> */}
             </div>
 
             {/* Right: Logo */}
@@ -62,7 +63,10 @@ const Hero = () => {
               <img
                 src="/logo.png"
                 alt="Hula Hoop Beast Logo"
-                className="w-40 md:w-56 drop-shadow-lg"
+                className="max-w-full h-auto drop-shadow-lg"
+                style={{ width: 'clamp(12rem, 18vw, 24rem)' }}
+                loading="eager"
+                decoding="async"
               />
             </div>
 
