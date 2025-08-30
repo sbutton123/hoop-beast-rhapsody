@@ -1,134 +1,54 @@
-import { Play, Clock, Star, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+// src/pages/Tutorials.tsx
 
 const Tutorials = () => {
-  const tutorials = [
-    {
-      id: 1,
-      title: "Beast Basics: Your First Hoop",
-      description: "Master the fundamentals and get your hoop spinning like a pro",
-      duration: "15 min",
-      difficulty: "Beginner",
-      rating: 4.9,
-      category: "Basics"
-    },
-    {
-      id: 2,
-      title: "Flow State Mastery",
-      description: "Advanced techniques for seamless transitions and fluid movements",
-      duration: "25 min",
-      difficulty: "Advanced",
-      rating: 4.8,
-      category: "Flow"
-    },
-    {
-      id: 3,
-      title: "Core Beast Workout",
-      description: "Intense core-focused hoop routine for maximum results",
-      duration: "30 min",
-      difficulty: "Intermediate",
-      rating: 4.9,
-      category: "Fitness"
-    },
-    {
-      id: 4,
-      title: "Dance Fusion Beast",
-      description: "Combine dance moves with hoop flow for an explosive routine",
-      duration: "20 min",
-      difficulty: "Intermediate",
-      rating: 4.7,
-      category: "Dance"
-    },
-    {
-      id: 5,
-      title: "Beast Strength Training",
-      description: "Build power and endurance with targeted hoop exercises",
-      duration: "35 min",
-      difficulty: "Advanced",
-      rating: 4.8,
-      category: "Strength"
-    },
-    {
-      id: 6,
-      title: "Flexibility & Flow",
-      description: "Improve flexibility while maintaining perfect hoop control",
-      duration: "22 min",
-      difficulty: "Beginner",
-      rating: 4.6,
-      category: "Flexibility"
-    }
-  ];
-
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty) {
-      case 'Beginner':
-        return 'bg-green-100 text-green-800';
-      case 'Intermediate':
-        return 'bg-yellow-100 text-yellow-800';
-      case 'Advanced':
-        return 'bg-red-100 text-red-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="bg-gradient-beast py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-bangers text-5xl md:text-6xl text-white mb-6">
+          <h1 className="font-bangers text-5xl md:text-6xl text-white mb-4">
             BEAST TUTORIALS
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Ready to level up? Start with beginner tricks or jump into more advanced skills — all broken down step-by-step. You’ll also learn how to make your own hoops, keep them in top shape, and become unstoppable. Get spinning, Beast!
+          <p className="text-white/90 max-w-2xl mx-auto text-lg">
+            We’re polishing the Tutorials section. Check back soon for beginner tricks,
+            advanced flow, hoop building, and more.
           </p>
-                  </div>
+        </div>
       </section>
 
-      {/* Tutorials Grid */}
+      {/* Coming Soon Card */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {tutorials.map((tutorial) => (
-              <Card key={tutorial.id} className="hover-lift shadow-lg hover:shadow-xl shadow-beast">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(tutorial.difficulty)}`}>
-                      {tutorial.difficulty}
-                    </span>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Star className="h-4 w-4 text-yellow-500 mr-1" />
-                      {tutorial.rating}
-                    </div>
-                  </div>
-                  <CardTitle className="font-bangers text-xl text-gradient-beast">
-                    {tutorial.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-4">
-                    {tutorial.description}
-                  </CardDescription>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Clock className="h-4 w-4 mr-1" />
-                      {tutorial.duration}
-                    </div>
-                    <Button variant="outline" size="sm">
-                      Watch Now
-                      <ChevronRight className="ml-1 h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border bg-card shadow-lg shadow-beast">
+            <div className="p-8 text-center">
+              <h2 className="font-bangers text-4xl mb-3 text-gradient-beast">
+                Coming Soon
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                The Tutorials page isn’t ready yet, but it’s in the works. In the meantime,
+                feel free to explore the rest of Hula Hoop Beast.
+              </p>
+
+              <div className="mt-6 flex items-center justify-center gap-3">
+                <a
+                  href="/"
+                  className="inline-block rounded-full border px-5 py-2 text-sm"
+                >
+                  ← Back to Home
+                </a>
+                <a
+                  href="/programs"
+                  className="inline-block rounded-full border px-5 py-2 text-sm"
+                >
+                  View Programs
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Tutorials;
+export default Tutorials
