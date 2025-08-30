@@ -5,8 +5,11 @@ const Hero = () => {
   const [videoError, setVideoError] = useState(false)
 
   return (
-    <section className="relative min-h-screen bg-gradient-beast overflow-hidden">
-      {/* Background video with poster + graceful fallback */}
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Background gradient as a base layer */}
+      <div className="absolute inset-0 bg-gradient-beast" aria-hidden="true" />
+
+      {/* Video layer */}
       {!videoError ? (
         <video
           autoPlay
@@ -14,9 +17,9 @@ const Hero = () => {
           loop
           playsInline
           preload="metadata"
-          poster="/logo.png"  // swap to hero-poster.jpg if you add one
+          poster="/placeholder.svg"            // file exists in /public
           onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover z-[-1]"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source src="/3hoopduckout.webm" type="video/webm" />
           <source src="/3hoop-duck-out-mobile.mp4" type="video/mp4" />
@@ -24,14 +27,17 @@ const Hero = () => {
         </video>
       ) : (
         <img
-          src="/hulahoopbeastlogo.png"
+          src="/placeholder.svg"              // fallback if video fails
           alt="Hula Hoop Beast"
-          className="absolute inset-0 w-full h-full object-cover z-[-1]"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         />
       )}
 
+      {/* Soft dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/20 z-10" aria-hidden="true" />
+
       {/* Main content */}
-      <div className="flex flex-col justify-center items-center text-center h-full px-4 md:px-12 pt-20 md:pt-36 z-10">
+      <div className="relative z-20 flex flex-col justify-center items-center text-center min-h-screen px-4 md:px-12 pt-20 md:pt-36">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
           UNLEASH YOUR <span className="text-orange-400">INNER BEAST</span>
         </h1>
@@ -45,22 +51,17 @@ const Hero = () => {
         </p>
       </div>
 
-      {/* Overlay images */}
+      {/* Overlay logo (uses the file that exists in /public) */}
       <img
-        src="/hulahoopbeastlogo.png"
+        src="/logo.png"
         alt="Hula Hoop Beast Logo"
-        className="absolute bottom-10 right-10 w-48 md:w-56 z-10"
+        className="absolute bottom-10 right-10 w-48 md:w-56 z-20"
       />
-      <img
-        src="/hooper-left.png"
-        alt="Hooping left"
-        className="absolute bottom-0 left-10 w-36 md:w-44 z-10"
-      />
-      <img
-        src="/hooper-center.png"
-        alt="Hooping center"
-        className="absolute bottom-0 mx-auto left-0 right-0 w-40 md:w-48 z-10"
-      />
+
+      {/* NOTE: Add these only after you place the files in /public
+         <img src="/hooper-left.png" ... />
+         <img src="/hooper-center.png" ... />
+      */}
     </section>
   )
 }
