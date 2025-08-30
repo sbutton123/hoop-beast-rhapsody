@@ -5,63 +5,61 @@ const Hero = () => {
   const [videoError, setVideoError] = useState(false)
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Background gradient as a base layer */}
-      <div className="absolute inset-0 bg-gradient-beast" aria-hidden="true" />
+    <section className="relative bg-gradient-beast py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-8">
+          
+          {/* Left: Video */}
+          <div className="flex justify-center">
+            {!videoError ? (
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster="/placeholder.svg"
+                onError={() => setVideoError(true)}
+                className="w-56 md:w-72 rounded-lg shadow-lg"
+              >
+                <source src="/3hoopduckout.webm" type="video/webm" />
+                <source src="/3hoop-duck-out-mobile.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <img
+                src="/placeholder.svg"
+                alt="Hula Hoop Beast"
+                className="w-56 md:w-72 rounded-lg shadow-lg"
+              />
+            )}
+          </div>
 
-      {/* Video layer */}
-      {!videoError ? (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/placeholder.svg"            // file exists in /public
-          onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="/3hoopduckout.webm" type="video/webm" />
-          <source src="/3hoop-duck-out-mobile.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      ) : (
-        <img
-          src="/placeholder.svg"              // fallback if video fails
-          alt="Hula Hoop Beast"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
-      )}
+          {/* Middle: Text */}
+          <div className="text-center md:col-span-1">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+              UNLEASH YOUR <span className="text-orange-400">INNER BEAST</span>
+            </h1>
+            <p className="text-white text-lg md:text-xl mb-4">
+              Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness!
+              Whether you’re brand new to hooping or ready to level up your skills, you’re in the right place.
+            </p>
+            <p className="text-orange-300 text-lg md:text-xl">
+              Embrace your inner beast. Let’s hoop!
+            </p>
+          </div>
 
-      {/* Soft dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/20 z-10" aria-hidden="true" />
+          {/* Right: Logo */}
+          <div className="flex justify-center">
+            <img
+              src="/logo.png"
+              alt="Hula Hoop Beast Logo"
+              className="w-40 md:w-56 drop-shadow-lg"
+            />
+          </div>
 
-      {/* Main content */}
-      <div className="relative z-20 flex flex-col justify-center items-center text-center min-h-screen px-4 md:px-12 pt-20 md:pt-36">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-          UNLEASH YOUR <span className="text-orange-400">INNER BEAST</span>
-        </h1>
-        <p className="text-white text-lg md:text-xl max-w-2xl">
-          Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness!
-          Whether you’re brand new to hooping or ready to level up your skills, you’re in the right place.
-          Dive into tutorials, challenge yourself with workouts, or get inspired by performances.
-        </p>
-        <p className="text-orange-300 mt-4 text-lg md:text-xl">
-          Embrace your inner beast. Let’s hoop!
-        </p>
+        </div>
       </div>
-
-      {/* Overlay logo (uses the file that exists in /public) */}
-      <img
-        src="/logo.png"
-        alt="Hula Hoop Beast Logo"
-        className="absolute bottom-10 right-10 w-48 md:w-56 z-20"
-      />
-
-      {/* NOTE: Add these only after you place the files in /public
-         <img src="/hooper-left.png" ... />
-         <img src="/hooper-center.png" ... />
-      */}
     </section>
   )
 }
