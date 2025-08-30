@@ -51,7 +51,7 @@ const Hero = () => {
 
               {/* Image under the paragraph */}
               <img
-                src="/hero-under.jpg"     // <-- upload this file to /public (see steps below)
+                src="/hulahooping1.png"     // <-- upload this file to /public (see steps below)
                 alt="Hula Hoop Beast"
                 className="mt-6 mx-auto w-64 md:w-80 rounded-lg shadow-lg"
               />
