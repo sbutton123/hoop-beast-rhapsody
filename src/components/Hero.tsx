@@ -17,7 +17,7 @@ const Hero = () => {
           {/* Media + Paragraph row sits RIGHT below the title */}
           <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
 
-            {/* Left: Video (top-aligned, big on desktop) */}
+            {/* Left: Video (slightly bigger) */}
             <div className="flex justify-center md:justify-start">
               {!videoError ? (
                 <video
@@ -28,7 +28,7 @@ const Hero = () => {
                   preload="metadata"
                   poster="/placeholder.svg"
                   onError={() => setVideoError(true)}
-                  className="h-56 md:h-96 w-auto rounded-lg shadow-lg object-cover"
+                  className="h-64 md:h-[28rem] w-auto rounded-lg shadow-lg object-cover"
                 >
                   <source src="/3hoopduckout.webm" type="video/webm" />
                   <source src="/3hoop-duck-out-mobile.mp4" type="video/mp4" />
@@ -38,7 +38,7 @@ const Hero = () => {
                 <img
                   src="/placeholder.svg"
                   alt="Hula Hoop Beast"
-                  className="h-56 md:h-96 w-auto rounded-lg shadow-lg object-cover"
+                  className="h-64 md:h-[28rem] w-auto rounded-lg shadow-lg object-cover"
                 />
               )}
             </div>
@@ -64,12 +64,12 @@ const Hero = () => {
               />
             </div>
 
-            {/* Right: Hulahooping image (top-aligned, same height as video) */}
+            {/* Right: Hulahooping image (match video height for balance) */}
             <div className="flex justify-center md:justify-end">
               <img
                 src="/hulahooping1.png"
                 alt="Hula hooping action"
-                className="h-56 md:h-96 w-auto rounded-lg shadow-lg object-cover"
+                className="h-64 md:h-[28rem] w-auto rounded-lg shadow-lg object-cover"
               />
             </div>
           </div>
