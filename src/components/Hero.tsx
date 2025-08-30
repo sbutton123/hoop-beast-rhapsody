@@ -14,7 +14,7 @@ const Hero = () => {
             UNLEASH YOUR INNER BEAST
           </h1>
 
-          {/* 3-column grid: video • paragraph (+ under image) • logo */}
+          {/* 3-column grid: video • logo under paragraph • hulahooping image */}
           <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-8">
             
             {/* Left: Video */}
@@ -43,7 +43,7 @@ const Hero = () => {
               )}
             </div>
 
-            {/* Middle: Paragraph + hulahooping image */}
+            {/* Middle: Paragraph + Logo */}
             <div className="text-center md:col-span-1">
               <p className="text-white text-lg md:text-xl mb-2">
                 Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness!
@@ -53,23 +53,23 @@ const Hero = () => {
                 Embrace your inner beast. Let’s hoop!
               </p>
 
-              {/* Image under the paragraph */}
-              <img
-                src="/hulahooping1.png"
-                alt="Hula hooping action"
-                className="mt-6 mx-auto w-64 md:w-80 rounded-lg shadow-lg"
-              />
-            </div>
-
-            {/* Right: Logo */}
-            <div className="flex justify-center">
+              {/* Logo under paragraph */}
               <img
                 src="/logo.png"
                 alt="Hula Hoop Beast Logo"
-                className="max-w-full h-auto drop-shadow-lg"
+                className="mt-6 mx-auto max-w-full h-auto drop-shadow-lg"
                 style={{ width: 'clamp(12rem, 18vw, 24rem)' }}
                 loading="eager"
                 decoding="async"
+              />
+            </div>
+
+            {/* Right: Hulahooping image */}
+            <div className="flex justify-center">
+              <img
+                src="/hulahooping1.png"
+                alt="Hula hooping action"
+                className="w-64 md:w-80 rounded-lg shadow-lg"
               />
             </div>
           </div>
