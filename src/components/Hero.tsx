@@ -8,6 +8,13 @@ const Hero = () => {
     <section className="relative bg-gradient-beast min-h-screen flex items-center">
       <div className="w-full py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Big Beast Title */}
+          <h1 className="text-center font-bangers text-5xl md:text-7xl text-orange-500 mb-12 drop-shadow-[2px_2px_0px_black] tracking-tight">
+            UNLEASH YOUR INNER BEAST
+          </h1>
+
+          {/* 3-column grid: video • paragraph (+ under image) • logo */}
           <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-8">
             
             {/* Left: Video */}
@@ -36,11 +43,8 @@ const Hero = () => {
               )}
             </div>
 
-            {/* Middle: Text + optional image under paragraph */}
+            {/* Middle: Paragraph + hulahooping image */}
             <div className="text-center md:col-span-1">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-                UNLEASH YOUR <span className="text-orange-400">INNER BEAST</span>
-              </h1>
               <p className="text-white text-lg md:text-xl mb-2">
                 Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness!
                 Whether you’re brand new to hooping or ready to level up your skills, you’re in the right place.
@@ -49,13 +53,12 @@ const Hero = () => {
                 Embrace your inner beast. Let’s hoop!
               </p>
 
-              {/* Example placeholder image under paragraph */}
-              {/* Replace /hero-under.jpg with your own file uploaded to /public */}
-              {/* <img
-                src="/hero-under.jpg"
-                alt="Hula Hoop Beast action"
+              {/* Image under the paragraph */}
+              <img
+                src="/hulahooping1.png"
+                alt="Hula hooping action"
                 className="mt-6 mx-auto w-64 md:w-80 rounded-lg shadow-lg"
-              /> */}
+              />
             </div>
 
             {/* Right: Logo */}
@@ -69,7 +72,6 @@ const Hero = () => {
                 decoding="async"
               />
             </div>
-
           </div>
         </div>
       </div>
