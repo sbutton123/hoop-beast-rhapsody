@@ -14,11 +14,12 @@ const Hero = () => {
             UNLEASH YOUR INNER BEAST
           </h1>
 
-          {/* 3-column grid: video • logo under paragraph • hulahooping image */}
-          <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-8">
-            
-            {/* Left: Video */}
-            <div className="flex justify-center">
+          {/* 3-column grid */}
+          {/* Bottom-align columns on desktop so media bottoms line up */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-end">
+
+            {/* Left: Video (bottom-aligned) */}
+            <div className="flex justify-center md:self-end">
               {!videoError ? (
                 <video
                   autoPlay
@@ -28,7 +29,8 @@ const Hero = () => {
                   preload="metadata"
                   poster="/placeholder.svg"
                   onError={() => setVideoError(true)}
-                  className="w-56 md:w-72 rounded-lg shadow-lg"
+                  /* Same height as the image; object-cover keeps it tidy */
+                  className="h-64 md:h-80 w-auto rounded-lg shadow-lg object-cover"
                 >
                   <source src="/3hoopduckout.webm" type="video/webm" />
                   <source src="/3hoop-duck-out-mobile.mp4" type="video/mp4" />
@@ -38,13 +40,13 @@ const Hero = () => {
                 <img
                   src="/placeholder.svg"
                   alt="Hula Hoop Beast"
-                  className="w-56 md:w-72 rounded-lg shadow-lg"
+                  className="h-64 md:h-80 w-auto rounded-lg shadow-lg object-cover"
                 />
               )}
             </div>
 
-            {/* Middle: Paragraph + Logo */}
-            <div className="text-center md:col-span-1">
+            {/* Middle: Paragraph + Logo (centered vertically on desktop) */}
+            <div className="text-center md:col-span-1 md:self-center">
               <p className="text-white text-lg md:text-xl mb-2">
                 Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness!
                 Whether you’re brand new to hooping or ready to level up your skills, you’re in the right place.
@@ -64,15 +66,16 @@ const Hero = () => {
               />
             </div>
 
-            {/* Right: Hulahooping image */}
-            <div className="flex justify-center">
+            {/* Right: Hulahooping image (bottom-aligned, same height as video) */}
+            <div className="flex justify-center md:self-end">
               <img
                 src="/hulahooping1.png"
                 alt="Hula hooping action"
-                className="w-64 md:w-80 rounded-lg shadow-lg"
+                className="h-64 md:h-80 w-auto rounded-lg shadow-lg object-cover"
               />
             </div>
           </div>
+
         </div>
       </div>
     </section>
