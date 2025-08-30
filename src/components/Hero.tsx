@@ -14,10 +14,10 @@ const Hero = () => {
             UNLEASH YOUR INNER BEAST
           </h1>
 
-          {/* Media + Paragraph row sits RIGHT below the title */}
-          <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
+          {/* Media + Paragraph row, tighter spacing */}
+          <div className="mt-5 md:mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-start">
 
-            {/* Left: Video (slightly bigger) */}
+            {/* Left: Video (slightly bigger, no shadow/card look) */}
             <div className="flex justify-center md:justify-start">
               {!videoError ? (
                 <video
@@ -28,7 +28,7 @@ const Hero = () => {
                   preload="metadata"
                   poster="/placeholder.svg"
                   onError={() => setVideoError(true)}
-                  className="h-64 md:h-[28rem] w-auto rounded-lg shadow-lg object-cover"
+                  className="h-72 md:h-[30rem] w-auto rounded-lg object-cover"
                 >
                   <source src="/3hoopduckout.webm" type="video/webm" />
                   <source src="/3hoop-duck-out-mobile.mp4" type="video/mp4" />
@@ -38,12 +38,12 @@ const Hero = () => {
                 <img
                   src="/placeholder.svg"
                   alt="Hula Hoop Beast"
-                  className="h-64 md:h-[28rem] w-auto rounded-lg shadow-lg object-cover"
+                  className="h-72 md:h-[30rem] w-auto rounded-lg object-cover"
                 />
               )}
             </div>
 
-            {/* Middle: Paragraph, then logo underneath */}
+            {/* Middle: Paragraph with logo under it */}
             <div className="text-center md:col-span-1">
               <p className="text-white text-lg md:text-xl">
                 Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness!
@@ -53,23 +53,23 @@ const Hero = () => {
                 Embrace your inner beast. Let’s hoop!
               </p>
 
-              {/* Logo directly UNDER the paragraph */}
+              {/* Logo (slightly closer + scales smoothly) */}
               <img
                 src="/logo.png"
                 alt="Hula Hoop Beast Logo"
-                className="mt-6 mx-auto max-w-full h-auto drop-shadow-lg"
+                className="mt-4 mx-auto max-w-full h-auto"
                 style={{ width: 'clamp(12rem, 18vw, 24rem)' }}
                 loading="eager"
                 decoding="async"
               />
             </div>
 
-            {/* Right: Hulahooping image (match video height for balance) */}
+            {/* Right: Hulahooping image (match video size, no shadow/card look) */}
             <div className="flex justify-center md:justify-end">
               <img
                 src="/hulahooping1.png"
                 alt="Hula hooping action"
-                className="h-64 md:h-[28rem] w-auto rounded-lg shadow-lg object-cover"
+                className="h-72 md:h-[30rem] w-auto rounded-lg object-cover"
               />
             </div>
           </div>
