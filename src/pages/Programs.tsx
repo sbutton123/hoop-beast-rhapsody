@@ -44,7 +44,7 @@ const videoProgram = {
     "This high‑energy 45‑minute interactive show is perfect for families and audiences of all ages. Performed to music, it features dazzling hula hoop tricks and crowd participation. Shanda brings the fun, laughter, and movement — your crowd brings the energy!",
   duration: "45 minutes",
   price: "$300 flat rate",
-  videoUrl: "https://www.youtube.com/embed/LDlvHRzV3ss",
+  videoUrl: "https://www.youtube.com/embed/NHJKBceyUgk",
 };
 
 export default function Programs() {
