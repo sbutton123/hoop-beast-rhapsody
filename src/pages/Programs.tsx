@@ -81,8 +81,7 @@ export default function Programs() {
               date &amp; area
             </p>
             <p className="text-center">
-              • $1/mile travel fee beyond 50 miles from Gresham, OR • 100+ miles
-              quoted case by case
+              • contact for travel quote
             </p>
           </div>
         </div>
