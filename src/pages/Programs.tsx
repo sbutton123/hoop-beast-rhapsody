@@ -10,7 +10,7 @@ const flyers = [
     image: "/lovable-uploads/hoopin&groovin.png",
     alt: "Hoopin & Groovin with Greg & Shanda flyer",
     duration: "45 min.",
-    price: "$350",
+    price: "$300",
     demoUrl: "https://youtube.com/shorts/x0ullahvn8E",
   },
   {
