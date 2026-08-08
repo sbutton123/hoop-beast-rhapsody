@@ -10,7 +10,7 @@ const flyers = [
     image: "/lovable-uploads/hoopin&groovin.png",
     alt: "Hoopin & Groovin with Greg & Shanda flyer",
     duration: "45 min.",
-    price: "$300",
+    price: "$450",
     demoUrl: "https://youtube.com/shorts/x0ullahvn8E",
   },
   {
@@ -18,7 +18,7 @@ const flyers = [
     image: "/lovable-uploads/hulahoopharvest.png",
     alt: "Hula Hoop Harvest flyer",
     duration: "45 min.",
-    price: "$300",
+    price: "$450",
   },
 ];
 
@@ -28,7 +28,7 @@ const secondRow = [
     image: "/lovable-uploads/hulahoopology.png",
     alt: "Hula‑Hoop‑Ology: Dig Up Your Skills flyer",
     duration: "45 min.",
-    price: "$300",
+    price: "$450",
   },
   {
     key: "juggle-workshop",
@@ -43,7 +43,7 @@ const videoProgram = {
   description:
     "This high‑energy 45‑minute interactive show is perfect for families and audiences of all ages. Performed to music, it features dazzling hula hoop tricks and crowd participation. Shanda brings the fun, laughter, and movement — your crowd brings the energy!",
   duration: "45 minutes",
-  price: "$300 flat rate",
+  price: "$450 flat rate",
   videoUrl: "https://www.youtube.com/embed/NHJKBceyUgk",
 };
 
