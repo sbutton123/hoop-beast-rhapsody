@@ -1,12 +1,25 @@
 // src/pages/Index.tsx
-import Hero from '@/components/Hero';
+// Homepage: Hero, Explore, See It in Action, Meet Shanda, Song, Final CTA.
+import Hero from '@/components/Hero'
+import ExploreSection from '@/components/home/ExploreSection'
+import ActionVideo from '@/components/home/ActionVideo'
+import MeetShanda from '@/components/home/MeetShanda'
+import SongFeature from '@/components/home/SongFeature'
+import FinalCta from '@/components/home/FinalCta'
 
 const Index = () => {
   return (
-    <div>
+    // -mt-8 cancels the site wide top padding under the sticky header so the
+    // hero starts right below the navigation on the homepage only.
+    <div className="-mt-8 overflow-x-hidden">
       <Hero />
+      <ExploreSection />
+      <ActionVideo />
+      <MeetShanda />
+      <SongFeature />
+      <FinalCta />
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
