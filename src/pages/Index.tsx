@@ -1,5 +1,5 @@
 // src/pages/Index.tsx
-// Homepage: Hero, Explore, See It in Action, Song, Final CTA.
+// Homepage: Hero, See It in Action, Explore, Song, Final CTA.
 import Hero from '@/components/Hero'
 import ExploreSection from '@/components/home/ExploreSection'
 import ActionVideo from '@/components/home/ActionVideo'
@@ -12,8 +12,8 @@ const Index = () => {
     // hero starts right below the navigation on the homepage only.
     <div className="-mt-8 overflow-x-hidden">
       <Hero />
-      <ExploreSection />
       <ActionVideo />
+      <ExploreSection />
       <SongFeature />
       <FinalCta />
     </div>
