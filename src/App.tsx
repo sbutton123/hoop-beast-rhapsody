@@ -3,6 +3,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
+import RouteSeo from './components/RouteSeo'
 
 // page imports
 import Index from './pages/Index'
@@ -18,6 +19,9 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <BrowserRouter>
+      {/* Per page title, description, canonical, and social tags */}
+      <RouteSeo />
+
       {/* Navbar sits above everything */}
       <Navbar />
 
