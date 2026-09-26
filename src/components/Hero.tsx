@@ -1,5 +1,8 @@
 // src/components/Hero.tsx
+// Homepage hero: headline, supporting copy, two calls to action, and one
+// focal video of Shanda hooping.
 import { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Pause, Play } from 'lucide-react'
 
 // Visitors who have "reduce motion" turned on in their device settings
@@ -7,6 +10,15 @@ import { Pause, Play } from 'lucide-react'
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
   window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+
+// The stage shows a 3:4 crop of the 9:16 video (the empty space above Shanda
+// is trimmed, positioned by MEDIA_POSITION). This gradient exactly matches the
+// matching crop of the background baked into the MP4 fallback video (used by
+// browsers that cannot show the transparent WebM), so the video blends into
+// its stage either way. Keep these values in sync with the MP4.
+const STAGE_GRADIENT =
+  'linear-gradient(119.36deg, rgb(64,75,236) 0%, rgb(72,34,225) 46.4%, rgb(116,30,226) 100%)'
+const MEDIA_POSITION = { objectPosition: '50% 75%' }
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -24,104 +36,131 @@ const Hero = () => {
     }
   }
 
-  return (
-    <section className="relative bg-gradient-beast min-h-screen">
-      <div className="w-full py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  // Same size on the video, the stage behind it, and the fallback image
+  const mediaSize = 'h-[20rem] sm:h-[24rem] lg:h-[30rem] aspect-[3/4] w-auto'
 
-          {/* Big Beast Title */}
-          <h1 className="text-center font-bangers text-5xl md:text-7xl text-orange-500 drop-shadow-[2px_2px_0px_black] tracking-tight">
+  return (
+    <section
+      aria-labelledby="hero-heading"
+      className="relative overflow-hidden bg-gradient-beast"
+    >
+      {/* Soft shade over the bright blue corner so the headline and copy stay readable */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(135deg, rgba(30,10,74,0.3) 0%, rgba(30,10,74,0.15) 45%, rgba(30,10,74,0) 70%)',
+        }}
+      />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-12 sm:px-8 md:pb-20 md:pt-16 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8 lg:pb-24 lg:pt-20">
+
+        {/* Text */}
+        <div className="text-center lg:text-left">
+          <h1
+            id="hero-heading"
+            className="font-bangers text-6xl leading-[0.95] tracking-wide text-[#FFE14D] sm:text-7xl lg:text-8xl"
+            style={{ textShadow: '4px 4px 0 #1E0A4A' }}
+          >
             UNLEASH YOUR INNER BEAST
           </h1>
 
-          {/* Media + Paragraph row, tighter spacing */}
-          <div className="mt-5 md:mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-start">
+          <p className="mt-6 text-2xl font-bold leading-snug text-white sm:text-3xl">
+            Hula hooping for fun, fitness, flow &amp; performance.
+          </p>
 
-            {/* Left: Video (slightly bigger, no shadow/card look) */}
-            <div className="flex justify-center md:justify-start">
-              {!videoError ? (
-                <div className="relative">
-                  <video
-                    ref={videoRef}
-                    autoPlay={!reduceMotion}
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    poster="/hero-video-poster.png"
-                    onPlay={() => setIsPlaying(true)}
-                    onPause={() => setIsPlaying(false)}
-                    onError={() => setVideoError(true)}
-                    aria-label="Shanda hula hooping with three hoops"
-                    className="block h-72 md:h-[30rem] w-auto rounded-lg object-cover"
-                  >
-                    <source src="/3hoopduckout.webm" type="video/webm" />
-                    <source
-                      src="/3hoop-duck-out-mobile.mp4"
-                      type="video/mp4"
-                      onError={() => setVideoError(true)}
-                    />
-                    Your browser does not support the video tag.
-                  </video>
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl lg:mx-0">
+            Learn new skills, get moving, find your flow, or bring Hula Hoop Beast to your next event.
+          </p>
 
-                  {/* Small pause/play control so the looping video can be stopped */}
-                  <button
-                    type="button"
-                    onClick={togglePlayback}
-                    aria-label={isPlaying ? 'Pause hooping video' : 'Play hooping video'}
-                    className="absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white opacity-70 transition-opacity hover:opacity-100 focus:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-                  >
-                    {isPlaying ? (
-                      <Pause className="h-4 w-4" aria-hidden="true" />
-                    ) : (
-                      <Play className="h-4 w-4" aria-hidden="true" />
-                    )}
-                  </button>
-                </div>
-              ) : (
-                <img
-                  src="/hero-video-poster.png"
-                  alt="Shanda hula hooping with three hoops"
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+            <Link
+              to="/tutorials"
+              className="inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-full bg-white px-8 text-lg font-extrabold tracking-wide text-[#3B0FB8] shadow-[0_6px_0_#1E0A4A] transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#FFE14D] sm:w-auto"
+            >
+              START HOOPING <span aria-hidden="true" className="ml-2">→</span>
+            </Link>
+            <Link
+              to="/programs"
+              className="inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-full border-[3px] border-white px-8 text-lg font-extrabold tracking-wide text-white transition-colors hover:bg-white/15 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#FFE14D] sm:w-auto"
+            >
+              EXPLORE PROGRAMS <span aria-hidden="true" className="ml-2">→</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Focal video on its stage, with a few decorative hoops around it */}
+        <div className="relative mx-auto">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-10 top-10 h-40 w-40 rounded-full border-[6px] border-[#FFE14D]/80 sm:-left-16 sm:h-52 sm:w-52"
+          />
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-8 -right-10 h-44 w-44 rounded-full border-[6px] border-[#FF7A45]/80 sm:-right-16 sm:h-56 sm:w-56"
+          />
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full border-[5px] border-white/60"
+          />
+
+          <div
+            className="relative overflow-hidden rounded-[2rem] shadow-[0_20px_50px_-15px_rgba(30,10,74,0.7)] ring-4 ring-white/40"
+            style={{ background: STAGE_GRADIENT }}
+          >
+            {!videoError ? (
+              <>
+                <video
+                  ref={videoRef}
+                  autoPlay={!reduceMotion}
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
                   width={360}
                   height={640}
-                  className="h-72 md:h-[30rem] w-auto rounded-lg object-cover"
-                />
-              )}
-            </div>
+                  poster="/hero-video-poster.png"
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  onError={() => setVideoError(true)}
+                  aria-label="Shanda hula hooping with three hoops"
+                  className={`block object-cover ${mediaSize}`}
+                  style={MEDIA_POSITION}
+                >
+                  <source src="/3hoopduckout.webm" type="video/webm" />
+                  <source
+                    src="/3hoop-duck-out-mobile.mp4"
+                    type="video/mp4"
+                    onError={() => setVideoError(true)}
+                  />
+                  Your browser does not support the video tag.
+                </video>
 
-            {/* Middle: Paragraph with logo under it */}
-            <div className="text-center md:col-span-1">
-              <p className="text-white text-lg md:text-xl">
-                Welcome to Hula Hoop Beast where strength meets flow and fun turns into fitness!
-                Whether you’re brand new to hooping or ready to level up your skills, you’re in the right place.
-              </p>
-              <p className="text-orange-300 text-lg md:text-xl mt-2">
-                Embrace your inner beast. Let’s hoop!
-              </p>
-
-              {/* Logo (slightly closer + scales smoothly) */}
+                {/* Pause/play control so the looping video can be stopped */}
+                <button
+                  type="button"
+                  onClick={togglePlayback}
+                  aria-label={isPlaying ? 'Pause hooping video' : 'Play hooping video'}
+                  className="absolute bottom-3 right-3 flex h-11 w-11 items-center justify-center rounded-full bg-black/45 text-white opacity-80 transition-opacity hover:opacity-100 focus:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                >
+                  {isPlaying ? (
+                    <Pause className="h-5 w-5" aria-hidden="true" />
+                  ) : (
+                    <Play className="h-5 w-5" aria-hidden="true" />
+                  )}
+                </button>
+              </>
+            ) : (
               <img
-                src="/logo-web.webp"
-                alt="Hula Hoop Beast Logo"
-                width={768}
-                height={1152}
-                className="mt-4 mx-auto max-w-full h-auto"
-                style={{ width: 'clamp(12rem, 18vw, 24rem)' }}
-                loading="eager"
-                decoding="async"
+                src="/hero-video-poster.png"
+                alt="Shanda hula hooping with three hoops"
+                width={360}
+                height={640}
+                className={`block object-cover ${mediaSize}`}
+                style={MEDIA_POSITION}
               />
-            </div>
-
-            {/* Right: Hulahooping image (match video size, no shadow/card look) */}
-            <div className="flex justify-center md:justify-end">
-              <img
-                src="/hulahooping1.png"
-                alt="Hula hooping action"
-                className="h-72 md:h-[30rem] w-auto rounded-lg object-cover"
-              />
-            </div>
+            )}
           </div>
-
         </div>
       </div>
     </section>
