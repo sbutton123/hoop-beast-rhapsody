@@ -1,0 +1,60 @@
+{
+  "siteUrl": "https://hulahoopbeast.com",
+  "siteName": "Hula Hoop Beast",
+  "ogImage": "https://hulahoopbeast.com/og-image.jpg",
+  "ogImageAlt": "Hula Hoop Beast logo beside Shanda Button hooping with four hula hoops on a colorful gradient",
+  "notFound": {
+    "title": "Page Not Found | Hula Hoop Beast",
+    "description": "This page could not be found. Head back to Hula Hoop Beast for hula hoop shows, workshops, and videos."
+  },
+  "pages": [
+    {
+      "path": "/",
+      "file": "index.html",
+      "title": "Hula Hoop Beast | Hula Hoop Shows, Workshops & Flow with Shanda Button",
+      "description": "Hula Hoop Beast is Shanda Button's world of high energy hula hoop performance, hands on workshops, and hoop flow for events, audiences, and hoopers of every age."
+    },
+    {
+      "path": "/tutorials",
+      "file": "tutorials.html",
+      "title": "Hula Hoop Tutorials (Coming Soon) | Hula Hoop Beast",
+      "description": "Hula hoop tutorials are on the way from Hula Hoop Beast, including beginner tricks, flow combos, and hoop making. Explore performance videos and programs in the meantime."
+    },
+    {
+      "path": "/showcase",
+      "file": "showcase.html",
+      "title": "Beast Moves: Hula Hoop Performance Videos | Hula Hoop Beast",
+      "description": "Watch Shanda Button's hula hoop tricks, multiple hoop combos, and flow performances in short videos from Hula Hoop Beast."
+    },
+    {
+      "path": "/programs",
+      "file": "programs.html",
+      "title": "Hula Hoop Shows & Workshops for Events | Hula Hoop Beast",
+      "description": "Book an interactive hula hoop show or a hoop making and juggling workshop with Shanda Button for schools, libraries, parks, parties, festivals, and community events."
+    },
+    {
+      "path": "/workouts",
+      "file": "workouts.html",
+      "title": "Hula Hoop Workouts (Coming Soon) | Hula Hoop Beast",
+      "description": "Hoop powered workouts are in the works at Hula Hoop Beast: cardio, core, strength flows, and recovery sessions. Check back soon."
+    },
+    {
+      "path": "/about",
+      "file": "about.html",
+      "title": "About Shanda Button | Hula Hoop Beast",
+      "description": "Meet Shanda Button, the hooper and performer behind Hula Hoop Beast, and learn how hula hooping became her path to strength, healing, and joy."
+    },
+    {
+      "path": "/products",
+      "file": "products.html",
+      "title": "Hula Hoop Beast Products (Coming Soon)",
+      "description": "Custom hula hoops, bundles, apparel, and accessories from Hula Hoop Beast are coming soon."
+    },
+    {
+      "path": "/contact",
+      "file": "contact.html",
+      "title": "Contact & Booking | Hula Hoop Beast",
+      "description": "Contact Shanda Button to book a Hula Hoop Beast show or workshop for your event, or to ask a question about hooping."
+    }
+  ]
+}
