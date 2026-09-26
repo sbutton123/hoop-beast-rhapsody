@@ -218,3 +218,23 @@ All colors MUST be HSL.
   }
 
 }
+
+/* ========= REDUCED MOTION =========== */
+/* Visitors who turn on "reduce motion" in their device settings get a calmer
+   site: no pulsing, floating, bouncing, or hover zoom. Colors and layout stay
+   exactly the same. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hover-lift:hover,
+  [class*="hover:scale"]:hover {
+    transform: none !important;
+  }
+}
