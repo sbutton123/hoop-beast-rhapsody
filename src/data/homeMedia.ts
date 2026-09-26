@@ -27,8 +27,8 @@ export const SONG = {
   audioSrc: '/music/lost-in-the-movement.mp3',
   // Shown before the file loads; replaced by the real length once playing.
   durationSeconds: 174,
-  cover480: '/images/lost-in-the-movement-cover-480.webp',
-  cover800: '/images/lost-in-the-movement-cover-800.webp',
+  cover480: '/images/home/lost-in-the-movement-cover-480.webp',
+  cover800: '/images/home/lost-in-the-movement-cover-800.webp',
 }
 
 // Paste each service's page for the song. A service only appears on the
