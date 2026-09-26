@@ -1,9 +1,8 @@
 // src/pages/Index.tsx
-// Homepage: Hero, Explore, See It in Action, Meet Shanda, Song, Final CTA.
+// Homepage: Hero, Explore, See It in Action, Song, Final CTA.
 import Hero from '@/components/Hero'
 import ExploreSection from '@/components/home/ExploreSection'
 import ActionVideo from '@/components/home/ActionVideo'
-import MeetShanda from '@/components/home/MeetShanda'
 import SongFeature from '@/components/home/SongFeature'
 import FinalCta from '@/components/home/FinalCta'
 
@@ -15,7 +14,6 @@ const Index = () => {
       <Hero />
       <ExploreSection />
       <ActionVideo />
-      <MeetShanda />
       <SongFeature />
       <FinalCta />
     </div>
