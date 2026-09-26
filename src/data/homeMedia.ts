@@ -27,8 +27,8 @@ export const SONG = {
   audioSrc: '/music/lost-in-the-movement.mp3',
   // Shown before the file loads; replaced by the real length once playing.
   durationSeconds: 174,
-  cover480: '/images/home/lost-in-the-movement-cover-480.webp',
-  cover800: '/images/home/lost-in-the-movement-cover-800.webp',
+  cover480: '/images/lost-in-the-movement-cover-480.webp',
+  cover800: '/images/lost-in-the-movement-cover-800.webp',
 }
 
 // Paste each service's page for the song. A service only appears on the
@@ -39,10 +39,10 @@ export const SONG = {
 // (for example '/images/badges/spotify.svg'). Without one, a clean text
 // button with the service name is shown instead.
 export const STREAMING_LINKS: { service: string; url: string; badge?: string }[] = [
-  { service: 'Spotify', url: '' },
-  { service: 'Apple Music', url: '' },
-  { service: 'Amazon Music', url: '' },
-  { service: 'YouTube Music', url: '' },
+  { service: 'Spotify', url: 'https://open.spotify.com/album/4HYeowUR1XC6mXfaF6RLRH?si=qK-l4lTLRtq0Yyd6SZCdDg' },
+  { service: 'Apple Music', url: 'https://music.apple.com/us/song/lost-in-the-movement-hula-hooping-song/6811544710' },
+  { service: 'Amazon Music', url: 'https://music.amazon.com/albums/B0HJNNZZQF?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_LgfczSQfHF877Xg7vUaJmlH1l' },
+  { service: 'YouTube Music', url: 'https://music.youtube.com/watch?v=whcWHvQEnFo&si=hY4flABwnfwPKE79' },
 ]
 
 // Pulls the 11 character video ID out of any common YouTube link.
