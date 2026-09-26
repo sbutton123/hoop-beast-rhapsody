@@ -6,9 +6,20 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 
+// The Programs page links here with ?program=<key>. These are the
+// human readable names shown on the form and sent with the submission.
+const PROGRAM_NAMES: Record<string, string> = {
+  'groovin': 'Hoopin & Groovin with Greg & Shanda',
+  'juggle-workshop': 'Hula Hoop Making & Juggling Making Workshop',
+  'harvest': 'Hula Hoop Harvest: Plant a Skill, Watch It Grow',
+  'beast-experience': 'The Hula Hoop Beast Experience',
+}
+
 export default function Contact() {
   const [searchParams] = useSearchParams()
-  const program = searchParams.get('program') || ''
+  const programKey = (searchParams.get('program') || '').trim()
+  // Unknown values are shown as they were passed in rather than dropped
+  const program = PROGRAM_NAMES[programKey] || programKey
 
   return (
     <div className="min-h-screen bg-background py-16 pt-20">
@@ -17,6 +28,10 @@ export default function Contact() {
           Contact Me
         </h1>
 
+        {/*
+          Netlify form. Every field below must also be listed in the hidden
+          "contact" form in index.html, or Netlify will not save it.
+        */}
         <form
           name="contact"
           method="POST"
@@ -28,15 +43,16 @@ export default function Contact() {
           <input type="hidden" name="form-name" value="contact" />
           <p className="hidden">
             <Label>
-              Don’t fill this out if you’re human: <Input name="bot-field" />
+              Don’t fill this out if you’re human: <Input name="bot-field" tabIndex={-1} autoComplete="off" />
             </Label>
           </p>
 
-          {/* Auto‑subject if program query present */}
+          {/* Email notification subject when a program was selected */}
           {program && (
             <input
               type="hidden"
-              name="_subject"
+              name="subject"
+              data-remove-prefix
               value={`Booking request: ${program}`}
             />
           )}
@@ -47,6 +63,7 @@ export default function Contact() {
               id="name"
               name="name"
               required
+              autoComplete="name"
               placeholder="Your full name"
             />
           </div>
@@ -58,6 +75,7 @@ export default function Contact() {
               name="email"
               type="email"
               required
+              autoComplete="email"
               placeholder="you@example.com"
             />
           </div>
