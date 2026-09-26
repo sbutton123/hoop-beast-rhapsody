@@ -41,7 +41,7 @@ const ExploreSection = () => {
             EXPLORE HULA HOOP BEAST
           </h2>
           <p className="mt-3 text-lg leading-relaxed text-[#4A3F66] sm:text-xl">
-            Pick up a new trick, get your body moving, or bring the show to your crowd.
+            Pick up a new trick, get your body moving, or bring the show to your event.
           </p>
         </div>
 
