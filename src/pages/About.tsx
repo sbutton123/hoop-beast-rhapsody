@@ -13,7 +13,7 @@ const About = () => {
         {/* Images column, stacked and matched to text height */}
         <div className="flex flex-col gap-6 w-full max-w-xs flex-shrink-0">
           <img
-            src="/lovable-uploads/hoopingcoast.jpg"
+            src="/lovable-uploads/hoopingcoast.JPG"
             alt="Hooping on the coast"
             className="rounded-2xl shadow-xl object-cover w-full h-56 sm:h-64 md:h-72 lg:h-80"
             style={{ minHeight: "180px", background: "#e36dc2" }}
