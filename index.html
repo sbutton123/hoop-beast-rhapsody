@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ8NEVEJPY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LZ8NEVEJPY', { page_path: window.location.pathname });
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      SEO tags below are the homepage defaults. At build time,
+      scripts/generate-page-html.mjs fills in the correct values for every
+      page from src/seo-pages.json. Edit titles and descriptions there.
+    -->
+    <title>Hula Hoop Beast | Hula Hoop Shows, Workshops &amp; Flow with Shanda Button</title>
+    <meta name="description" content="Hula Hoop Beast is Shanda Button's world of high energy hula hoop performance, hands on workshops, and hoop flow for events, audiences, and hoopers of every age." />
+    <link rel="canonical" href="https://hulahoopbeast.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hula Hoop Beast" />
+    <meta property="og:url" content="https://hulahoopbeast.com/" />
+    <meta property="og:title" content="Hula Hoop Beast | Hula Hoop Shows, Workshops &amp; Flow with Shanda Button" />
+    <meta property="og:description" content="Hula Hoop Beast is Shanda Button's world of high energy hula hoop performance, hands on workshops, and hoop flow for events, audiences, and hoopers of every age." />
+    <meta property="og:image" content="https://hulahoopbeast.com/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hula Hoop Beast logo beside Shanda Button hooping with four hula hoops on a colorful gradient" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://hulahoopbeast.com/" />
+    <meta name="twitter:title" content="Hula Hoop Beast | Hula Hoop Shows, Workshops &amp; Flow with Shanda Button" />
+    <meta name="twitter:description" content="Hula Hoop Beast is Shanda Button's world of high energy hula hoop performance, hands on workshops, and hoop flow for events, audiences, and hoopers of every age." />
+    <meta name="twitter:image" content="https://hulahoopbeast.com/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Hula Hoop Beast logo beside Shanda Button hooping with four hula hoops on a colorful gradient" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Fonts: Bangers (headings) and Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- DO NOT link /index.css here in Vite. CSS is imported in src/main.tsx -->
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!--
+      Netlify form detection. Netlify only saves fields that are listed here,
+      so every field the Contact page can send must also appear in this form.
+      The build script keeps this form only in the homepage HTML file.
+    -->
+    <!-- netlify-form:start -->
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="bot-field" />
+      <input type="hidden" name="subject" data-remove-prefix />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="program" />
+      <textarea name="message"></textarea>
+    </form>
+    <!-- netlify-form:end -->
+  </body>
+</html>
