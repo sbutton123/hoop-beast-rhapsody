@@ -89,21 +89,8 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Focal video on its stage, with a few decorative hoops around it */}
+        {/* Focal video on its stage */}
         <div className="relative mx-auto">
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute -left-10 top-10 h-40 w-40 rounded-full border-[6px] border-[#FFE14D]/80 sm:-left-16 sm:h-52 sm:w-52"
-          />
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-8 -right-10 h-44 w-44 rounded-full border-[6px] border-[#FF7A45]/80 sm:-right-16 sm:h-56 sm:w-56"
-          />
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full border-[5px] border-white/60"
-          />
-
           <div
             className="relative overflow-hidden rounded-[2rem] shadow-[0_20px_50px_-15px_rgba(30,10,74,0.7)] ring-4 ring-white/40"
             style={{ background: STAGE_GRADIENT }}
