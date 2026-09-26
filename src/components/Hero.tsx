@@ -1,8 +1,28 @@
 // src/components/Hero.tsx
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import { Pause, Play } from 'lucide-react'
+
+// Visitors who have "reduce motion" turned on in their device settings
+// see the first frame of the video and can press play if they want to.
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' &&
+  window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null)
   const [videoError, setVideoError] = useState(false)
+  const [reduceMotion] = useState(prefersReducedMotion)
+  const [isPlaying, setIsPlaying] = useState(!reduceMotion)
+
+  const togglePlayback = () => {
+    const video = videoRef.current
+    if (!video) return
+    if (video.paused) {
+      video.play().catch(() => setIsPlaying(false))
+    } else {
+      video.pause()
+    }
+  }
 
   return (
     <section className="relative bg-gradient-beast min-h-screen">
@@ -20,24 +40,50 @@ const Hero = () => {
             {/* Left: Video (slightly bigger, no shadow/card look) */}
             <div className="flex justify-center md:justify-start">
               {!videoError ? (
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster="/placeholder.svg"
-                  onError={() => setVideoError(true)}
-                  className="h-72 md:h-[30rem] w-auto rounded-lg object-cover"
-                >
-                  <source src="/3hoopduckout.webm" type="video/webm" />
-                  <source src="/3hoop-duck-out-mobile.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <div className="relative">
+                  <video
+                    ref={videoRef}
+                    autoPlay={!reduceMotion}
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    poster="/hero-video-poster.png"
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
+                    onError={() => setVideoError(true)}
+                    aria-label="Shanda hula hooping with three hoops"
+                    className="block h-72 md:h-[30rem] w-auto rounded-lg object-cover"
+                  >
+                    <source src="/3hoopduckout.webm" type="video/webm" />
+                    <source
+                      src="/3hoop-duck-out-mobile.mp4"
+                      type="video/mp4"
+                      onError={() => setVideoError(true)}
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+
+                  {/* Small pause/play control so the looping video can be stopped */}
+                  <button
+                    type="button"
+                    onClick={togglePlayback}
+                    aria-label={isPlaying ? 'Pause hooping video' : 'Play hooping video'}
+                    className="absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white opacity-70 transition-opacity hover:opacity-100 focus:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  >
+                    {isPlaying ? (
+                      <Pause className="h-4 w-4" aria-hidden="true" />
+                    ) : (
+                      <Play className="h-4 w-4" aria-hidden="true" />
+                    )}
+                  </button>
+                </div>
               ) : (
                 <img
-                  src="/placeholder.svg"
-                  alt="Hula Hoop Beast"
+                  src="/hero-video-poster.png"
+                  alt="Shanda hula hooping with three hoops"
+                  width={360}
+                  height={640}
                   className="h-72 md:h-[30rem] w-auto rounded-lg object-cover"
                 />
               )}
@@ -55,8 +101,10 @@ const Hero = () => {
 
               {/* Logo (slightly closer + scales smoothly) */}
               <img
-                src="/logo.png"
+                src="/logo-web.webp"
                 alt="Hula Hoop Beast Logo"
+                width={768}
+                height={1152}
                 className="mt-4 mx-auto max-w-full h-auto"
                 style={{ width: 'clamp(12rem, 18vw, 24rem)' }}
                 loading="eager"
