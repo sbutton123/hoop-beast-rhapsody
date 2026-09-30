@@ -13,7 +13,8 @@ import { Link } from 'react-router-dom'
 import { Play } from 'lucide-react'
 import { ACTION_VIDEO, getYouTubeId } from '@/data/homeMedia'
 
-// Real testimonials. Keep the wording inside the quotation marks exactly as given.
+// Real testimonials (shortened excerpts). Keep the wording inside the quotation
+// marks exactly as given.
 type Testimonial = {
   quote: string
   name: string
@@ -31,14 +32,14 @@ const TESTIMONIALS: Record<'left' | 'right' | 'below', Testimonial> = {
   },
   right: {
     quote:
-      '“Kids were in awe of her, along with adults. The audience loved being able to actually experiment and play with the hula hoops, ribbons, and other materials Shanda used after the performance.”',
+      '“Kids were in awe of her, along with adults. Highly recommend booking Shanda for a performance.”',
     name: 'Wendy Fjorden',
     role: 'Senior Branch Librarian',
     organization: 'Beaverton City Library Murray Scholls',
   },
   below: {
     quote:
-      '“I had three separate people tell me days after the event what a great program it was! ‘Isn’t she amazing!’ ‘She made it look so easy!’ ‘I loved her message! So positive and spot on!’”',
+      '“I had three separate people tell me days after the event what a great program it was! ‘Isn’t she amazing!’ ‘I loved her message! So positive and spot on!’”',
     name: 'Jaime Thoreson',
     role: 'Youth Services Librarian II',
     organization: 'Sherwood Public Library',
@@ -47,12 +48,12 @@ const TESTIMONIALS: Record<'left' | 'right' | 'below', Testimonial> = {
 
 const Quote = ({ testimonial, className = '' }: { testimonial: Testimonial; className?: string }) => (
   <figure
-    className={`rounded-2xl border border-white/15 bg-white/[0.06] p-5 text-left sm:p-6 ${className}`}
+    className={`rounded-2xl border border-white/15 bg-white/[0.06] px-5 py-4 text-left sm:px-6 sm:py-5 ${className}`}
   >
     <blockquote className="text-base leading-relaxed text-white/90 sm:text-[1.05rem]">
       <p>{testimonial.quote}</p>
     </blockquote>
-    <figcaption className="mt-4 border-t border-white/10 pt-3 text-sm leading-snug">
+    <figcaption className="mt-3 border-t border-white/10 pt-3 text-sm leading-snug">
       <span className="block font-bold text-[#FFE14D]">{testimonial.name}</span>
       <span className="block text-white/75">{testimonial.role}</span>
       <span className="block text-white/75">{testimonial.organization}</span>
@@ -79,7 +80,7 @@ const ActionVideo = () => {
         className="pointer-events-none absolute -bottom-28 -right-20 h-80 w-80 rounded-full border-[10px] border-[#3D7FF5]/25"
       />
 
-      <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8 xl:max-w-7xl">
+      <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8 xl:max-w-[88rem] xl:px-6">
         <h2
           id="action-heading"
           className="font-bangers text-5xl tracking-wide text-white sm:text-6xl"
@@ -95,7 +96,7 @@ const ActionVideo = () => {
           wide desktop so it always comes right after the heading on phones
           and tablets; on wide desktops the quotes sit left, right, and below.
         */}
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,40rem)_minmax(0,1fr)] xl:gap-x-10 xl:gap-y-8 2xl:grid-cols-[minmax(0,1fr)_minmax(0,44rem)_minmax(0,1fr)]">
+        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,40rem)_minmax(0,1fr)] xl:gap-x-7 xl:gap-y-7 2xl:grid-cols-[minmax(0,1fr)_minmax(0,44rem)_minmax(0,1fr)]">
           <h3 className="mt-3 text-sm font-extrabold tracking-[0.2em] text-[#FFE14D] md:col-span-3 md:mt-4 xl:mt-0">
             WHAT LIBRARIANS ARE SAYING
           </h3>
@@ -160,7 +161,7 @@ const ActionVideo = () => {
 
           <Quote testimonial={TESTIMONIALS.right} className="xl:self-center" />
 
-          <Quote testimonial={TESTIMONIALS.below} className="xl:col-start-2" />
+          <Quote testimonial={TESTIMONIALS.below} className="xl:col-start-2 xl:w-full xl:justify-self-center" />
         </div>
 
         <Link
